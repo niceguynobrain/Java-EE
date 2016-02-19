@@ -1,0 +1,315 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>The Message-Driven Bean Class - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level3"><a href="bnbpl.html"><tt>simplemessage</tt> Example Application Overview</a></p>
+<p class="toc level3"><a href="bnbpn.html">The <tt>simplemessage</tt> Application Client</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3"><a href="">The Message-Driven Bean Class</a></p>
+<p class="toc level4"><a href="#bnbpp">The <tt>onMessage</tt> Method</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnbpq.html">Packaging, Deploying, and Running the <tt>simplemessage</tt> Example</a></p>
+<p class="toc level4"><a href="bnbpq.html#bnbpr">Administered Objects for the <tt>simplemessage</tt> Example</a></p>
+<p class="toc level4"><a href="bnbpq.html#bnbps">To Build, Deploy, and Run the <tt>simplemessage</tt> Application Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="bnbpq.html#bnbpt">To Build, Deploy, and Run the <tt>simplemessage</tt> Application Using Ant</a></p>
+<p class="toc level4"><a href="bnbpq.html#bnbpu">Removing the Administered Objects for the <tt>simplemessage</tt> Example</a></p>
+<p class="toc level2 tocsp"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="bnbpn.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="bnbpq.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbpo"></a><h2>The Message-Driven Bean Class</h2>
+<a name="indexterm-1495"></a><a name="indexterm-1496"></a><p>The code for the <tt>SimpleMessageBean</tt> class illustrates the requirements of a message-driven bean
+class:</p>
+
+
+<ul><li><p>It must be annotated with the <tt>@MessageDriven</tt> annotation if it does not use a deployment descriptor.</p>
+
+</li>
+<li><p>The class must be defined as <tt>public</tt>.</p>
+
+</li>
+<li><p>The class cannot be defined as <tt>abstract</tt> or <tt>final</tt>.</p>
+
+</li>
+<li><p>It must contain a public constructor with no arguments.</p>
+
+</li>
+<li><p>It must not define the <tt>finalize</tt> method.</p>
+
+</li></ul>
+<p>It is recommended, but not required, that a message-driven bean class implement the
+message listener interface for the message type it supports. A bean that supports
+the JMS API implements the <tt>javax.jms.MessageListener</tt> interface.</p>
+
+<p>Unlike session beans and entities, message-driven beans do not have the remote or
+local interfaces that define client access. Client components do not locate message-driven beans
+and invoke methods on them. Although message-driven beans do not have business methods,
+they may contain helper methods that are invoked internally by the <tt>onMessage</tt> method.</p>
+
+<p>For the GlassFish Server, the <tt>@MessageDriven</tt> annotation typically contains a <tt>mappedName</tt> element that
+specifies the JNDI name of the destination from which the bean will consume
+messages. For complex message-driven beans, there can also be an <tt>activationconfig</tt> element containing <tt>@ActivationConfigProperty</tt>
+annotations used by the bean.</p>
+
+<p>A message-driven bean can also inject a <tt>MessageDrivenContext</tt> resource. Commonly you use
+this resource to call the <tt>setRollbackOnly</tt> method to handle exceptions for a
+bean that uses container-managed transactions.</p>
+
+<p>Therefore, the first few lines of the <tt>SimpleMessageBean</tt> class look like this:</p>
+
+<pre>@MessageDriven(mappedName="jms/Queue", activationConfig =  {
+        @ActivationConfigProperty(propertyName = "acknowledgeMode",
+                                  propertyValue = "Auto-acknowledge"),
+        @ActivationConfigProperty(propertyName = "destinationType",
+                                  propertyValue = "javax.jms.Queue")
+    })
+public class SimpleMessageBean implements MessageListener {
+    @Resource
+    private MessageDrivenContext mdc;
+    ...</pre><p>NetBeans IDE typically creates a message-driven bean with a default set of <tt>@ActivationConfigProperty</tt>
+settings. You can delete those you do not need, or add others. <a href="#gjkoh">Table&nbsp;25-1</a>
+lists commonly used properties.</p>
+
+<a name="gjkoh"></a><p class="caption">Table&nbsp;25-1 <tt>@ActivationConfigProperty</tt> Settings for Message-Driven Beans</p><table><col width="50%"><col width="50%"><tr><th align="left" valign="top" scope="column"><p>Property Name</p>
+
+</th>
+<th align="left" valign="top" scope="column"><p>Description</p>
+
+</th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>acknowledgeMode</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Acknowledgment mode; see <a href="bncfu.html#bncfw">Controlling Message Acknowledgment</a> for information</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>destinationType</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Either <tt>javax.jms.Queue</tt> or
+<tt>javax.jms.Topic</tt></p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>subscriptionDurability</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>For durable subscribers, set to <tt>Durable</tt>; see <a href="bncfu.html#bncgd">Creating Durable Subscriptions</a> for information</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>clientId</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>For durable subscribers,
+the client ID for the connection</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>subscriptionName</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>For durable subscribers, the name of the
+subscription</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>messageSelector</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>A string that filters messages; see <a href="bnceh.html#bncer">JMS Message Selectors</a> for information, and see <a href="bncgw.html">An Application That Uses the JMS API with a Session Bean</a>
+for an example</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>addressList</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Remote system or systems to communicate with; see <a href="bnchp.html">An Application Example That Consumes Messages from a Remote Server</a> for an
+example</p>
+
+</td>
+</tr>
+</table>
+
+<a name="bnbpp"></a><h3>The <tt>onMessage</tt> Method</h3>
+<a name="indexterm-1497"></a><a name="indexterm-1498"></a><a name="indexterm-1499"></a><p>When the queue receives a message, the EJB container invokes the message listener
+method or methods. For a bean that uses JMS, this is the
+<tt>onMessage</tt> method of the <tt>MessageListener</tt> interface.</p>
+
+<p>A message listener method must follow these rules:</p>
+
+
+<ul><li><p>The method must be declared as <tt>public</tt>.</p>
+
+</li>
+<li><p>The method must not be declared as <tt>final</tt> or <tt>static</tt>.</p>
+
+</li></ul>
+<p>The <tt>onMessage</tt> method is called by the bean&rsquo;s container when a message has
+arrived for the bean to service. This method contains the business logic that
+handles the processing of the message. It is the message-driven bean&rsquo;s responsibility to
+parse the message and perform the necessary business logic.</p>
+
+<p>The <tt>onMessage</tt> method has a single argument: the incoming message.</p>
+
+<p>The signature of the <tt>onMessage</tt> method must follow these rules:</p>
+
+
+<ul><li><p>The return type must be <tt>void</tt>.</p>
+
+</li>
+<li><p>The method must have a single argument of type <tt>javax.jms.Message</tt>.</p>
+
+</li></ul>
+<p>In the <tt>SimpleMessageBean</tt> class, the <tt>onMessage</tt> method casts the incoming message to
+a <tt>TextMessage</tt> and displays the text:</p>
+
+<pre>public void onMessage(Message inMessage) {
+    TextMessage msg = null;
+
+    try {
+        if (inMessage instanceof TextMessage) {
+            msg = (TextMessage) inMessage;
+            logger.info("MESSAGE BEAN: Message received: " +
+                msg.getText());
+        } else {
+            logger.warning("Message of wrong type: " +
+                inMessage.getClass().getName());
+        }
+    } catch (JMSException e) {
+        e.printStackTrace();
+        mdc.setRollbackOnly();
+    } catch (Throwable te) {
+        te.printStackTrace();
+    }
+}</pre>
+         </div>
+         <div class="navigation">
+             <a href="bnbpn.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="bnbpq.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

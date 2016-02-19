@@ -1,0 +1,346 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Using Interceptors - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level3"><a href="gkigq.html">Overview of Interceptors</a></p>
+<p class="toc level4"><a href="gkigq.html#gkeck">Interceptor Classes</a></p>
+<p class="toc level4"><a href="gkigq.html#gkedy">Interceptor Lifecycle</a></p>
+<p class="toc level4"><a href="gkigq.html#gkhsn">Interceptors and Contexts and Dependency Injection for the Java EE Platform</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3 tocsp"><a href="">Using Interceptors</a></p>
+<p class="toc level4"><a href="#gkecy">Intercepting Method Invocations</a></p>
+<p class="toc level5"><a href="#gkhmh">Using Multiple Method Interceptors</a></p>
+<p class="toc level5"><a href="#gkhov">Accessing Target Method Parameters From an Interceptor Class</a></p>
+<p class="toc level4 tocsp"><a href="#gkecr">Intercepting Lifecycle Callback Events</a></p>
+<p class="toc level5"><a href="#gkhni">Using Multiple Lifecycle Callback Interceptors</a></p>
+<p class="toc level4 tocsp"><a href="#gkedu">Intercepting Timeout Events</a></p>
+<p class="toc level5"><a href="#gkhla">Using Multiple Timeout Interceptors</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="gkeci.html">The <tt>interceptor</tt> Example Application</a></p>
+<p class="toc level4"><a href="gkeci.html#gkedf">Running the <tt>interceptor</tt> Example Application in NetBeans IDE</a></p>
+<p class="toc level4"><a href="gkeci.html#gkect">Running the <tt>interceptor</tt> Example Applications Using Ant</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="gkigq.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="gkeci.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="gkedm"></a><h2>Using Interceptors</h2>
+<p>Interceptors are defined using one of the interceptor metadata annotations listed in <a href="gkigq.html#gkecc">Table&nbsp;50-1</a>
+within the target class, or in a separate interceptor class. The following code
+declares an <tt>@AroundTimeout</tt> interceptor method within a target class.</p>
+
+<pre>@Stateless
+public class TimerBean {
+...
+    @Schedule(minute="*/1", hour="*")
+    public void automaticTimerMethod() { ... }
+
+    @AroundTimeout
+    public void timeoutInterceptorMethod(InvocationContext ctx) { ... }
+...
+}</pre><p>If interceptor classes are used, use the <tt>javax.interceptor.Interceptors</tt> annotation to declare one
+or more interceptors at the class or method level of the target class.
+The following code declares interceptors at the class level.</p>
+
+<pre>@Stateless
+@Interceptors({PrimaryInterceptor.class, SecondaryInterceptor.class})
+public class OrderBean { ... }</pre><p>The following code declares a method-level interceptor class.</p>
+
+<pre>@Stateless
+public class OrderBean {
+...
+    @Interceptors(OrderInterceptor.class)
+    public void placeOrder(Order order) { ... }
+...
+}</pre>
+
+<a name="gkecy"></a><h3>Intercepting Method Invocations</h3>
+<p>The <tt>@AroundInvoke</tt> annotation is used to designate interceptor methods for managed object methods.
+Only one around-invoke interceptor method per class is allowed. Around-invoke interceptor methods have
+the following form:</p>
+
+<pre>@AroundInvoke
+&lt;<i>visibility</i>> Object &lt;<i>Method name</i>>(InvocationContext) throws Exception { ... }</pre><p>For example:</p>
+
+<pre>@AroundInvoke
+public void interceptOrder(InvocationContext ctx) { ... }</pre><p>Around-invoke interceptor methods can have public, private, protected, or package-level access, and must
+not be declared static or final.</p>
+
+<p>Around-invoke interceptors can call any component or resource callable by the target method
+on which it interposes, have the same security and transaction context as the
+target method, and run in the same Java virtual machine call-stack as the
+target method.</p>
+
+<p>Around-invoke interceptors can throw any exception allowed by the throws clause of the
+target method. They may catch and suppress exceptions, and then recover by calling
+the <tt>InvocationContext.proceed</tt> method.</p>
+
+
+
+<a name="gkhmh"></a><h4>Using Multiple Method Interceptors</h4>
+<p>Use the <tt>@Interceptors</tt> annotation to declare multiple interceptors for a target method or
+class.</p>
+
+<pre>@Interceptors({PrimaryInterceptor.class, SecondaryInterceptor.class, 
+        LastInterceptor.class})
+public void updateInfo(String info) { ... }</pre><p>The order of the interceptors in the <tt>@Interceptors</tt> annotation is the order in
+which the interceptors are invoked.</p>
+
+<p>Multiple interceptors may also be defined in the deployment descriptor. The order of
+the interceptors in the deployment descriptor is the order in which the interceptors
+will be invoked.</p>
+
+<pre>...
+&lt;interceptor-binding>
+    &lt;target-name>myapp.OrderBean&lt;/target-name>
+    &lt;interceptor-class>myapp.PrimaryInterceptor.class&lt;/interceptor-class>
+    &lt;interceptor-class>myapp.SecondaryInterceptor.class&lt;/interceptor-class>
+    &lt;interceptor-class>myapp.LastInterceptor.class&lt;/interceptor-class>
+    &lt;method-name>updateInfo&lt;/method-name>
+&lt;/interceptor-binding>
+...</pre><p>To explicitly pass control to the next interceptor in the chain, call the
+<tt>InvocationContext.proceed</tt> method.</p>
+
+
+
+<a name="gkhkm"></a><h5>Sharing Data Across Interceptors</h5>
+<p>The same <tt>InvocationContext</tt> instance is passed as an input parameter to each interceptor
+method in the interceptor chain for a particular target method. The <tt>InvocationContext</tt> instance's
+<tt>contextData</tt> property is used to pass data across interceptor methods. The <tt>contextData</tt> property
+is a <tt>java.util.Map&lt;String, Object></tt> object. Data stored in <tt>contextData</tt> is accessible to interceptor methods
+further down the interceptor chain.</p>
+
+<p>The data stored in <tt>contextData</tt> is not sharable across separate target class method
+invocations. That is, a different <tt>InvocationContext</tt> object is created for each invocation
+of the method in the target class.</p>
+
+
+
+<a name="gkhov"></a><h4>Accessing Target Method Parameters From an Interceptor Class</h4>
+<p>The <tt>InvocationContext</tt> instance passed to each around-invoke method may be used to access
+and modify the parameters of the target method. The <tt>parameters</tt> property of <tt>InvocationContext</tt>
+is an array of <tt>Object</tt> instances that corresponds to the parameter order of
+the target method. For example, for the following target method:</p>
+
+<pre>@Interceptors(PrimaryInterceptor.class)
+public void updateInfo(String firstName, String lastName, Date date) { ... }</pre><p>The <tt>parameters</tt> property, in the <tt>InvocationContext</tt> instance passed to the around-invoke interceptor
+method in <tt>PrimaryInterceptor</tt>, is an <tt>Object</tt> array containing a <tt>String</tt> object (<tt>firstName</tt>), a <tt>String</tt>
+object (<tt>lastName</tt>), and a <tt>Date</tt> object (<tt>date</tt>).</p>
+
+<p>The parameters can be accessed and modified using the <tt>InvocationContext.getParameters</tt> and <tt>InvocationContext.setParameters</tt>
+methods, respectively.</p>
+
+
+
+<a name="gkecr"></a><h3>Intercepting Lifecycle Callback Events</h3>
+<p>Interceptors for lifecycle callback events (post-create and pre-destroy) may be defined in the
+target class or in interceptor classes. The <tt>@PostCreate</tt> annotation is used to
+designate a method as a post-create lifecycle event interceptor. The <tt>@PreDestroy</tt> annotation is
+used to designate a method as a pre-destroy lifecycle event interceptor.</p>
+
+<p>Lifecycle event interceptors defined within the target class have the following form:</p>
+
+<pre>void &lt;<i>Method name</i>>() { ... }</pre><p>For example:</p>
+
+<pre>@PostCreate
+void initialize() { ... }</pre><p>Lifecycle event interceptors defined in an interceptor class have the following form:</p>
+
+<pre>void &lt;<i>Method name</i>>(InvocationContext) { ... }</pre><p>For example:</p>
+
+<pre>@PreDestroy
+void cleanup(InvocationContext ctx) { ... }</pre><p>Lifecycle interceptor methods can have public, private, protected, or package-level access, and must
+not be declared static or final.</p>
+
+<p>Lifecycle interceptor methods are called in an unspecified security and transaction context. That
+is, portable Java EE applications should not assume the lifecycle event interceptor method
+has access to a security or transaction context. Only one interceptor method for each
+lifecycle event (post-create and pre-destroy) is allowed per class.</p>
+
+
+
+<a name="gkhni"></a><h4>Using Multiple Lifecycle Callback Interceptors</h4>
+<p>Multiple lifecycle interceptors may be defined for a target class by specifying the
+interceptor classes in the <tt>@Interceptors</tt> annotation:</p>
+
+<pre>@Interceptors({PrimaryInterceptor.class, SecondaryInterceptor.class, 
+        LastInterceptor.class})
+@Stateless
+public class OrderBean { ... }</pre><p>The order in which the interceptor classes are listed in the <tt>@Interceptors</tt>
+annotation defines the order in which the interceptors are invoked.</p>
+
+<p>Data stored in the <tt>contextData</tt> property of <tt>InvocationContext</tt> is not sharable across
+different lifecycle events.</p>
+
+
+
+<a name="gkedu"></a><h3>Intercepting Timeout Events</h3>
+<p>Interceptors for EJB timer service timeout methods may be defined using the <tt>@AroundTimeout</tt>
+annotation on methods in the target class or in an interceptor class. Only
+one <tt>@AroundTimeout</tt> method per class is allowed.</p>
+
+<p>Timeout interceptors have the following form:</p>
+
+<pre>Object &lt;<i>Method name</i>>(InvocationContext) throws Exception { ... }</pre><p>For example:</p>
+
+<pre>@AroundTimeout
+protected void timeoutInterceptorMethod(InvocationContext ctx) { ... }</pre><p>Timeout interceptor methods can have public, private, protected, or package-level access, and must
+not be declared static or final.</p>
+
+<p>Timeout interceptors can call any component or resource callable by the target timeout
+method, and are invoked in the same transaction and security context as the
+target method.</p>
+
+<p>Timeout interceptors may access the timer object associated with the target timeout method
+through the <tt>InvocationContext</tt> instance's <tt>getTimer</tt> method.</p>
+
+
+
+<a name="gkhla"></a><h4>Using Multiple Timeout Interceptors</h4>
+<p>Multiple timeout interceptors may be defined for a given target class by specifying
+the interceptor classes containing <tt>@AroundTimeout</tt> interceptor methods in an <tt>@Interceptors</tt> annotation at the
+class level.</p>
+
+<p>If a target class specifies timeout interceptors in an interceptor class, and also
+has a <tt>@AroundTimeout</tt> interceptor method within the target class itself, the timeout interceptors
+in the interceptor classes are called first, then the timeout interceptors defined in
+the target class. For example, in the following example, assume that the <tt>PrimaryInterceptor</tt>
+and <tt>SecondaryInterceptor</tt> class have timeout interceptor methods.</p>
+
+<pre>@Interceptors({PrimaryInterceptor.class, SecondaryInterceptor.class})
+@Stateful
+public class OrderBean {
+...
+    @AroundTimeout
+    private void last(InvocationContext ctx) { ... }
+...
+}</pre><p>The timeout interceptor in <tt>PrimaryInterceptor</tt> will be called first, then the timeout interceptor
+in <tt>SecondaryInterceptor</tt>, and finally the <tt>last</tt> method defined in the target class.</p>
+
+
+         </div>
+         <div class="navigation">
+             <a href="gkigq.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="gkeci.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,447 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>The producerfields Example: Using Producer Fields to Generate Resources - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level3"><a href="gkhpu.html">The <tt>encoder</tt> Example: Using Alternatives</a></p>
+<p class="toc level4"><a href="gkhpu.html#gkhqa">The <tt>Coder</tt> Interface and Implementations</a></p>
+<p class="toc level4"><a href="gkhpu.html#gkhpm">The <tt>encoder</tt> Facelets Page and Managed Bean</a></p>
+<p class="toc level4"><a href="gkhpu.html#gkhqq">Building, Packaging, Deploying, and Running the <tt>encoder</tt> Example</a></p>
+<p class="toc level5"><a href="gkhpu.html#gkhow">To Build, Package, and Deploy the <tt>encoder</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="gkhpu.html#gkhqu">To Run the <tt>encoder</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="gkhpu.html#gkhql">To Build, Package, and Deploy the <tt>encoder</tt> Example Using Ant</a></p>
+<p class="toc level5"><a href="gkhpu.html#gkhol">To Run the <tt>encoder</tt> Example Using Ant</a></p>
+<p class="toc level3 tocsp"><a href="gkhpy.html">The <tt>producermethods</tt> Example: Using a Producer Method To Choose a Bean Implementation</a></p>
+<p class="toc level4"><a href="gkhpy.html#gkhro">Components of the <tt>producermethods</tt> Example</a></p>
+<p class="toc level4"><a href="gkhpy.html#gkhqe">Building, Packaging, Deploying, and Running the <tt>producermethods</tt> Example</a></p>
+<p class="toc level5"><a href="gkhpy.html#gkhpe">To Build, Package, and Deploy the <tt>producermethods</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="gkhpy.html#gkhps">To Build, Package, and Deploy the <tt>producermethods</tt> Example Using Ant</a></p>
+<p class="toc level5"><a href="gkhpy.html#gkhqg">To Run the <tt>producermethods</tt> Example</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3 tocsp"><a href="">The <tt>producerfields</tt> Example: Using Producer Fields to Generate Resources</a></p>
+<p class="toc level4"><a href="#gkhpp">The Producer Field for the <tt>producerfields</tt> Example</a></p>
+<p class="toc level4"><a href="#gkhpd">The <tt>producerfields</tt> Entity and Session Bean</a></p>
+<p class="toc level4"><a href="#gkhpf">The <tt>producerfields</tt> Facelets Pages and Managed Bean</a></p>
+<p class="toc level4"><a href="#gkhrh">Building, Packaging, Deploying, and Running the <tt>producerfields</tt> Example</a></p>
+<p class="toc level5"><a href="#gkhpb">To Build, Package, and Deploy the <tt>producerfields</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="#gkhrm">To Build, Package, and Deploy the <tt>producerfields</tt> Example Using Ant</a></p>
+<p class="toc level5"><a href="#gkhrr">To Run the <tt>producerfields</tt> Example</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="gkhpa.html">The <tt>billpayment</tt> Example: Using Events and Interceptors</a></p>
+<p class="toc level4"><a href="gkhpa.html#gkhok">The <tt>PaymentEvent</tt> Event Class</a></p>
+<p class="toc level4"><a href="gkhpa.html#gkhrb">The <tt>PaymentHandler</tt> Event Listener</a></p>
+<p class="toc level4"><a href="gkhpa.html#gkhrj">The <tt>billpayment</tt> Facelets Pages and Managed Bean</a></p>
+<p class="toc level4"><a href="gkhpa.html#gkhrq">The <tt>LoggedInterceptor</tt> Interceptor Class</a></p>
+<p class="toc level4"><a href="gkhpa.html#gkhpk">Building, Packaging, Deploying, and Running the <tt>billpayment</tt> Example</a></p>
+<p class="toc level5"><a href="gkhpa.html#gkhqs">To Build, Package, and Deploy the <tt>billpayment</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="gkhpa.html#gkhpx">To Build, Package, and Deploy the <tt>billpayment</tt> Example Using Ant</a></p>
+<p class="toc level5"><a href="gkhpa.html#gkhpt">To Run the <tt>billpayment</tt> Example</a></p>
+<p class="toc level3 tocsp"><a href="gkpax.html">The <tt>decorators</tt> Example: Decorating a Bean</a></p>
+<p class="toc level4"><a href="gkpax.html#gkpaq">Components of the <tt>decorators</tt> Example</a></p>
+<p class="toc level4"><a href="gkpax.html#gkpbk">Building, Packaging, Deploying, and Running the <tt>decorators</tt> Example</a></p>
+<p class="toc level5"><a href="gkpax.html#gkpag">To Build, Package, and Deploy the <tt>decorators</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="gkpax.html#gkpaj">To Build, Package, and Deploy the <tt>decorators</tt> Example Using Ant</a></p>
+<p class="toc level5"><a href="gkpax.html#gkpan">To Run the <tt>decorators</tt> Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="gkhpy.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="gkhpa.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="gkhrg"></a><h2>The <tt>producerfields</tt> Example: Using Producer Fields to Generate Resources</h2>
+<a name="indexterm-1597"></a><p>The <tt>producerfields</tt> example, which allows you to create a to-do list, shows how
+to use a producer field to generate objects that can then be managed
+by the container. This example generates an <tt>EntityManager</tt> object, but resources such
+as JDBC connections and datasources can also be generated this way.</p>
+
+<p>The <tt>producerfields</tt> example is the simplest possible entity example. It also contains a
+qualifier and a class that generates the entity manager. It also contains a
+single entity, a stateful session bean, a Facelets page, and a managed bean.</p>
+
+
+
+<a name="gkhpp"></a><h3>The Producer Field for the <tt>producerfields</tt> Example</h3>
+<p>The most important component of the <tt>producerfields</tt> example is the smallest, the <tt>db.UserDatabaseEntityManager</tt>
+class, which isolates the generation of the <tt>EntityManager</tt> object so that it can easily
+be used by other components in the application. The class uses a producer
+field to inject an <tt>EntityManager</tt> that is annotated with the <tt>@UserDatabase</tt> qualifier, also
+defined in the <tt>db</tt> package:</p>
+
+<pre>@Singleton
+public class UserDatabaseEntityManager {
+
+    @Produces
+    @PersistenceContext
+    @UserDatabase
+    private EntityManager em;
+    ...
+}</pre><p>The class does not explicitly produce a persistence unit field, but the application
+has a <tt>persistence.xml</tt> file that specifies a persistence unit. The class is annotated
+<tt>javax.inject.Singleton</tt> to specify that the injector should instantiate it only once.</p>
+
+<p>The <tt>db.UserDatabaseEntityManager</tt> class also contains commented-out code that uses <tt>create</tt> and <tt>close</tt> methods
+to generate and remove the producer field:</p>
+
+<pre> /* @PersistenceContext
+    private EntityManager em;
+
+    @Produces
+    @UserDatabase
+    public EntityManager create() {
+        return em;
+    } */
+
+    public void close(@Disposes @UserDatabase EntityManager em) {
+        em.close();
+    }</pre><p>You can remove the comments from this code and place them around
+the field declaration to test how the methods work. The behavior of the
+application is the same with either mechanism.</p>
+
+<p>The advantage of producing the <tt>EntityManager</tt> in a separate class rather than simply
+injecting it into an enterprise bean is that the object can easily be
+reused in a typesafe way. Also, a more complex application may want to
+create multiple entity managers using multiple persistence units, and this mechanism isolates this
+code for easy maintenance, as in the following example:</p>
+
+<pre>@Singleton
+public class JPAResourceProducer {
+    @Produces 
+    @PersistenceUnit(unitName="pu3")
+    @TestDatabase 
+    EntityManagerFactory customerDatabasePersistenceUnit;
+
+    @Produces 
+    @PersistenceContext(unitName="pu3")
+    @TestDatabase 
+    EntityManager customerDatabasePersistenceContext;
+    
+    @Produces 
+    @PersistenceUnit(unitName="pu4")
+    @Documents
+    EntityManagerFactory customerDatabasePersistenceUnit;
+
+    @Produces 
+    @PersistenceContext(unitName="pu4")
+    @Documents 
+    EntityManager docDatabaseEntityManager;"
+}</pre><p>The <tt>EntityManagerFactory</tt> declarations also allow applications to use an application-managed entity manager.</p>
+
+
+
+<a name="gkhpd"></a><h3>The <tt>producerfields</tt> Entity and Session Bean</h3>
+<p>The <tt>producerfields</tt> example contains a simple entity class, <tt>entity.ToDo</tt>, and a stateful session
+bean, <tt>ejb.RequestBean</tt>, that uses it.</p>
+
+<p>The entity class contains three fields: an autogenerated id field, a string specifying
+the task, and a timestamp. The timestamp field, <tt>timeCreated</tt>, is annotated with
+<tt>@Temporal</tt>, which is required for persistent <tt>Date</tt> fields.</p>
+
+<pre>@Entity
+public class ToDo implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    protected String taskText;
+    @Temporal(TIMESTAMP)
+    protected Date timeCreated;
+
+    public ToDo() {
+    }
+
+    public ToDo(Long id, String taskText, Date timeCreated) {
+        this.id = id;
+        this.taskText = taskText;
+        this.timeCreated = timeCreated;
+    }
+    ...</pre><p>The remainder of the <tt>ToDo</tt> class contains the usual getters, setters, and other
+entity methods.</p>
+
+<p>The <tt>RequestBean</tt> class injects the <tt>EntityManager</tt> generated by the producer method, annotated
+with the <tt>@UserDatabase</tt> qualifier:</p>
+
+<pre>@ConversationScoped
+@Stateful
+public class RequestBean {
+
+    @Inject
+    @UserDatabase
+    EntityManager em;</pre><p>It then defines two methods, one that creates and persists a single
+<tt>ToDo</tt> list item, and another that retrieves all the <tt>ToDo</tt> items created so
+far by creating a query:</p>
+
+<pre>    public ToDo createToDo(String inputString) {
+        ToDo toDo = null;
+        Date currentTime = Calendar.getInstance().getTime();
+
+        try {
+            toDo = new ToDo();
+            toDo.setTaskText(inputString);
+            toDo.setTimeCreated(currentTime);
+            em.persist(toDo);
+            return toDo;
+        } catch (Exception e) {
+            throw new EJBException(e.getMessage());
+        }
+    }
+
+    public List&lt;ToDo> getToDos() {
+        try {
+             List&lt;ToDo> toDos =
+                    (List&lt;ToDo>) em.createQuery(
+                    "SELECT t FROM ToDo t ORDER BY t.timeCreated").getResultList();
+            return toDos;
+        } catch (Exception e) {
+            throw new EJBException(e.getMessage());
+        }
+    }
+}</pre>
+
+<a name="gkhpf"></a><h3>The <tt>producerfields</tt> Facelets Pages and Managed Bean</h3>
+<p>The <tt>producerfields</tt> example has two Facelets pages, <tt>index.xhtml</tt> and <tt>todolist.xhtml</tt>. The simple form
+on the <tt>index.xhtml</tt> page asks the user only for the task. When the
+user clicks the Submit button, the <tt>listBean.createTask</tt> method is called. When the
+user clicks the Show Items button, the action specifies that the <tt>todolist.xhtml</tt> file
+should be displayed:</p>
+
+<pre>    &lt;h:body>
+        &lt;h2>To Do List&lt;/h2>
+        &lt;p>Type a task to be completed.&lt;/p>
+        &lt;h:form id="todolist">
+            &lt;p>&lt;h:outputLabel value="Type a string: " for="inputString"/>
+                &lt;h:inputText id="inputString"
+                             value="#{listBean.inputString}"/>&lt;/p>
+            &lt;p>&lt;h:commandButton value="Submit"
+                                action="#{listBean.createTask()}"/>&lt;/p>
+            &lt;p>&lt;h:commandButton value="Show Items"
+                                action="todolist"/>&lt;/p>
+        &lt;/h:form>
+        ...
+    &lt;/h:body></pre><p>The managed bean, <tt>web.ListBean</tt>, injects the <tt>ejb.RequestBean</tt> session bean. It declares the
+<tt>entity.ToDo</tt> entity and a list of the entity, along with the input string
+that it passes to the session bean. The <tt>inputString</tt> is annotated with the
+<tt>@NotNull</tt> Bean Validation constraint, so that an attempt to submit an empty string
+results in an error.</p>
+
+<pre>@Named
+@ConversationScoped
+public class ListBean implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    @EJB
+    private RequestBean request;
+    @NotNull
+    private String inputString;
+    private ToDo toDo;
+    private List&lt;ToDo> toDos;</pre><p>The <tt>createTask</tt> method called by the Submit button calls the <tt>createToDo</tt> method of
+<tt>RequestBean</tt>:</p>
+
+<pre>    public void createTask() {
+        this.toDo = request.createToDo(inputString);
+    }</pre><p>The <tt>getToDos</tt> method, which is called by the <tt>todolist.xhtml</tt> page, calls the
+<tt>getToDos</tt> method of <tt>RequestBean</tt>:</p>
+
+<pre>public List&lt;ToDo> getToDos() {
+        return request.getToDos();
+    }</pre><p>To force the Facelets page to recognize an empty string as a
+null value and return an error, the <tt>web.xml</tt> file sets the context parameter <tt>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</tt>
+to <tt>true</tt>:</p>
+
+<pre>&lt;context-param>
+  &lt;param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL&lt;/param-name>
+  &lt;param-value>true&lt;/param-value>
+&lt;/context-param></pre><p>The <tt>todolist.xhtml</tt> page is a little more complicated than the <tt>index.html</tt> page. It
+contains a <tt>dataTable</tt> element that displays the contents of the <tt>ToDo</tt> list. The
+body of the page looks like this:</p>
+
+<pre>    &lt;body>
+        &lt;h2>To Do List&lt;/h2>
+        &lt;h:form id="showlist">
+            &lt;h:dataTable var="toDo"
+                         value="#{listBean.toDos}"
+                         rules="all"
+                         border="1"
+                         cellpadding="5">
+                &lt;h:column>
+                    &lt;f:facet name="header">
+                        &lt;h:outputText value="Time Stamp" />
+                    &lt;/f:facet>
+                    &lt;h:outputText value="#{toDo.timeCreated}" />
+                &lt;/h:column>
+                &lt;h:column>
+                    &lt;f:facet name="header">
+                        &lt;h:outputText value="Task" />
+                    &lt;/f:facet>
+                    &lt;h:outputText value="#{toDo.taskText}" />
+                &lt;/h:column>
+            &lt;/h:dataTable>
+            &lt;p>&lt;h:commandButton id="back" value="Back" action="index" />&lt;/p>
+        &lt;/h:form>
+    &lt;/body></pre><p>The value of the <tt>dataTable</tt> is <tt>listBean.toDos</tt>, the list returned by the managed
+bean's <tt>getToDos</tt> method, which in turn calls the session bean's <tt>getToDos</tt> method. Each row
+of the table displays the <tt>timeCreated</tt> and <tt>taskText</tt> fields of the individual
+task. Finally, a Back button returns the user to the <tt>index.xhtml</tt> page.</p>
+
+
+
+<a name="gkhrh"></a><h3>Building, Packaging, Deploying, and Running the <tt>producerfields</tt> Example</h3>
+<p>You can build, package, deploy, and run the <tt>producerfields</tt> application by using either
+NetBeans IDE or the Ant tool.</p>
+
+
+
+<a name="gkhpb"></a><h4>To Build, Package, and Deploy the <tt>producerfields</tt> Example Using NetBeans IDE</h4>
+<ol>
+<li><b>If the database server is not already running, start it by following the
+instructions in <a href="bnadk.html">Starting and Stopping the Java DB Server</a>.</b></li>
+<li><b>From the File menu, choose Open Project.</b></li>
+<li><b>In the Open Project dialog, navigate to:</b><pre><tt></tt><i>tut-install</i><tt>/examples/cdi/</tt></pre></li>
+<li><b>Select the <tt>producerfields</tt> folder.</b></li>
+<li><b>Select the Open as Main Project check box.</b></li>
+<li><b>Click Open Project.</b></li>
+<li><b>In the Projects tab, right-click the <tt>producerfields</tt> project and select Deploy.</b></li></ol>
+
+<a name="gkhrm"></a><h4>To Build, Package, and Deploy the <tt>producerfields</tt> Example Using Ant</h4>
+<ol>
+<li><b>If the database server is not already running, start it by following the
+instructions in <a href="bnadk.html">Starting and Stopping the Java DB Server</a>.</b></li>
+<li><b>In a terminal window, go to:</b><pre><i>tut-install</i>/examples/cdi/producerfields/</pre></li>
+<li><b>Type the following command:</b><pre><tt><b>ant</b></tt></pre><p>This command calls the <tt>default</tt> target, which builds and packages the application into
+a WAR file, <tt>producerfields.war</tt>, located in the <tt>dist</tt> directory.</p></li>
+<li><b>Type the following command:</b><pre><tt><b>ant deploy</b></tt></pre></li></ol>
+
+<a name="gkhrr"></a><h4>To Run the <tt>producerfields</tt> Example</h4>
+<ol>
+<li><b>In a web browser, type the following URL:</b><pre>http://localhost:8080/producerfields</pre><p>The Create To Do List page opens.</p></li>
+<li><b>Type a string in the text field and click Submit.</b><p>You can type additional strings and click Submit to create a task list
+with multiple items.</p></li>
+<li><b>Click the Show Items button.</b><p>The To Do List page opens, showing the timestamp and text for each
+item you created.</p></li>
+<li><b>Click the Back button to return to the Create To Do List
+page.</b><p>On this page, you can enter more items in the list.</p></li></ol>
+         </div>
+         <div class="navigation">
+             <a href="gkhpy.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="gkhpa.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

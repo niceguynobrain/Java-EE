@@ -1,0 +1,409 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Using Bean Validation - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level3"><a href="bnaqm.html">Managed Beans in JavaServer Faces Technology</a></p>
+<p class="toc level4"><a href="bnaqm.html#bnaqn">Creating a Managed Bean</a></p>
+<p class="toc level4"><a href="bnaqm.html#bnaqp">Using the EL to Reference Managed Beans</a></p>
+<p class="toc level3 tocsp"><a href="bnaty.html">Writing Bean Properties</a></p>
+<p class="toc level4"><a href="bnaty.html#bnatz">Writing Properties Bound to Component Values</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaub"><tt>UIInput</tt> and <tt>UIOutput</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnauc"><tt>UIData</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaud"><tt>UISelectBoolean</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaue"><tt>UISelectMany</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnauf"><tt>UISelectOne</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaug"><tt>UISelectItem</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnauh"><tt>UISelectItems</tt> Properties</a></p>
+<p class="toc level4 tocsp"><a href="bnaty.html#bnauk">Writing Properties Bound to Component Instances</a></p>
+<p class="toc level4"><a href="bnaty.html#bnaul">Writing Properties Bound to Converters, Listeners, or Validators</a></p>
+<p class="toc level3 tocsp"><a href="bnavb.html">Writing Managed Bean Methods</a></p>
+<p class="toc level4"><a href="bnavb.html#bnavc">Writing a Method to Handle Navigation</a></p>
+<p class="toc level4"><a href="bnavb.html#bnavd">Writing a Method to Handle an Action Event</a></p>
+<p class="toc level4"><a href="bnavb.html#bnave">Writing a Method to Perform Validation</a></p>
+<p class="toc level4"><a href="bnavb.html#bnavf">Writing a Method to Handle a Value-Change Event</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3 tocsp"><a href="">Using Bean Validation</a></p>
+<p class="toc level4"><a href="#gkcrg">Validating Null and Empty Strings</a></p>
+</div>
+<p class="toc level2 tocsp"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="bnavb.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="gkmaa.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="gircz"></a><h2>Using Bean Validation</h2>
+<a name="indexterm-612"></a><a name="indexterm-613"></a><a name="indexterm-614"></a><p>Validating input received from the user to maintain data integrity is an important
+part of application logic. Validation of data can take place at different layers
+in even the simplest of applications, as shown in <a href="gipob.html">Developing a Simple Facelets Application</a>. The <tt>guessnumber</tt>
+example application validates the user input (in the <tt>h:inputText</tt> tag) for numerical
+data at the presentation layer and for a valid range of numbers at
+the business layer.</p>
+
+<p>JavaBeans Validation (Bean Validation) is a new validation model available as part of
+Java EE 6 platform. The Bean Validation model is supported by constraints in
+the form of annotations placed on a field, method, or class of a
+JavaBeans component, such as a managed bean.</p>
+
+<p>Constraints can be built in or user defined. User-defined constraints are called custom
+constraints. Several built-in constraints are available in the <tt>javax.validation.constraints</tt> package. <a href="#gkagk">Table&nbsp;9-2</a> lists all
+the built-in constraints.</p>
+
+<a name="gkagk"></a><p class="caption">Table&nbsp;9-2 Built-In Bean Validation Constraints</p><table><col width="14%"><col width="31%"><col width="54%"><tr><th align="left" valign="top" scope="column"><p>Constraint</p>
+
+</th>
+<th align="left" valign="top" scope="column"><p>Description</p>
+
+</th>
+<th align="left" valign="top" scope="column"><p>Example</p>
+
+</th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>@AssertFalse</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>The value of the field or property must be false.</p>
+
+</td>
+<td align="left" valign="top" scope="row"><pre>@AssertFalse
+boolean isUnsupported;</pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>@AssertTrue</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>The
+value of the field or property must be true.</p>
+
+</td>
+<td align="left" valign="top" scope="row"><pre>@AssertTrue
+boolean isActive;</pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>@DecimalMax</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>The value of the
+field or property must be a decimal value lower than or equal to
+the number in the value element.</p>
+
+</td>
+<td align="left" valign="top" scope="row"><pre>@DecimalMax("30.00")
+BigDecimal discount;</pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>@DecimalMin</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>The value of the field or property
+must be a decimal value greater than or equal to the number in
+the value element.</p>
+
+</td>
+<td align="left" valign="top" scope="row"><pre>@DecimalMin("5.00")
+BigDecimal discount;</pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>@Digits</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>The value of the field or property must be a
+number within a specified range. The <tt>integer</tt> element specifies the maximum integral digits for
+the number, and the <tt>fraction</tt> element specifies the maximum fractional digits for the
+number.</p>
+
+</td>
+<td align="left" valign="top" scope="row"><pre>@Digits(integer=6, fraction=2)
+BigDecimal price;</pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>@Future</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>The value of the field or property must be a date in
+the future.</p>
+
+</td>
+<td align="left" valign="top" scope="row"><pre>@Future
+Date eventDate;</pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>@Max</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>The value of the field or property must be an integer
+value lower than or equal to the number in the value element.</p>
+
+</td>
+<td align="left" valign="top" scope="row"><pre>@Max(10)
+int quantity;</pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>@Min</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>The value
+of the field or property must be an integer value greater than or
+equal to the number in the value element.</p>
+
+</td>
+<td align="left" valign="top" scope="row"><pre>@Min(5)
+int quantity;</pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>@NotNull</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>The value of the field
+or property must not be null.</p>
+
+</td>
+<td align="left" valign="top" scope="row"><pre>@NotNull
+String username;</pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>@Null</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>The value of the field or property
+must be null.</p>
+
+</td>
+<td align="left" valign="top" scope="row"><pre>@Null
+String unusedString;</pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>@Past</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>The value of the field or property must be a
+date in the past.</p>
+
+</td>
+<td align="left" valign="top" scope="row"><pre>@Past
+Date birthday;</pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>@Pattern</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>The value of the field or property must match
+the regular expression defined in the <tt>regexp</tt> element.</p>
+
+</td>
+<td align="left" valign="top" scope="row"><pre>@Pattern(regexp="\\(\\d{3}\\)\\d{3}-\\d{4}")
+String phoneNumber;</pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>@Size</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>The size of the field or
+property is evaluated and must match the specified boundaries. If the field or
+property is a <tt>String</tt>, the size of the string is evaluated. If the
+field or property is a <tt>Collection</tt>, the size of the <tt>Collection</tt> is
+evaluated. If the field or property is a <tt>Map</tt>, the size of the
+<tt>Map</tt> is evaluated. If the field or property is an array, the
+size of the array is evaluated. Use one of the optional <tt>max</tt> or
+<tt>min</tt> elements to specify the boundaries.</p>
+
+</td>
+<td align="left" valign="top" scope="row"><pre>@Size(min=2, max=240)
+String briefMessage;</pre></td>
+</tr>
+</table><p>In the following example, a constraint is placed on a field using
+the built-in <tt>@NotNull</tt> constraint:</p>
+
+<pre>public class Name {
+    @NotNull 
+    private String firstname;
+
+    @NotNull 
+    private String lastname;
+}</pre><p>You can also place more than one constraint on a single JavaBeans
+component object. For example, you can place an additional constraint for size of
+field on the <tt>firstname</tt> and the <tt>lastname</tt> fields:</p>
+
+<pre>public class Name {
+    @NotNull
+    @Size(min=1, max=16)
+    private String firstname;
+
+    @NotNull 
+    @Size(min=1, max=16)
+    private String lastname;
+}</pre><p>The following example shows a method with a user-defined constraint that checks for
+a predefined email address pattern such as a corporate email account:</p>
+
+<pre>@ValidEmail 
+public String getEmailAddress() {
+    return emailAddress;
+}</pre><p>For a built-in constraint, a default implementation is available. A user-defined or custom
+constraint needs a validation implementation. In the above example, the <tt>@ValidEmail</tt> custom constraint
+needs an implementation class.</p>
+
+<p>Any validation failures are gracefully handled and can be displayed by the <tt>h:messages</tt>
+tag.</p>
+
+<p>Any managed bean that contains Bean Validation annotations automatically gets validation  constraints
+placed on the fields on a JavaServer Faces application&rsquo;s web pages.</p>
+
+<p>See <a href="bnbqa.html#gkahq">Validating Persistent Fields and Properties</a> for more information on using validation constraints.</p>
+
+
+
+<a name="gkcrg"></a><h3>Validating Null and Empty Strings</h3>
+<p>The Java programming language distinguishes between null and empty strings. An empty string
+is a string instance of zero length, whereas a null string has no
+value at all.</p>
+
+<p>An empty string is represented as <tt>""</tt>. It is a character array of
+zero characters. A null string is represented by <tt>null</tt>. It can be described
+as the absence of a string instance.</p>
+
+<p>Managed bean elements represented as a JavaServer Faces text component such as <tt>inputText</tt>
+are initialized with the value of the empty string by the JavaServer Faces
+implementation. Validating these strings can be an issue when user input for such
+fields is not required. Consider the following example, where the string <tt>testString</tt> is
+a bean variable that will be set using input typed by the user.
+In this case, the user input for the field is not required.</p>
+
+<pre>if (testString==null) {
+    doSomething();
+} else {
+    doAnotherThing();
+}</pre><p>By default, the <tt>doAnotherThing</tt> method is called even when the user enters no
+data, because the <tt>testString</tt> element has been initialized with the value of an
+empty string.</p>
+
+<p>In order for the Bean Validation model to work as intended, you
+must set the context parameter <tt>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</tt> to <tt>true</tt> in the web deployment descriptor
+file, <tt>web.xml</tt>:</p>
+
+<pre>&lt;context-param>
+    &lt;param-name>
+        javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL
+    &lt;/param-name>
+    &lt;param-value>true&lt;/param-value>
+&lt;/context-param></pre><p>This parameter enables the JavaServer Faces implementation to treat empty strings as null.</p>
+
+<p>Suppose, on the other hand, that you have a <tt>@NotNull</tt> constraint on an
+element, meaning that input is required. In this case, an empty string will
+pass this validation constraint. However, if you set the context parameter <tt>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</tt>
+to true, the value of the managed bean attribute is passed to the
+Bean Validation runtime as a null value, causing the <tt>@NotNull</tt> constraint to fail.</p>
+
+
+         </div>
+         <div class="navigation">
+             <a href="bnavb.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="gkmaa.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

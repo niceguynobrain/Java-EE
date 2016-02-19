@@ -1,0 +1,591 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Using the Standard Converters - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3"><a href="">Using the Standard Converters</a></p>
+<p class="toc level4"><a href="#bnasu">Converting a Component's Value</a></p>
+<p class="toc level4"><a href="#bnasv">Using <tt>DateTimeConverter</tt></a></p>
+<p class="toc level4"><a href="#bnasx">Using <tt>NumberConverter</tt></a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnasz.html">Registering Listeners on Components</a></p>
+<p class="toc level4"><a href="bnasz.html#bnata">Registering a Value-Change Listener on a Component</a></p>
+<p class="toc level4"><a href="bnasz.html#bnatb">Registering an Action Listener on a Component</a></p>
+<p class="toc level3 tocsp"><a href="bnatc.html">Using the Standard Validators</a></p>
+<p class="toc level4"><a href="bnatc.html#bnate">Validating a Component's Value</a></p>
+<p class="toc level4"><a href="bnatc.html#bnatf">Using <tt>LongRangeValidator</tt></a></p>
+<p class="toc level3 tocsp"><a href="bnatn.html">Referencing a Managed Bean Method</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatp">Referencing a Method That Performs Navigation</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatq">Referencing a Method That Handles an Action Event</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatr">Referencing a Method That Performs Validation</a></p>
+<p class="toc level4"><a href="bnatn.html#bnats">Referencing a Method That Handles a Value-Change Event</a></p>
+<p class="toc level2 tocsp"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="gjcut.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="bnasz.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnast"></a><h2>Using the Standard Converters</h2>
+<a name="indexterm-433"></a><a name="indexterm-434"></a><p><a name="indexterm-435"></a>The JavaServer Faces implementation provides a set of <tt>Converter</tt> implementations that you can use
+to convert component data. For more information on the conceptual details of the
+conversion model, see <a href="bnaqd.html#bnaqi">Conversion Model</a>. The standard <tt>Converter</tt> implementations, located in the <tt>javax.faces.convert</tt> package,
+are as follows:</p>
+
+
+<ul><li><p><a name="indexterm-436"></a><tt>BigDecimalConverter</tt></p>
+
+</li>
+<li><p><a name="indexterm-437"></a><tt>BigIntegerConverter</tt></p>
+
+</li>
+<li><p><a name="indexterm-438"></a><tt>BooleanConverter</tt></p>
+
+</li>
+<li><p><a name="indexterm-439"></a><tt>ByteConverter</tt></p>
+
+</li>
+<li><p><a name="indexterm-440"></a><tt>CharacterConverter</tt></p>
+
+</li>
+<li><p><a name="indexterm-441"></a><tt>DateTimeConverter</tt></p>
+
+</li>
+<li><p><a name="indexterm-442"></a><tt>DoubleConverter</tt></p>
+
+</li>
+<li><p><a name="indexterm-443"></a><tt>EnumConverter</tt></p>
+
+</li>
+<li><p><a name="indexterm-444"></a><tt>FloatConverter</tt></p>
+
+</li>
+<li><p><a name="indexterm-445"></a><tt>IntegerConverter</tt></p>
+
+</li>
+<li><p><a name="indexterm-446"></a><tt>LongConverter</tt></p>
+
+</li>
+<li><p><a name="indexterm-447"></a><tt>NumberConverter</tt></p>
+
+</li>
+<li><p><a name="indexterm-448"></a><tt>ShortConverter</tt></p>
+
+</li></ul>
+<p>A standard error message is associated with each of these converters. If you
+have registered one of these converters onto a component on your page, and
+the converter is not able to convert the component&rsquo;s value, the converter&rsquo;s error
+message will display on the page. For example, the following error message appears
+if <tt>BigIntegerConverter</tt> fails to convert a value:</p>
+
+<pre>{0} must be a number consisting of one or more digits</pre><p>In this case, the <tt>{0}</tt> substitution parameter will be replaced with the name
+of the input component on which the converter is registered.</p>
+
+<p><a name="indexterm-449"></a><a name="indexterm-450"></a>Two of the standard converters (<tt>DateTimeConverter</tt> and <tt>NumberConverter</tt>) have their own tags, which
+allow you to configure the format of the component data using the tag
+attributes. For more information about using <tt>DateTimeConverter</tt>, see <a href="#bnasv">Using <tt>DateTimeConverter</tt></a>. For more information about
+ using <tt>NumberConverter</tt>, see <a href="#bnasx">Using <tt>NumberConverter</tt></a>. The following section explains how to convert a
+component&rsquo;s value, including how to register other standard converters with a component.</p>
+
+
+
+<a name="bnasu"></a><h3>Converting a Component&rsquo;s Value</h3>
+<a name="indexterm-451"></a><a name="indexterm-452"></a><p>To use a particular converter to convert a component&rsquo;s value, you need to
+register the converter onto the component. You can register any of the standard
+converters in one of the following ways:</p>
+
+
+<ul><li><p>Nest one of the standard converter tags inside the component&rsquo;s tag. These tags are <tt>convertDateTime</tt> and <tt>convertNumber</tt>, which are described in <a href="#bnasv">Using <tt>DateTimeConverter</tt></a> and <a href="#bnasx">Using <tt>NumberConverter</tt></a>, respectively.</p>
+
+</li>
+<li><p><a name="indexterm-453"></a><a name="indexterm-454"></a>Bind the value of the component to a managed bean property of the same type as the converter.</p>
+
+</li>
+<li><p>Refer to the converter from the component tag&rsquo;s <tt>converter</tt> attribute.</p>
+
+</li>
+<li><p><a name="indexterm-455"></a><a name="indexterm-456"></a>Nest a <tt>converter</tt> tag inside of the component tag, and use either the <tt>converter</tt> tag&rsquo;s <tt>converterId</tt> attribute or its <tt>binding</tt> attribute to refer to the converter.</p>
+
+</li></ul>
+<p>As an example of the second technique, if you want a component&rsquo;s data
+to be converted to an <tt>Integer</tt>, you can simply bind the component&rsquo;s value
+to a managed bean property. Here is an example:</p>
+
+<pre>Integer age = 0;
+public Integer getAge(){ return age;}
+public void setAge(Integer age) {this.age = age;}</pre><p>If the component is not bound to a bean property, you can
+use the third technique by using the <tt>converter</tt> attribute directly on the component tag:</p>
+
+<pre>&lt;h:inputText
+    converter="javax.faces.convert.IntegerConverter" /></pre><p>This example shows the <tt>converter</tt> attribute referring to the fully qualified class name
+of the converter. The <tt>converter</tt> attribute can also take the ID of the
+component.</p>
+
+<p><a name="indexterm-457"></a><a name="indexterm-458"></a><a name="indexterm-459"></a>The data from the <tt>inputText</tt> tag in the  this example will be
+converted to a <tt>java.lang.Integer</tt> value. The <tt>Integer</tt> type is a supported type of
+<tt>NumberConverter</tt>. If you don&rsquo;t need to specify any formatting instructions using the <tt>convertNumber</tt>
+tag attributes, and if one of the standard converters will suffice, you can
+simply reference that converter by using the component tag&rsquo;s <tt>converter</tt> attribute.</p>
+
+<p><a name="indexterm-460"></a><a name="indexterm-461"></a>Finally, you can nest a <tt>converter</tt> tag within the component tag and use
+either the converter tag&rsquo;s <tt>converterId</tt> attribute or its <tt>binding</tt> attribute to reference the
+converter.</p>
+
+<p><a name="indexterm-462"></a><a name="indexterm-463"></a>The <tt>converterId</tt> attribute must reference the converter&rsquo;s ID. Here is an example:</p>
+
+<pre>&lt;h:inputText value="#{loginBean.age}" />
+    &lt;f:converter converterId="Integer" />
+&lt;/h:inputText></pre><p>Instead of using the <tt>converterId</tt> attribute, the <tt>converter</tt> tag can use the
+<tt>binding</tt> attribute. The <tt>binding</tt> attribute must resolve to a bean property that accepts and
+returns an appropriate <tt>Converter</tt> instance.</p>
+
+
+
+<a name="bnasv"></a><h3>Using <tt>DateTimeConverter</tt></h3>
+<p><a name="indexterm-464"></a><a name="indexterm-465"></a><a name="indexterm-466"></a>You can convert a component&rsquo;s data to a <tt>java.util.Date</tt> by nesting the
+<tt>convertDateTime</tt> tag inside the component tag. The <tt>convertDateTime</tt> tag has several attributes that allow
+you to specify the format and type of the data. <a href="#bnasw">Table&nbsp;8-1</a> lists
+the attributes.</p>
+
+<p>Here is a simple example of a <tt>convertDateTime</tt> tag:</p>
+
+<pre>&lt;h:outputText value="#{cashier.shipDate}">
+    &lt;f:convertDateTime type="date" dateStyle="full" />
+&lt;/h:outputText></pre><p>When binding the <tt>DateTimeConverter</tt> to a component, ensure that the managed bean property
+to which the component is bound is of type <tt>java.util.Date</tt>. In the preceding
+example, <tt>cashier.shipDate</tt> must be of type <tt>java.util.Date</tt>.</p>
+
+<p>The example tag can display the following output:</p>
+
+<pre>Saturday, September 25, 2011</pre><p>You can also display the same date and time by using the
+following tag where the date format is specified:</p>
+
+<pre>&lt;h:outputText value="#{cashier.shipDate}">
+    &lt;f:convertDateTime
+         pattern="EEEEEEEE, MMM dd, yyyy" />
+&lt;/h:outputText></pre><p>If you want to display the example date in Spanish, you can
+use the <tt>locale</tt> attribute:</p>
+
+<pre>&lt;h:outputText value="#{cashier.shipDate}">
+    &lt;f:convertDateTime dateStyle="full"
+        locale="es"
+        timeStyle="long" type="both" />
+&lt;/h:outputText></pre><p>This tag would display the following output:</p>
+
+<pre>jueves 27 de octubre de 2011 15:07:04 GMT</pre><p>Refer to the &ldquo;Customizing Formats&rdquo; lesson of the <i>Java Tutorial</i> at <a href="http://docs.oracle.com/javase/tutorial/i18n/format/simpleDateFormat.html">http://docs.oracle.com/javase/tutorial/i18n/format/simpleDateFormat.html</a> for
+more information on how to format the output using the <tt>pattern</tt> attribute of
+the <tt>convertDateTime</tt> tag.</p>
+
+<a name="bnasw"></a><p class="caption">Table&nbsp;8-1 Attributes for the <tt>convertDateTime</tt> Tag</p><a name="indexterm-467"></a><a name="indexterm-468"></a><table><col width="11%"><col width="23%"><col width="64%"><tr><th align="left" valign="top" scope="column"><p>Attribute</p>
+
+</th>
+<th align="left" valign="top" scope="column"><p>Type</p>
+
+</th>
+<th align="left" valign="top" scope="column"><p>Description</p>
+
+</th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>binding</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>DateTimeConverter</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Used to bind a converter to a managed bean property.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>dateStyle</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Defines
+the format, as specified by <tt>java.text.DateFormat</tt>, of a date or the date part
+of a <tt>date</tt> string. Applied only if <tt>type</tt> is <tt>date</tt> or <tt>both</tt> and if
+<tt>pattern</tt> is not defined. Valid values: <tt>default</tt>, <tt>short</tt>, <tt>medium</tt>, <tt>long</tt>, and <tt>full</tt>.
+If no value is specified, <tt>default</tt> is used.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>for</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt> </p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Used with composite components.
+Refers to one of the objects within the composite component inside which this
+tag is nested.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>locale</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt> or <tt>Locale</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-469"></a><tt>Locale</tt> whose predefined styles for dates and times are
+used during formatting or parsing. If not specified, the <tt>Locale</tt> returned by
+<tt>FacesContext.getLocale</tt> will be used.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>pattern</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Custom formatting pattern that determines how the date/time string should be
+formatted and parsed. If this attribute is specified, <tt>dateStyle</tt>, <tt>timeStyle</tt>, and <tt>type</tt>
+attributes are ignored.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>timeStyle</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Defines the format, as specified by <tt>java.text.DateFormat</tt>, of a <tt>time</tt> or
+the time part of a <tt>date</tt> string. Applied only if <tt>type</tt> is time
+and <tt>pattern</tt> is not defined. Valid values: <tt>default</tt>, <tt>short</tt>, <tt>medium</tt>, <tt>long</tt>, and <tt>full</tt>.
+If no value is specified, <tt>default</tt> is used.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>timeZone</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt> or <tt>TimeZone</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Time zone in which
+to interpret any time information in the <tt>date</tt> string.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>type</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Specifies whether the string
+value will contain a date, a time, or both. Valid values are <tt>date</tt>,
+<tt>time</tt>, or <tt>both</tt>. If no value is specified, <tt>date</tt> is used.</p>
+
+</td>
+</tr>
+</table>
+
+<a name="bnasx"></a><h3>Using <tt>NumberConverter</tt></h3>
+<a name="indexterm-470"></a><a name="indexterm-471"></a><a name="indexterm-472"></a><p>You can convert a component&rsquo;s data to a <tt>java.lang.Number</tt> by nesting the <tt>convertNumber</tt>
+tag inside the component tag. The <tt>convertNumber</tt> tag has several attributes that allow you
+to specify the format and type of the data. <a href="#bnasy">Table&nbsp;8-2</a> lists the
+attributes.</p>
+
+<p>The following example uses a <tt>convertNumber</tt> tag to display the total prices of
+the contents of a shopping cart:</p>
+
+<pre>&lt;h:outputText value="#{cart.total}" >
+    &lt;f:convertNumber currencySymbol="$" type="currency"/>
+&lt;/h:outputText></pre><p>When binding the <tt>NumberConverter</tt> to a component, ensure that the managed bean property
+to which the component is bound is of a primitive type or has
+a type of <tt>java.lang.Number</tt>. In the preceding example, <tt>cart.total</tt> is of type <tt>double</tt>.</p>
+
+<p>Here is an example of a number that this tag can display:</p>
+
+<pre>$934</pre><p>This result can also be displayed by using the following tag, where the
+currency pattern is specified:</p>
+
+<pre>&lt;h:outputText id="cartTotal"
+     value="#{cart.Total}" >
+    &lt;f:convertNumber pattern="$####" />
+&lt;/h:outputText></pre><p>See the &ldquo;Customizing Formats&rdquo; lesson of the <i>Java Tutorial</i> at <a href="http://docs.oracle.com/javase/tutorial/i18n/format/decimalFormat.html">http://docs.oracle.com/javase/tutorial/i18n/format/decimalFormat.html</a> for more
+information on how to format the output by using the <tt>pattern</tt> attribute of
+the <tt>convertNumber</tt> tag.</p>
+
+<a name="bnasy"></a><p class="caption">Table&nbsp;8-2 Attributes for the <tt>convertNumber</tt> Tag</p><a name="indexterm-473"></a><a name="indexterm-474"></a><table><col width="21%"><col width="21%"><col width="56%"><tr><th align="left" valign="top" scope="column"><p>Attribute</p>
+
+</th>
+<th align="left" valign="top" scope="column"><p>Type</p>
+
+</th>
+<th align="left" valign="top" scope="column"><p>Description</p>
+
+</th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>binding</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>NumberConverter</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Used to bind a converter to a managed bean property.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>currencyCode</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>ISO
+4217 currency code, used only when formatting currencies.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>currencySymbol</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Currency symbol, applied only when
+formatting currencies.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>for</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Used with composite components. Refers to one of the objects within the
+composite component inside which this tag is nested.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>groupingUsed</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>Boolean</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Specifies whether formatted output contains
+grouping separators.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>integerOnly</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>Boolean</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Specifies whether only the integer part of the value will be
+parsed.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>locale</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt> or <tt>Locale</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>Locale</tt> whose number styles are used to format or parse data.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>maxFractionDigits</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>int</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Maximum
+number of digits formatted in the fractional part of the output.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>maxIntegerDigits</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>int</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Maximum number
+of digits formatted in the integer part of the output.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>minFractionDigits</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>int</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Minimum number of
+digits formatted in the fractional part of the output.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>minIntegerDigits</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>int</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Minimum number of digits
+formatted in the integer part of the output.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>pattern</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Custom formatting pattern that determines
+how the number string is formatted and parsed.</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>type</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Specifies whether the string value is
+parsed and formatted as a <tt>number</tt>, <tt>currency</tt>, or <tt>percentage</tt>. If not specified, <tt>number</tt>
+is used.</p>
+
+</td>
+</tr>
+</table>
+         </div>
+         <div class="navigation">
+             <a href="gjcut.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="bnasz.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

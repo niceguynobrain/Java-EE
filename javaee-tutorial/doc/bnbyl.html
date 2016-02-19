@@ -1,0 +1,539 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Securing Enterprise Beans - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3"><a href="">Securing Enterprise Beans</a></p>
+<p class="toc level4"><a href="#gjgdi">Securing an Enterprise Bean Using Declarative Security</a></p>
+<p class="toc level5"><a href="#gjgcq">Specifying Authorized Users by Declaring Security Roles</a></p>
+<p class="toc level5"><a href="#bnbyu">Specifying an Authentication Mechanism and Secure Connection</a></p>
+<p class="toc level4 tocsp"><a href="#gjgcs">Securing an Enterprise Bean Programmatically</a></p>
+<p class="toc level5"><a href="#gjgcr">Accessing an Enterprise Bean Caller's Security Context</a></p>
+<p class="toc level4 tocsp"><a href="#bnbyr">Propagating a Security Identity (Run-As)</a></p>
+<p class="toc level5"><a href="#bnbzb">Configuring a Component's Propagated Security Identity</a></p>
+<p class="toc level5"><a href="#bnbzc">Trust between Containers</a></p>
+<p class="toc level4 tocsp"><a href="#bnbzg">Deploying Secure Enterprise Beans</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="gkbsz.html">Examples: Securing Enterprise Beans</a></p>
+<p class="toc level4"><a href="gkbsz.html#bnbzk">Example: Securing an Enterprise Bean with Declarative Security</a></p>
+<p class="toc level5"><a href="gkbsz.html#bnbzl">Annotating the Bean</a></p>
+<p class="toc level5"><a href="gkbsz.html#bnbzn">To Build, Package, Deploy, and Run the Secure Cart Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="gkbsz.html#bnbzo">To Build, Package, Deploy, and Run the Secure Cart Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="gkbsz.html#bncaa">Example: Securing an Enterprise Bean with Programmatic Security</a></p>
+<p class="toc level5"><a href="gkbsz.html#bncab">Modifying <tt>ConverterBean</tt></a></p>
+<p class="toc level5"><a href="gkbsz.html#gkbsi">Modifying <tt>ConverterServlet</tt></a></p>
+<p class="toc level5"><a href="gkbsz.html#bncad">To Build, Package, and Deploy the Secure Converter Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="gkbsz.html#bncae">To Build, Package, and Deploy the Secure Converter Example Using Ant</a></p>
+<p class="toc level5"><a href="gkbsz.html#gjtdp">To Run the Secure Converter Example</a></p>
+<p class="toc level2 tocsp"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="bnbyk.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="gkbsz.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbyl"></a><h2>Securing Enterprise Beans</h2>
+<a name="indexterm-2086"></a><a name="indexterm-2087"></a><a name="indexterm-2088"></a><p>Enterprise beans are Java EE components that implement EJB technology. Enterprise beans run
+in the EJB container, a runtime environment within the GlassFish Server. Although transparent
+to the application developer, the EJB container provides system-level services, such as transactions
+and security to its enterprise beans, which form the core of transactional Java
+EE applications.</p>
+
+<p>Enterprise bean methods can be secured in either of the following ways:</p>
+
+
+<ul><li><p><a name="indexterm-2089"></a><a name="indexterm-2090"></a><a name="indexterm-2091"></a><a name="indexterm-2092"></a><a name="indexterm-2093"></a><b>Declarative security</b> (preferred): Expresses an application component&rsquo;s security requirements using either deployment descriptors or annotations. The presence of an annotation in the business method of an enterprise bean class that specifies method permissions is all that is needed for method protection and authentication in some situations. This section discusses this simple and efficient method of securing enterprise beans.</p>
+
+<p>Because of some limitations to the simplified method of securing enterprise beans, you would want to continue to use the deployment descriptor to specify security information in some instances. An authentication mechanism must be configured on the server for the simple solution to work. Basic authentication is the GlassFish Server&rsquo;s default authentication method.</p>
+
+<p>This tutorial explains how to invoke user name/password authentication of authorized users by decorating the enterprise application&rsquo;s business methods with annotations that specify method permissions.</p>
+
+<p>To make the deployer&rsquo;s task easier, the application developer can define security roles. A security role is a grouping of permissions that a given type of application users must have in order to successfully use the application. For example, in a payroll application, some users will want to view their own payroll information (<i>employee</i>), some will need to view others&rsquo; payroll information (<i>manager</i>), and some will need to be able to change others&rsquo; payroll information (<i>payrollDept</i>). The application developer would determine the potential users of the application and which methods would be accessible to which users. The application developer would then decorate classes or methods of the enterprise bean with annotations that specify the types of users authorized to access those methods. Using annotations to specify authorized users is described in <a href="#gjgcq">Specifying Authorized Users by Declaring Security Roles</a>.</p>
+
+<p>When one of the annotations is used to define method permissions, the deployment system will automatically require user name/password authentication. In this type of authentication, a user is prompted to enter a user name and password, which will be compared against a database of known users. If the user is found and the password matches, the roles that the user is assigned will be compared against the roles that are authorized to access the method. If the user is authenticated and found to have a role that is authorized to access that method, the data will be returned to the user.</p>
+
+<p>Using declarative security is discussed in <a href="#gjgdi">Securing an Enterprise Bean Using Declarative Security</a>.</p>
+
+</li>
+<li><p><a name="indexterm-2094"></a><a name="indexterm-2095"></a><b>Programmatic security</b>: For an enterprise bean, code embedded in a business method that is used to access a caller&rsquo;s identity programmatically and that uses this information to make security decisions. Programmatic security is useful when declarative security alone is not sufficient to express the security model of an application.</p>
+
+<p>In general, security management should be enforced by the container in a manner that is transparent to the enterprise beans&rsquo; business methods. The programmatic security APIs described in this chapter should be used only in the less frequent situations in which the enterprise bean business methods need to access the security-context information, such as when you want to grant access based on the time of day or other nontrivial condition checks for a particular role.</p>
+
+<p>Programmatic security is discussed in <a href="#gjgcs">Securing an Enterprise Bean Programmatically</a>.</p>
+
+</li></ul>
+<p>Some of the material in this chapter assumes that you have already
+read <a href="gijsz.html">Chapter&nbsp;22, Enterprise Beans</a>, <a href="gijre.html">Chapter&nbsp;23, Getting Started with Enterprise Beans</a>, and <a href="bnbwj.html">Chapter&nbsp;39, Introduction to Security in the Java EE Platform</a>. </p>
+
+<p>As mentioned earlier, enterprise beans run in the EJB container, a runtime environment
+within the GlassFish Server, as shown in <a href="#bnbym">Figure&nbsp;41-1</a>.</p>
+
+<a name="bnbym"></a><p class="caption">Figure&nbsp;41-1 Java EE Server and Containers</p><img src="figures/overview-servercontainers.gif" alt="Diagram of Java EE server showing web container and EJB container"></img><p>This section discusses securing a Java EE application where one or more modules,
+such as EJB JAR files, are packaged into an EAR file, the
+archive file that holds the application. Security annotations will be used in the Java
+programming class files to specify authorized users and basic, or user name/password, authentication.</p>
+
+<p><a name="indexterm-2096"></a><a name="indexterm-2097"></a><a name="indexterm-2098"></a>Enterprise beans often provide the business logic of a web application. In these
+cases, packaging the enterprise bean within the web application&rsquo;s WAR module simplifies deployment
+and application organization. Enterprise beans may be packaged within a WAR module as
+Java class files or within a JAR file that is bundled within the
+WAR module. When a servlet or JavaServer Faces page handles the web front
+end and the application is packaged into a WAR module as a Java
+class file, security for the application can be handled in the application&rsquo;s <tt>web.xml</tt>
+file. The EJB in the WAR file can have its own deployment descriptor,
+<tt>ejb-jar.xml</tt>, if required. Securing web applications using <tt>web.xml</tt> is discussed in <a href="bncas.html">Chapter&nbsp;40, Getting Started Securing Web Applications</a>.</p>
+
+<p>The following sections describe declarative and programmatic security mechanisms that can be used
+to protect enterprise bean resources. The protected resources include enterprise bean methods that
+are called from application clients, web components, or other enterprise beans. </p>
+
+<p>For more information on this topic, read the Enterprise JavaBeans 3.1 specification. This
+document can be downloaded from <a href="http://jcp.org/en/jsr/detail?id=318">http://jcp.org/en/jsr/detail?id=318</a>. Chapter 17 of this specification, &ldquo;Security Management,&rdquo;
+discusses security management for enterprise beans.</p>
+
+
+
+<a name="gjgdi"></a><h3>Securing an Enterprise Bean Using Declarative Security</h3>
+<p>Declarative security enables the application developer to specify which users are authorized to
+access which methods of the enterprise beans and to authenticate these users with
+basic, or username-password, authentication. Frequently, the person who is developing an enterprise application
+is not the same person who is responsible for deploying the application. An
+application developer who uses declarative security to define method permissions and authentications mechanisms is
+passing along to the deployer a security view of the enterprise beans contained
+in the EJB JAR. When a security view is passed on to
+the deployer, he or she uses this information to define method permissions for
+security roles. If you don&rsquo;t define a security view, the deployer will have
+to determine what each business method does to determine which users are authorized to
+call each method.</p>
+
+<p><a name="indexterm-2099"></a><a name="indexterm-2100"></a><a name="indexterm-2101"></a><a name="indexterm-2102"></a><a name="indexterm-2103"></a>A security view consists of a set of security roles, a semantic grouping
+of permissions that a given type of users of an application must have
+to successfully access the application. Security roles are meant to be logical roles,
+representing a type of user. You can define method permissions for each security
+role. A method permission is a permission to invoke a specified group of
+methods of an enterprise bean&rsquo;s business interface, home interface, component interface, and/or web
+service endpoints. After method permissions are defined, user name/password authentication will be used to
+verify the identity of the user.</p>
+
+<p>It is important to keep in mind that security roles are used
+to define the logical security view of an application. They should not be
+confused with the user groups, users, principals, and other concepts that exist in
+the GlassFish Server. An additional step is required to map the roles defined
+in the application to users, groups, and principals that are the components of
+the user database in the file realm of the GlassFish Server. These steps
+are outlined in <a href="bnbxj.html#bnbxv">Mapping Roles to Users and Groups</a>.</p>
+
+<p>The following sections show how an application developer uses declarative security to either
+secure an application or to create a security view to pass along to
+the deployer.</p>
+
+
+
+<a name="gjgcq"></a><h4>Specifying Authorized Users by Declaring Security Roles</h4>
+<a name="indexterm-2104"></a><a name="indexterm-2105"></a><a name="indexterm-2106"></a><a name="indexterm-2107"></a><a name="indexterm-2108"></a><a name="indexterm-2109"></a><a name="indexterm-2110"></a><p>This section discusses how to use annotations to specify the method permissions for
+the methods of a bean class. For more information on these annotations, refer
+to the Common Annotations for the Java Platform specification at <a href="http://jcp.org/en/jsr/detail?id=250">http://jcp.org/en/jsr/detail?id=250</a>.</p>
+
+<p>Method permissions can be specified on the class, the business methods of the
+class, or both. Method permissions can be specified on a method of the
+bean class to override the method permissions value specified on the entire bean
+class. The following annotations are used to specify method permissions:</p>
+
+
+<ul><li><p><a name="indexterm-2111"></a><tt>@DeclareRoles</tt>: Specifies all the roles that the application will use, including roles not specifically named in a <tt>@RolesAllowed</tt> annotation. The set of security roles the application uses is the total of the security roles defined in the <tt>@DeclareRoles</tt> and <tt>@RolesAllowed</tt> annotations.</p>
+
+<p>The <tt>@DeclareRoles</tt> annotation is specified on a bean class, where it serves to declare roles that can be tested (for example, by calling <tt>isCallerInRole</tt>) from within the methods of the annotated class. When declaring the name of a role used as a parameter to the <tt>isCallerInRole(String roleName)</tt> method, the declared name must be the same as the parameter value.</p>
+
+<p>The following example code demonstrates the use of the <tt>@DeclareRoles</tt> annotation:</p>
+
+<pre>@DeclareRoles("BusinessAdmin")
+public class Calculator {
+    ...
+}</pre><p>The syntax for declaring more than one role is as shown in the following example:</p>
+
+<pre>@DeclareRoles({"Administrator", "Manager", "Employee"})</pre></li>
+<li><p><a name="indexterm-2112"></a><tt>@RolesAllowed("</tt><i>list-of-roles</i><tt>")</tt>: Specifies the security roles permitted to access methods in an application. This annotation can be specified on a class or on one or more methods. When specified at the class level, the annotation applies to all methods in the class. When specified on a method, the annotation applies to that method only and overrides any values specified at the class level.</p>
+
+<p>To specify that no roles are authorized to access methods in an application, use the <tt>@DenyAll</tt> annotation. To specify that a user in any role is authorized to access the application, use the <tt>@PermitAll</tt> annotation.</p>
+
+<p>When used in conjunction with the <tt>@DeclareRoles</tt> annotation, the combined set of security roles is used by the application.</p>
+
+<p>The following example code demonstrates the use of the <tt>@RolesAllowed</tt> annotation:</p>
+
+<pre>@DeclareRoles({"Administrator", "Manager", "Employee"})
+public class Calculator {
+
+    @RolesAllowed("Administrator")
+    public void setNewRate(int rate) {
+        ...
+    }
+}</pre></li>
+<li><p><a name="indexterm-2113"></a><tt>@PermitAll</tt>: Specifies that <b>all</b> security roles are permitted to execute the specified method or methods. The user is not checked against a database to ensure that he or she is authorized to access this application.</p>
+
+<p>This annotation can be specified on a class or on one or more methods. Specifying this annotation on the class means that it applies to all methods of the class. Specifying it at the method level means that it applies to only that method.</p>
+
+<p>The following example code demonstrates the use of the <tt>@PermitAll</tt> annotation:</p>
+
+<pre>import javax.annotation.security.*;
+@RolesAllowed("RestrictedUsers")
+public class Calculator {
+
+    @RolesAllowed("Administrator")
+    public void setNewRate(int rate) {
+        //...
+    }
+    @PermitAll
+    public long convertCurrency(long amount) {
+        //...
+    }
+}</pre></li>
+<li><p><a name="indexterm-2114"></a><tt>@DenyAll</tt>: Specifies that <b>no</b> security roles are permitted to execute the specified method or methods. This means that these methods are excluded from execution in the Java EE container.</p>
+
+<p>The following example code demonstrates the use of the <tt>@DenyAll</tt> annotation:</p>
+
+<pre>import javax.annotation.security.*;
+@RolesAllowed("Users")
+public class Calculator {
+    @RolesAllowed("Administrator")
+    public void setNewRate(int rate) {
+        //...
+    }
+    @DenyAll
+    public long convertCurrency(long amount) {
+        //...
+    }
+}</pre></li></ul>
+<p>The following code snippet demonstrates the use of the <tt>@DeclareRoles</tt> annotation with
+the <tt>isCallerInRole</tt> method. In this example, the <tt>@DeclareRoles</tt> annotation declares a role that the
+enterprise bean <tt>PayrollBean</tt> uses to make the security check by using <tt>isCallerInRole("payroll")</tt> to verify
+that the caller is authorized to change salary data:</p>
+
+<pre>@DeclareRoles("payroll")
+@Stateless public class PayrollBean implements Payroll {
+    @Resource SessionContext ctx;
+
+    public void updateEmployeeInfo(EmplInfo info) {
+
+        oldInfo = ... read from database;
+
+        // The salary field can be changed only by callers
+        // who have the security role "payroll"
+        Principal callerPrincipal = ctx.getCallerPrincipal();
+        if (info.salary != oldInfo.salary &amp;&amp; !ctx.isCallerInRole("payroll")) {
+            throw new SecurityException(...);
+        }
+        ...
+    }
+    ...
+}</pre><p>The following example code illustrates the use of the <tt>@RolesAllowed</tt> annotation:</p>
+
+<pre>@RolesAllowed("admin")
+public class SomeClass {
+    public void aMethod () {...}
+    public void bMethod () {...}
+    ...
+}
+
+@Stateless public class MyBean extends SomeClass implements A  {
+
+    @RolesAllowed("HR")
+    public void aMethod () {...}
+
+    public void cMethod () {...}
+    ...
+}</pre><p>In this example, assuming that <tt>aMethod</tt>, <tt>bMethod</tt>, and <tt>cMethod</tt> are methods of
+business interface <tt>A</tt>, the method permissions values of methods <tt>aMethod</tt> and <tt>bMethod</tt>
+are <tt>@RolesAllowed("HR")</tt> and <tt>@RolesAllowed("admin")</tt>, respectively. The method permissions for method <tt>cMethod</tt> have not
+been specified.</p>
+
+<p>To clarify, the annotations are not inherited by the subclass itself. Instead, the
+annotations apply to methods of the superclass that are inherited by the subclass.</p>
+
+
+
+<a name="bnbyu"></a><h4>Specifying an Authentication Mechanism and Secure Connection</h4>
+<a name="indexterm-2115"></a><a name="indexterm-2116"></a><p>When method permissions are specified, basic user name/password authentication will be invoked by
+the GlassFish Server.</p>
+
+<p>To use a different type of authentication or to require a secure
+connection using SSL, specify this information in an application deployment descriptor.</p>
+
+
+
+<a name="gjgcs"></a><h3>Securing an Enterprise Bean Programmatically</h3>
+<p>Programmatic security, code that is embedded in a business method, is used to
+access a caller&rsquo;s identity programmatically and uses this information to make security decisions
+within the method itself.</p>
+
+
+
+<a name="gjgcr"></a><h4>Accessing an Enterprise Bean Caller&rsquo;s Security Context</h4>
+<a name="indexterm-2117"></a><a name="indexterm-2118"></a><a name="indexterm-2119"></a><a name="indexterm-2120"></a><a name="indexterm-2121"></a><a name="indexterm-2122"></a><p>In general, security management should be enforced by the container in a manner
+that is transparent to the enterprise bean&rsquo;s business methods. The security API described
+in this section should be used only in the less frequent situations in
+which the enterprise bean business methods need to access the security context information,
+such as when you want to restrict access to a particular time of
+day.</p>
+
+<p>The <tt>javax.ejb.EJBContext</tt> interface provides two methods that allow the bean provider to access
+security information about the enterprise bean&rsquo;s caller:</p>
+
+
+<ul><li><p><tt>getCallerPrincipal</tt>, which allows the enterprise bean methods to obtain the current caller principal&rsquo;s name. The methods might, for example, use the name as a key to information in a database.</p>
+
+<p>The following code sample illustrates the use of the <tt>getCallerPrincipal</tt> method:</p>
+
+<pre>@Stateless public class EmployeeServiceBean implements EmployeeService {
+    @Resource SessionContext ctx;
+    @PersistenceContext EntityManager em;
+
+    public void changePhoneNumber(...) {
+        ...
+        // obtain the caller principal.
+        callerPrincipal = ctx.getCallerPrincipal();
+
+        // obtain the caller principal's name.
+        callerKey = callerPrincipal.getName();
+
+        // use callerKey as primary key to find EmployeeRecord
+        EmployeeRecord myEmployeeRecord =
+            em.find(EmployeeRecord.class, callerKey);
+
+        // update phone number
+        myEmployeeRecord.setPhoneNumber(...);
+
+        ...
+    }
+}</pre><p>In this example, the enterprise bean obtains the principal name of the current caller and uses it as the primary key to locate an <tt>EmployeeRecord</tt> entity. This example assumes that application has been deployed such that the current caller principal contains the primary key used for the identification of employees (for example, employee number).</p>
+
+</li>
+<li><p><tt>isCallerInRole</tt>, which the enterprise bean code can use to allow the bean provider/application developer to code the security checks that cannot be easily defined using method permissions. Such a check might impose a role-based limit on a request, or it might depend on information stored in the database.</p>
+
+<p>The enterprise bean code can use the <tt>isCallerInRole</tt> method to test whether the current caller has been assigned to a given security role. Security roles are defined by the bean provider or the application assembler and are assigned by the deployer to principals or principal groups that exist in the operational environment.</p>
+
+<p>The following code sample illustrates the use of the <tt>isCallerInRole</tt> method:</p>
+
+<pre>@Stateless public class PayrollBean implements Payroll {
+     @Resource SessionContext ctx;
+
+     public void updateEmployeeInfo(EmplInfo info) {
+
+         oldInfo = ... read from database;
+
+         // The salary field can be changed only by callers
+         // who have the security role "payroll"
+         if (info.salary != oldInfo.salary &amp;&amp;
+             !ctx.isCallerInRole("payroll")) {
+                 throw new SecurityException(...);
+         }
+         ...
+     }
+     ...
+ }</pre></li></ul>
+<p>You would use programmatic security in this way to dynamically control access to
+a method, for example, when you want to deny access except during a
+particular time of day. An example application that uses the <tt>getCallerPrincipal</tt> and
+<tt>isCallerInRole</tt> methods is described in <a href="gkbsz.html#bncaa">Example: Securing an Enterprise Bean with Programmatic Security</a>.</p>
+
+
+
+<a name="bnbyr"></a><h3>Propagating a Security Identity (Run-As)</h3>
+<a name="indexterm-2123"></a><a name="indexterm-2124"></a><a name="indexterm-2125"></a><a name="indexterm-2126"></a><a name="indexterm-2127"></a><p>You can specify whether a caller&rsquo;s security identity should be used for the
+execution of specified methods of an enterprise bean or whether a specific run-as
+identity should be used. <a href="#bnbza">Figure&nbsp;41-2</a> illustrates this concept.</p>
+
+<a name="bnbza"></a><p class="caption">Figure&nbsp;41-2 Security Identity Propagation</p><img src="figures/security-idPropag.gif" alt="Diagram of security identity propagation from client to intermediate container to target container"></img><p>In this illustration, an application client is making a call to an
+enterprise bean method in one EJB container. This enterprise bean method, in turn,
+makes a call to an enterprise bean method in another container. The security
+identity during the first call is the identity of the caller. The security
+identity during the second call can be any of the following options.</p>
+
+
+<ul><li><p>By default, the identity of the caller of the intermediate component is propagated to the target enterprise bean. This technique is used when the target container trusts the intermediate container.</p>
+
+</li>
+<li><p><a name="indexterm-2128"></a>A <b>specific</b> identity is propagated to the target enterprise bean. This technique is used when the target container expects access using a specific identity.</p>
+
+<p>To propagate an identity to the target enterprise bean, configure a run-as identity for the bean, as described in <a href="#bnbzb">Configuring a Component's Propagated Security Identity</a>. Establishing a run-as identity for an enterprise bean does not affect the identities of its callers, which are the identities tested for permission to access the methods of the enterprise bean. The run-as identity establishes the identity that the enterprise bean will use when it makes calls.</p>
+
+<p>The run-as identity applies to the enterprise bean as a whole, including all the methods of the enterprise bean&rsquo;s business interface, local and remote interfaces, component interface, and web service endpoint interfaces, the message listener methods of a message-driven bean, the timeout method of an enterprise bean, and all internal methods of the bean that might be called in turn.</p>
+
+</li></ul>
+
+
+<a name="bnbzb"></a><h4>Configuring a Component&rsquo;s Propagated Security Identity</h4>
+<p>You can configure an enterprise bean&rsquo;s run-as, or propagated, security identity by using
+the <tt>@RunAs</tt> annotation, which defines the role of the application during execution in
+a Java EE container. The annotation can be specified on a class, allowing
+developers to execute an application under a particular role. The role must map
+to the user/group information in the container&rsquo;s security realm. The <tt>@RunAs</tt> annotation specifies the
+name of a security role as its parameter.</p>
+
+<p>Here is some example code that demonstrates the use of the <tt>@RunAs</tt>
+annotation.</p>
+
+<pre>@RunAs("Admin")
+public class Calculator {
+    //....
+}</pre><p>You will have to map the run-as role name to a given
+principal defined on the GlassFish Server if the given roles are associated with
+more than one user principal.</p>
+
+
+
+<a name="bnbzc"></a><h4>Trust between Containers</h4>
+<a name="indexterm-2129"></a><a name="indexterm-2130"></a><p>When an enterprise bean is designed so that either the original caller identity
+or a designated identity is used to call a target bean, the
+target bean will receive the propagated identity only. The target bean will not
+receive any authentication data.</p>
+
+<p>There is no way for the target container to authenticate the propagated security
+identity. However, because the security identity is used in authorization checks (for example,
+method permissions or with the <tt>isCallerInRole</tt> method), it is vitally important that the
+security identity be authentic. Because no authentication data is available to authenticate the
+propagated identity, the target must trust that the calling container has propagated an
+authenticated security identity.</p>
+
+<p>By default, the GlassFish Server is configured to trust identities that are propagated
+from different containers. Therefore, you do not need to take any special steps
+to set up a trust relationship.</p>
+
+
+
+<a name="bnbzg"></a><h3>Deploying Secure Enterprise Beans</h3>
+<a name="indexterm-2131"></a><p>The deployer is responsible for ensuring that an assembled application is secure after
+it has been deployed in the target operational environment. If a security view
+has been provided to the deployer through the use of security annotations and/or
+a deployment descriptor, the security view is mapped to the mechanisms and policies
+used by the security domain in the target operational environment, which in this
+case is the GlassFish Server. If no security view is provided, the deployer
+must set up the appropriate security policy for the enterprise bean application.</p>
+
+<p>Deployment information is specific to a web or application server.</p>
+
+
+         </div>
+         <div class="navigation">
+             <a href="bnbyk.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="gkbsz.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

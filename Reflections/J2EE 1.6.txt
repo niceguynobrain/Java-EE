@@ -1,0 +1,9 @@
+J2EE with 'Conversations' overview:
+Having a client platform for service providers which can be installed locally and logged in to via secure connection
+would allow the distribution of a protal through which to interact with customers.
+Customers could interact with the service through either a distributed platform, or a more preferable option
+would be for customers to access the servive through a web browser with secure login. 
+Information regarding client and customer would be accessed through J2EE servers. 
+
+
+	

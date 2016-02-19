@@ -1,0 +1,356 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>The encoder Example: Using Alternatives - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3"><a href="">The <tt>encoder</tt> Example: Using Alternatives</a></p>
+<p class="toc level4"><a href="#gkhqa">The <tt>Coder</tt> Interface and Implementations</a></p>
+<p class="toc level4"><a href="#gkhpm">The <tt>encoder</tt> Facelets Page and Managed Bean</a></p>
+<p class="toc level4"><a href="#gkhqq">Building, Packaging, Deploying, and Running the <tt>encoder</tt> Example</a></p>
+<p class="toc level5"><a href="#gkhow">To Build, Package, and Deploy the <tt>encoder</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="#gkhqu">To Run the <tt>encoder</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="#gkhql">To Build, Package, and Deploy the <tt>encoder</tt> Example Using Ant</a></p>
+<p class="toc level5"><a href="#gkhol">To Run the <tt>encoder</tt> Example Using Ant</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="gkhpy.html">The <tt>producermethods</tt> Example: Using a Producer Method To Choose a Bean Implementation</a></p>
+<p class="toc level4"><a href="gkhpy.html#gkhro">Components of the <tt>producermethods</tt> Example</a></p>
+<p class="toc level4"><a href="gkhpy.html#gkhqe">Building, Packaging, Deploying, and Running the <tt>producermethods</tt> Example</a></p>
+<p class="toc level5"><a href="gkhpy.html#gkhpe">To Build, Package, and Deploy the <tt>producermethods</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="gkhpy.html#gkhps">To Build, Package, and Deploy the <tt>producermethods</tt> Example Using Ant</a></p>
+<p class="toc level5"><a href="gkhpy.html#gkhqg">To Run the <tt>producermethods</tt> Example</a></p>
+<p class="toc level3 tocsp"><a href="gkhrg.html">The <tt>producerfields</tt> Example: Using Producer Fields to Generate Resources</a></p>
+<p class="toc level4"><a href="gkhrg.html#gkhpp">The Producer Field for the <tt>producerfields</tt> Example</a></p>
+<p class="toc level4"><a href="gkhrg.html#gkhpd">The <tt>producerfields</tt> Entity and Session Bean</a></p>
+<p class="toc level4"><a href="gkhrg.html#gkhpf">The <tt>producerfields</tt> Facelets Pages and Managed Bean</a></p>
+<p class="toc level4"><a href="gkhrg.html#gkhrh">Building, Packaging, Deploying, and Running the <tt>producerfields</tt> Example</a></p>
+<p class="toc level5"><a href="gkhrg.html#gkhpb">To Build, Package, and Deploy the <tt>producerfields</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="gkhrg.html#gkhrm">To Build, Package, and Deploy the <tt>producerfields</tt> Example Using Ant</a></p>
+<p class="toc level5"><a href="gkhrg.html#gkhrr">To Run the <tt>producerfields</tt> Example</a></p>
+<p class="toc level3 tocsp"><a href="gkhpa.html">The <tt>billpayment</tt> Example: Using Events and Interceptors</a></p>
+<p class="toc level4"><a href="gkhpa.html#gkhok">The <tt>PaymentEvent</tt> Event Class</a></p>
+<p class="toc level4"><a href="gkhpa.html#gkhrb">The <tt>PaymentHandler</tt> Event Listener</a></p>
+<p class="toc level4"><a href="gkhpa.html#gkhrj">The <tt>billpayment</tt> Facelets Pages and Managed Bean</a></p>
+<p class="toc level4"><a href="gkhpa.html#gkhrq">The <tt>LoggedInterceptor</tt> Interceptor Class</a></p>
+<p class="toc level4"><a href="gkhpa.html#gkhpk">Building, Packaging, Deploying, and Running the <tt>billpayment</tt> Example</a></p>
+<p class="toc level5"><a href="gkhpa.html#gkhqs">To Build, Package, and Deploy the <tt>billpayment</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="gkhpa.html#gkhpx">To Build, Package, and Deploy the <tt>billpayment</tt> Example Using Ant</a></p>
+<p class="toc level5"><a href="gkhpa.html#gkhpt">To Run the <tt>billpayment</tt> Example</a></p>
+<p class="toc level3 tocsp"><a href="gkpax.html">The <tt>decorators</tt> Example: Decorating a Bean</a></p>
+<p class="toc level4"><a href="gkpax.html#gkpaq">Components of the <tt>decorators</tt> Example</a></p>
+<p class="toc level4"><a href="gkpax.html#gkpbk">Building, Packaging, Deploying, and Running the <tt>decorators</tt> Example</a></p>
+<p class="toc level5"><a href="gkpax.html#gkpag">To Build, Package, and Deploy the <tt>decorators</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="gkpax.html#gkpaj">To Build, Package, and Deploy the <tt>decorators</tt> Example Using Ant</a></p>
+<p class="toc level5"><a href="gkpax.html#gkpan">To Run the <tt>decorators</tt> Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="gkhre.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="gkhpy.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="gkhpu"></a><h2>The <tt>encoder</tt> Example: Using Alternatives</h2>
+<a name="indexterm-1595"></a><p>The <tt>encoder</tt> example shows how to use alternatives to choose between two beans
+at deployment time, as described in <a href="gjsdf.html">Using Alternatives in CDI Applications</a>. The example includes an interface and
+two implementations of it, a managed bean, a Facelets page, and configuration files.</p>
+
+
+
+<a name="gkhqa"></a><h3>The <tt>Coder</tt> Interface and Implementations</h3>
+<p>The <tt>Coder</tt> interface contains just one method, <tt>codeString</tt>, that takes two arguments: a
+string, and an integer value that specifies how the letters in the string
+should be transposed.</p>
+
+<pre>public interface Coder {
+
+    public String codeString(String s, int tval);
+}</pre><p>The interface has two implementation classes, <tt>CoderImpl</tt> and <tt>TestCoderImpl</tt>. The implementation of
+<tt>codeString</tt> in <tt>CoderImpl</tt> shifts the string argument forward in the alphabet by the
+number of letters specified in the second argument; any characters that are not
+letters are left unchanged. (This simple shift code is known as a Caesar
+cipher, for Julius Caesar, who reportedly used it to communicate with his generals.)
+The implementation in <tt>TestCoderImpl</tt> merely displays the values of the arguments. The <tt>TestCoderImpl</tt>
+implementation is annotated <tt>@Alternative</tt>:</p>
+
+<pre>import javax.enterprise.inject.Alternative;
+
+@Alternative
+public class TestCoderImpl implements Coder {
+
+    public String codeString(String s, int tval) {
+        return ("input string is " + s + ", shift value is " + tval);
+    }
+}</pre><p>The <tt>beans.xml</tt> file for the <tt>encoder</tt> example contains an <tt>alternatives</tt> element for the
+<tt>TestCoderImpl</tt>class, but by default the element is commented out:</p>
+
+<pre>&lt;beans ... >
+    &lt;!--&lt;alternatives>
+        &lt;class>encoder.TestCoderImpl&lt;/class>
+    &lt;/alternatives>-->
+&lt;/beans></pre><p>This means that by default, the <tt>TestCoderImpl</tt> class, annotated <tt>@Alternative</tt>, will not be
+used. Instead, the <tt>CoderImpl</tt> class will be used.</p>
+
+
+
+<a name="gkhpm"></a><h3>The <tt>encoder</tt> Facelets Page and Managed Bean</h3>
+<p>The simple Facelets page for the <tt>encoder</tt> example, <tt>index.xhtml</tt>, asks the user
+to type the string and integer values and passes them to the managed
+bean, <tt>CoderBean</tt>, as <tt>coderBean.inputString</tt> and <tt>coderBean.transVal</tt>:</p>
+
+<pre>&lt;html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    &lt;h:head>
+        &lt;h:outputStylesheet library="css" name="default.css"/>
+        &lt;title>String Encoder&lt;/title>
+    &lt;/h:head>
+    &lt;h:body>
+        &lt;h2>String Encoder&lt;/h2>
+        &lt;p>Type a string and an integer, then click Encode.&lt;/p>
+        &lt;p>Depending on which alternative is enabled, the coder bean
+            will either display the argument values or return a string that
+            shifts the letters in the original string by the value you specify.
+            The value must be between 0 and 26.&lt;/p>
+        &lt;h:form id="encodeit">
+            &lt;p>&lt;h:outputLabel value="Type a string: " for="inputString"/>
+                &lt;h:inputText id="inputString"
+                             value="#{coderBean.inputString}"/>
+                &lt;h:outputLabel value="Type the number of letters to shift by: "
+                               for="transVal"/>
+                &lt;h:inputText id="transVal" value="#{coderBean.transVal}"/>&lt;/p>
+            &lt;p>&lt;h:commandButton value="Encode"
+                                action="#{coderBean.encodeString()}"/>&lt;/p>
+            &lt;p>&lt;h:outputLabel value="Result: " for="outputString"/>
+                &lt;h:outputText id="outputString" value="#{coderBean.codedString}"
+                              style="color:blue"/> &lt;/p>
+            &lt;p>&lt;h:commandButton value="Reset" action="#{coderBean.reset}"/>&lt;/p>
+        &lt;/h:form>
+        ...
+    &lt;/h:body>
+&lt;/html></pre><p>When the user clicks the Encode button, the page invokes the managed bean's
+<tt>encodeString</tt> method and displays the result, <tt>coderBean.codedString</tt>, in blue. The page also
+has a Reset button that clears the fields.</p>
+
+<p>The managed bean, <tt>CoderBean</tt>, is a <tt>@RequestScoped</tt> bean that declares its input
+and output properties. The <tt>transVal</tt> property has three Bean Validation constraints that
+enforce limits on the integer value, so that if the user types an
+invalid value, a default error message appears on the Facelets page. The bean
+also injects an instance of the <tt>Coder</tt> interface:</p>
+
+<pre>@Named
+@RequestScoped
+public class CoderBean {
+
+    private String inputString;
+    private String codedString;
+    @Max(26)
+    @Min(0)
+    @NotNull
+    private int transVal;
+
+    @Inject
+    Coder coder;
+    ...</pre><p>In addition to simple getter and setter methods for the three properties, the
+bean defines the <tt>encodeString</tt> action method called by the Facelets page. This method
+sets the <tt>codedString</tt> property to the value returned by a call to the
+<tt>codeString</tt> method of the <tt>Coder</tt> implementation:</p>
+
+<pre>    public void encodeString() {
+        setCodedString(coder.codeString(inputString, transVal));
+    }</pre><p>Finally, the bean defines the <tt>reset</tt> method to empty the fields of the
+Facelets page:</p>
+
+<pre>    public void reset() {
+        setInputString("");
+        setTransVal(0);
+    }</pre>
+
+<a name="gkhqq"></a><h3>Building, Packaging, Deploying, and Running the <tt>encoder</tt> Example</h3>
+<p>You can build, package, deploy, and run the <tt>encoder</tt> application by using either
+NetBeans IDE or the Ant tool.</p>
+
+
+
+<a name="gkhow"></a><h4>To Build, Package, and Deploy the <tt>encoder</tt> Example Using NetBeans IDE</h4>
+<ol>
+<li><b>From the File menu, choose Open Project.</b></li>
+<li><b>In the Open Project dialog, navigate to:</b><pre><tt></tt><i>tut-install</i><tt>/examples/cdi/</tt></pre></li>
+<li><b>Select the <tt>encoder</tt> folder.</b></li>
+<li><b>Select the Open as Main Project check box.</b></li>
+<li><b>Click Open Project.</b></li>
+<li><b>In the Projects tab, right-click the <tt>encoder</tt> project and select Deploy.</b></li></ol>
+
+<a name="gkhqu"></a><h4>To Run the <tt>encoder</tt> Example Using NetBeans IDE</h4>
+<ol>
+<li><b>In a web browser, type the following URL:</b><pre>http://localhost:8080/encoder</pre><p>The String Encoder page opens.</p></li>
+<li><b>Type a string and the number of letters to shift by, then
+click Encode.</b><p>The encoded string appears in blue on the Result line. For example, if
+you type <tt>Java</tt> and <tt>4</tt>, the result is <tt>Neze</tt>.</p></li>
+<li><b>Now, edit the <tt>beans.xml</tt> file to enable the alternative implementation of <tt>Coder</tt>.</b><ol style="list-style-type: lower-alpha">
+<li><b>In the Projects tab, under the <tt>encoder</tt> project, expand the Web Pages node,
+then the WEB-INF node.</b></li>
+<li><b>Double-click the <tt>beans.xml</tt> file to open it.</b></li>
+<li><b>Remove the comment characters that surround the <tt>alternatives</tt> element, so that it
+looks like this:</b><pre>&lt;alternatives>
+    &lt;class>encoder.TestCoderImpl&lt;/class>
+&lt;/alternatives></pre></li>
+<li><b>Save the file.</b></li></ol></li>
+<li><b>Right-click the <tt>encoder</tt> project and select Deploy.</b></li>
+<li><b>In the web browser, retype the URL to show the String Encoder page
+for the redeployed project:</b><pre>http://localhost:8080/encoder/</pre></li>
+<li><b>Type a string and the number of letters to shift by, then
+click Encode.</b><p>This time, the Result line displays your arguments. For example, if you type
+<tt>Java</tt> and <tt>4</tt>, the result is:</p><pre>Result: input string is Java, shift value is 4</pre></li></ol>
+
+<a name="gkhql"></a><h4>To Build, Package, and Deploy the <tt>encoder</tt> Example Using Ant</h4>
+<ol>
+<li><b>In a terminal window, go to:</b><pre><i>tut-install</i>/examples/cdi/encoder/</pre></li>
+<li><b>Type the following command:</b><pre><tt><b>ant</b></tt></pre><p>This command calls the <tt>default</tt> target, which builds and packages the application into
+a WAR file, <tt>encoder.war</tt>, located in the <tt>dist</tt> directory.</p></li>
+<li><b>Type the following command:</b><pre><tt><b>ant deploy</b></tt></pre></li></ol>
+
+<a name="gkhol"></a><h4>To Run the <tt>encoder</tt> Example Using Ant</h4>
+<ol>
+<li><b>In a web browser, type the following URL:</b><pre>http://localhost:8080/encoder/</pre><p>The String Encoder page opens.</p></li>
+<li><b>Type a string and the number of letters to shift by, then
+click Encode.</b><p>The encoded string appears in blue on the Result line. For example, if
+you type <tt>Java</tt> and <tt>4</tt>, the result is <tt>Neze</tt>.</p></li>
+<li><b>Now, edit the <tt>beans.xml</tt> file to enable the alternative implementation of <tt>Coder</tt>.</b><ol style="list-style-type: lower-alpha">
+<li><b>In a text editor, open the following file:</b><pre><i>tut-install</i>/examples/cdi/encoder/web/WEB-INF/beans.xml</pre></li>
+<li><b>Remove the comment characters that surround the <tt>alternatives</tt> element, so that it
+looks like this:</b><pre>&lt;alternatives>
+    &lt;class>encoder.TestCoderImpl&lt;/class>
+&lt;/alternatives></pre></li>
+<li><b>Save and close the file.</b></li></ol></li>
+<li><b>Type the following commands:</b><pre><tt><b>ant undeploy</b></tt>
+<tt><b>ant</b></tt>
+<tt><b>ant deploy</b></tt></pre></li>
+<li><b>In the web browser, retype the URL to show the String Encoder page
+for the redeployed project:</b><pre>http://localhost:8080/encoder</pre></li>
+<li><b>Type a string and the number of letters to shift by, then
+click Encode.</b><p>This time, the Result line displays your arguments. For example, if you type
+<tt>Java</tt> and <tt>4</tt>, the result is:</p><pre>Result: input string is Java, shift value is 4</pre></li></ol>
+         </div>
+         <div class="navigation">
+             <a href="gkhre.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="gkhpy.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

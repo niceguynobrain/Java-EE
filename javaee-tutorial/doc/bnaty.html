@@ -1,0 +1,595 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Writing Bean Properties - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level3"><a href="bnaqm.html">Managed Beans in JavaServer Faces Technology</a></p>
+<p class="toc level4"><a href="bnaqm.html#bnaqn">Creating a Managed Bean</a></p>
+<p class="toc level4"><a href="bnaqm.html#bnaqp">Using the EL to Reference Managed Beans</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3 tocsp"><a href="">Writing Bean Properties</a></p>
+<p class="toc level4"><a href="#bnatz">Writing Properties Bound to Component Values</a></p>
+<p class="toc level5"><a href="#bnaub"><tt>UIInput</tt> and <tt>UIOutput</tt> Properties</a></p>
+<p class="toc level5"><a href="#bnauc"><tt>UIData</tt> Properties</a></p>
+<p class="toc level5"><a href="#bnaud"><tt>UISelectBoolean</tt> Properties</a></p>
+<p class="toc level5"><a href="#bnaue"><tt>UISelectMany</tt> Properties</a></p>
+<p class="toc level5"><a href="#bnauf"><tt>UISelectOne</tt> Properties</a></p>
+<p class="toc level5"><a href="#bnaug"><tt>UISelectItem</tt> Properties</a></p>
+<p class="toc level5"><a href="#bnauh"><tt>UISelectItems</tt> Properties</a></p>
+<p class="toc level4 tocsp"><a href="#bnauk">Writing Properties Bound to Component Instances</a></p>
+<p class="toc level4"><a href="#bnaul">Writing Properties Bound to Converters, Listeners, or Validators</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnavb.html">Writing Managed Bean Methods</a></p>
+<p class="toc level4"><a href="bnavb.html#bnavc">Writing a Method to Handle Navigation</a></p>
+<p class="toc level4"><a href="bnavb.html#bnavd">Writing a Method to Handle an Action Event</a></p>
+<p class="toc level4"><a href="bnavb.html#bnave">Writing a Method to Perform Validation</a></p>
+<p class="toc level4"><a href="bnavb.html#bnavf">Writing a Method to Handle a Value-Change Event</a></p>
+<p class="toc level3 tocsp"><a href="gircz.html">Using Bean Validation</a></p>
+<p class="toc level4"><a href="gircz.html#gkcrg">Validating Null and Empty Strings</a></p>
+<p class="toc level2 tocsp"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="bnaqm.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="bnavb.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnaty"></a><h2>Writing Bean Properties</h2>
+<a name="indexterm-544"></a><p>As explained in <a href="bnaqm.html">Managed Beans in JavaServer Faces Technology</a>, a managed bean property can be bound to
+one of the following items:</p>
+
+
+<ul><li><p>A component value</p>
+
+</li>
+<li><p>A component instance</p>
+
+</li>
+<li><p>A converter implementation</p>
+
+</li>
+<li><p>A listener implementation</p>
+
+</li>
+<li><p>A validator implementation</p>
+
+</li></ul>
+<p>These properties follow the conventions of JavaBeans components (also called beans). For more
+information on JavaBeans components, see the <i>JavaBeans Tutorial</i> at <a href="http://docs.oracle.com/javase/tutorial/javabeans/index.html">http://docs.oracle.com/javase/tutorial/javabeans/index.html</a>.</p>
+
+<p><a name="indexterm-545"></a><a name="indexterm-546"></a><a name="indexterm-547"></a>The component&rsquo;s tag binds the component&rsquo;s value to a managed bean property by
+using its <tt>value</tt> attribute and binds the component&rsquo;s instance to a managed bean
+property by using its <tt>binding</tt> attribute. Likewise, all the converter, listener, and validator
+tags use their <tt>binding</tt> attributes to bind their associated implementations to managed bean
+properties. See <a href="bnatg.html">Binding Component Values and Instances to Managed Bean Properties</a> and <a href="bnatm.html">Binding Converters, Listeners, and Validators to Managed Bean Properties</a> for more information.</p>
+
+<p>To bind a component&rsquo;s value to a managed bean property, the type of
+the property must match the type of the component&rsquo;s value to which it
+is bound. For example, if a managed bean property is bound to
+a <tt>UISelectBoolean</tt> component&rsquo;s value, the property should accept and return a <tt>boolean</tt> value
+or a <tt>Boolean</tt> wrapper <tt>Object</tt> instance.</p>
+
+<p><a name="indexterm-548"></a>To bind a component instance to a managed bean property, the property must
+match the type of component. For example, if a managed bean property is
+bound to a <tt>UISelectBoolean</tt> instance, the property should accept and return a <tt>UISelectBoolean</tt>
+value.</p>
+
+<p>Similarly, to bind a converter, listener, or validator implementation to a managed bean
+property, the property must accept and return the same type of converter, listener,
+or validator object. For example, if you are using the <tt>convertDateTime</tt> tag to
+bind a <tt>DateTimeConverter</tt> to a property, that property must accept and return
+a <tt>DateTimeConverter</tt> instance.</p>
+
+<p>The rest of this section explains how to write properties that can
+be bound to component values, to component instances for the component objects described in
+<a href="bnarf.html">Adding Components to a Page Using HTML Tags</a>, and to converter, listener, and validator implementations.</p>
+
+
+
+<a name="bnatz"></a><h3>Writing Properties Bound to Component Values</h3>
+<a name="indexterm-549"></a><p>To write a managed bean property that is bound to a component&rsquo;s value,
+you must match the property type to the component&rsquo;s value.</p>
+
+<p><a href="#bnaua">Table&nbsp;9-1</a> lists the <tt>javax.faces.component</tt> classes and the acceptable types of their values.</p>
+
+<a name="bnaua"></a><p class="caption">Table&nbsp;9-1 Acceptable Types of Component Values</p><a name="indexterm-550"></a><table><col width="31%"><col width="68%"><tr><th align="left" valign="top" scope="column"><p>Component
+Class</p>
+
+</th>
+<th align="left" valign="top" scope="column"><p>Acceptable Types of Component Values</p>
+
+</th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>UIInput</tt>, <tt>UIOutput</tt>, <tt>UISelectItem</tt>, <tt>UISelectOne</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Any of the basic primitive
+and numeric types or any Java programming language object type for which an
+appropriate <tt>Converter</tt> implementation is available</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>UIData</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>array</tt> of beans, <tt>List</tt> of beans, single bean, <tt>java.sql.ResultSet</tt>, <tt>javax.servlet.jsp.jstl.sql.Result</tt>,
+<tt>javax.sql.RowSet</tt></p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>UISelectBoolean</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>boolean</tt> or <tt>Boolean</tt></p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>UISelectItems</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>java.lang.String</tt>, <tt>Collection</tt>, <tt>Array</tt>, <tt>Map</tt></p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>UISelectMany</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>array</tt> or <tt>List</tt>, though elements of the <tt>array</tt>
+or <tt>List</tt> can be any of the standard types</p>
+
+</td>
+</tr>
+</table><p>When they bind components to properties by using the <tt>value</tt> attributes of the
+component tags, page authors need to ensure that the corresponding properties match the
+types of the components&rsquo; values.</p>
+
+
+
+<a name="bnaub"></a><h4><tt>UIInput</tt> and <tt>UIOutput</tt> Properties</h4>
+<p>The <tt>UIInput</tt> and <tt>UIOutput</tt> component classes are represented by the component tags that
+begin with <tt>h:input</tt> and <tt>h:output</tt>, respectively (for example, <tt>h:inputText</tt> and <tt>h:outputText</tt>).</p>
+
+<p><a name="indexterm-551"></a><a name="indexterm-552"></a>In the following example, an <tt>h:inputText</tt> tag binds the <tt>name</tt> component to the
+<tt>name</tt> property of a managed bean called <tt>CashierBean</tt>.</p>
+
+<pre>&lt;h:inputText id="name" 
+             size="30"
+             value="#{cashier.name}"
+    ...>
+&lt;/h:inputText></pre><p>The following code snippet from the managed bean <tt>CashierBean</tt> shows the bean property
+type bound by the preceding component tag:</p>
+
+<pre>protected String name = null;
+
+public void setName(String name) {
+    this.name = name;
+}
+public String getName() {
+    return this.name;
+}</pre><p>As described in <a href="bnast.html">Using the Standard Converters</a>, to convert the value of an input or output
+component, you can either apply a converter or create the bean property bound
+to the component with the matching type. Here is the example tag, from
+<a href="bnast.html#bnasv">Using <tt>DateTimeConverter</tt></a>, that displays the date when items will be shipped.</p>
+
+<pre>&lt;h:outputText value="#{cashier.shipDate}">
+    &lt;f:convertDateTime type="date" dateStyle="full" />
+&lt;/h:outputText></pre><p><a name="indexterm-553"></a>The bean property represented by this tag must have a type of <tt>java.util.Date</tt>.
+The following code snippet shows the <tt>shipDate</tt> property, from the managed bean <tt>CashierBean</tt>, that
+is bound by the tag&rsquo;s value in the preceding example:</p>
+
+<pre>protected Date shipDate;
+
+public Date getShipDate() {
+    return this.shipDate;
+}
+public void setShipDate(Date shipDate) {
+    this.shipDate = shipDate;
+}</pre>
+
+<a name="bnauc"></a><h4><tt>UIData</tt> Properties</h4>
+<a name="indexterm-554"></a><a name="indexterm-555"></a><p>The <tt>UIData</tt> component class is represented by the <tt>h:dataTable</tt> component tag.</p>
+
+<p><a name="indexterm-556"></a><tt>UIData</tt> components must be bound to one of the managed bean property types
+listed in <a href="#bnaua">Table&nbsp;9-1</a>. Data components are discussed in <a href="bnarf.html#bnarz">Using Data-Bound Table Components</a>. Here is part
+of the start tag of <tt>dataTable</tt> from that section:</p>
+
+<pre>&lt;h:dataTable id="items"
+    ...
+    value="#{cart.items}"
+    ...
+    var="item"></pre><p><a name="indexterm-557"></a>The value expression points to the <tt>items</tt> property of a shopping cart bean
+named <tt>cart</tt>. The <tt>cart</tt> bean maintains a map of <tt>ShoppingCartItem</tt> beans.</p>
+
+<p>The <tt>getItems</tt> method from the <tt>cart</tt> bean populates a <tt>List</tt> with <tt>ShoppingCartItem</tt> instances that
+are saved in the <tt>items</tt> map when the customer adds books to the
+cart, as shown in the following code segment:</p>
+
+<pre>public synchronized List&lt;ShoppingCartItem> getItems() {
+    List&lt;ShoppingCartItem> results = new ArrayList&lt;ShoppingCartItem>();
+    results.addAll(this.items.values());
+    return results;
+}</pre><p><a name="indexterm-558"></a>All the components contained in the <tt>UIData</tt> component are bound to the properties
+of the <tt>cart</tt> bean that is bound to the entire <tt>UIData</tt> component. For
+example, here is the <tt>h:outputText</tt> tag that displays the book title in the table:</p>
+
+<pre>&lt;h:commandLink action="#{showcart.details}">
+    &lt;h:outputText value="#{item.item.title}"/>
+&lt;/h:commandLink></pre><p>The title is actually a hyperlink to the <tt>bookdetails.xhtml</tt> page. The <tt>h:outputText</tt> tag
+uses the value expression <tt>#{item.item.title}</tt> to bind its <tt>UIOutput</tt> component to the <tt>title</tt>
+property of the <tt>Book</tt> entity. The first item in the expression is the <tt>ShoppingCartItem</tt>
+instance that the <tt>h:dataTable</tt> tag is referencing while rendering the current row.
+The second item in expression refers to the <tt>item</tt> property of <tt>ShoppingCartItem</tt>, which
+returns an <tt>Object</tt> (in this case, a <tt>Book</tt>. The <tt>title</tt> part of the
+expression refers to the <tt>title</tt> property of <tt>Book</tt>. The value of the <tt>UIOutput</tt> component
+corresponding to this tag is bound to the <tt>title</tt> property of the <tt>Book</tt>
+entity:</p>
+
+<pre>private String title;
+...
+public String getTitle() {
+    return title;
+}
+
+public void setTitle(String title) {
+    this.title = title;
+}</pre>
+
+<a name="bnaud"></a><h4><tt>UISelectBoolean</tt> Properties</h4>
+<a name="indexterm-559"></a><a name="indexterm-560"></a><p>The <tt>UISelectBoolean</tt> component class is represented by the component tag <tt>h:selectBooleanCheckbox</tt>.</p>
+
+<p><a name="indexterm-561"></a>Managed bean properties that hold a <tt>UISelectBoolean</tt> component&rsquo;s data must be of
+<tt>boolean</tt> or <tt>Boolean</tt> type. The example <tt>selectBooleanCheckbox</tt> tag from the section <a href="bnarf.html#bnase">Displaying Components for Selecting One Value</a> binds
+a component to a property. The following example shows a tag that binds
+a component value to a <tt>boolean</tt> property:</p>
+
+<pre>&lt;h:selectBooleanCheckbox title="#{bundle.receiveEmails}"
+     value="#{custFormBean.receiveEmails}" >
+&lt;/h:selectBooleanCheckbox>
+&lt;h:outputText value="#{bundle.receiveEmails}"></pre><p>Here is an example property that can be bound to the component
+represented by the example tag:</p>
+
+<pre>protected boolean receiveEmails = false;
+        ...
+    public void setReceiveEmails(boolean receiveEmails) {
+        this.receiveEmails = receiveEmails;
+    }
+    public boolean getReceiveEmails() {
+        return receiveEmails;
+    }</pre>
+
+<a name="bnaue"></a><h4><tt>UISelectMany</tt> Properties</h4>
+<a name="indexterm-562"></a><a name="indexterm-563"></a><p>The <tt>UISelectMany</tt> component class is represented by the component tags that begin with
+<tt>h:selectMany</tt> (for example, <tt>h:selectManyRadio</tt> and <tt>h:selectManyListbox</tt>).</p>
+
+<p>Because a <tt>UISelectMany</tt> component allows a user to select one or more items
+from a list of items, this component must map to a bean property
+of type <tt>List</tt> or <tt>array</tt>. This bean property represents the set of currently
+selected items from the list of available items.</p>
+
+<p><a name="indexterm-564"></a>The following example of the <tt>selectManyCheckbox</tt> tag comes from <a href="bnarf.html#bnasi">Displaying Components for Selecting Multiple Values</a>:</p>
+
+<pre>&lt;h:selectManyCheckbox
+    id="newslettercheckbox"
+    layout="pageDirection"
+    value="#{cashier.newsletters}">
+    &lt;f:selectItems value="#{cashier.newsletterItems}"/>
+&lt;/h:selectManyCheckbox></pre><p>Here is the bean property that maps to the <tt>value</tt> of the <tt>selectManyCheckbox</tt>
+tag from the preceding example:</p>
+
+<pre>protected String newsletters[] = new String[0];
+
+public void setNewsletters(String newsletters[]) {
+    this.newsletters = newsletters;
+}
+public String[] getNewsletters() {
+    return this.newsletters;
+}</pre><p>The <tt>UISelectItem</tt> and <tt>UISelectItems</tt> components are used to represent all the values in
+a <tt>UISelectMany</tt> component. See <a href="#bnaug"><tt>UISelectItem</tt> Properties</a> and <a href="#bnauh"><tt>UISelectItems</tt> Properties</a> for information on writing the bean properties
+for the <tt>UISelectItem</tt> and <tt>UISelectItems</tt> components.</p>
+
+
+
+<a name="bnauf"></a><h4><tt>UISelectOne</tt> Properties</h4>
+<a name="indexterm-565"></a><a name="indexterm-566"></a><p>The <tt>UISelectOne</tt> component class is represented by the component tags that begin with
+<tt>h:selectOne</tt> (for example, <tt>h:selectOneRadio</tt> and <tt>h:selectOneListbox</tt>).</p>
+
+<p><tt>UISelectOne</tt> properties accept the same types as <tt>UIInput</tt> and <tt>UIOutput</tt> properties, because a <tt>UISelectOne</tt>
+component represents the single selected item from a set of items. This item
+can be any of the primitive types and anything else for which you
+can apply a converter.</p>
+
+<p><a name="indexterm-567"></a>Here is an example of the <tt>h:selectOneMenu</tt> tag from <a href="bnarf.html#bnash">Displaying a Menu Using the <tt>h:selectOneMenu</tt> Tag</a>:</p>
+
+<pre>&lt;h:selectOneMenu id="shippingOption"
+    required="true"
+    value="#{cashier.shippingOption}">
+    &lt;f:selectItem
+        itemValue="2"
+        itemLabel="#{bundle.QuickShip}"/>
+    &lt;f:selectItem
+        itemValue="5"
+        itemLabel="#{bundle.NormalShip}"/>
+    &lt;f:selectItem
+        itemValue="7"
+        itemLabel="#{bundle.SaverShip}"/>
+ &lt;/h:selectOneMenu></pre><p>Here is the bean property corresponding to this tag:</p>
+
+<pre>protected String shippingOption = "2";
+
+public void setShippingOption(String shippingOption) {
+    this.shippingOption = shippingOption;
+}
+public String getShippingOption() {
+    return this.shippingOption;
+}</pre><p>Note that <tt>shippingOption</tt> represents the currently selected item from the list of items
+in the <tt>UISelectOne</tt> component.</p>
+
+<p>The <tt>UISelectItem</tt> and <tt>UISelectItems</tt> components are used to represent all the values in
+a <tt>UISelectOne</tt> component. This is explained in the section <a href="bnarf.html#bnash">Displaying a Menu Using the <tt>h:selectOneMenu</tt> Tag</a>.</p>
+
+<p>For information on how to write the managed bean properties for the
+<tt>UISelectItem</tt> and <tt>UISelectItems</tt> components, see <a href="#bnaug"><tt>UISelectItem</tt> Properties</a> and <a href="#bnauh"><tt>UISelectItems</tt> Properties</a>.</p>
+
+
+
+<a name="bnaug"></a><h4><tt>UISelectItem</tt> Properties</h4>
+<p><a name="indexterm-568"></a><a name="indexterm-569"></a>A <tt>UISelectItem</tt> component represents a single value in a set of values in
+a <tt>UISelectMany</tt> or a <tt>UISelectOne</tt> component. A <tt>UISelectItem</tt> component must be bound to
+a managed bean property of type <tt>javax.faces.model.SelectItem</tt>. A <tt>SelectItem</tt> object is composed
+of an <tt>Object</tt> representing the value, along with two <tt>Strings</tt> representing the label
+and description of the <tt>UISelectItem</tt> object.</p>
+
+<p><a name="indexterm-570"></a>The example <tt>selectOneMenu</tt> tag from <a href="#bnauf"><tt>UISelectOne</tt> Properties</a> contains <tt>selectItem</tt> tags that set the values
+of the list of items in the page. Here is an example of
+a bean property that can set the values for this list in the
+bean:</p>
+
+<pre>SelectItem itemOne = null;
+
+SelectItem getItemOne(){
+    return itemOne;
+}
+void setItemOne(SelectItem item) {
+    itemOne = item;
+}</pre>
+
+<a name="bnauh"></a><h4><tt>UISelectItems</tt> Properties</h4>
+<a name="indexterm-571"></a><p><a name="indexterm-572"></a><a name="indexterm-573"></a><tt>UISelectItems</tt> components are children of <tt>UISelectMany</tt> and <tt>UISelectOne</tt> components. Each <tt>UISelectItems</tt> component is
+composed of a set of either <tt>UISelectItem</tt> instances or any collection of objects,
+such as an array, a list, or even POJOs.</p>
+
+<p> The following code snippet from <tt>CashierBean</tt> shows how to write the properties for
+<tt>selectItems</tt> tags containing <tt>SelectItem</tt> instances.</p>
+
+<pre>protected String[] newsletters = new String[0];
+...
+private static SelectItem[] newsletterItems = {
+        new SelectItem("200", "Duke's Quarterly"),
+        new SelectItem("201", "Innovator's Almanac"),
+        new SelectItem("202", "Duke's Diet and Exercise Journal"),
+        new SelectItem("203", "Random Ramblings")    };
+...
+public void setNewsletters(String[] newsletters) {
+    this.newsletters = newsletters;
+}
+
+public String[] getNewsletters() {
+    return this.newsletters;
+}
+
+public SelectItem[] getNewsletterItems() {
+    return newsletterItems;
+}</pre><p>Here, the <tt>newsletters</tt> property represents the <tt>SelectItems</tt> object, while the <tt>newsletterItems</tt> property represents
+a static array of <tt>SelectItem</tt> objects. The <tt>SelectItem</tt> class has several constructors; in
+this example, the first argument is an <tt>Object</tt> representing the value of the item,
+while the second argument is a <tt>String</tt> representing the label that appears in
+the <tt>UISelectMany</tt> component on the page.</p>
+
+
+
+<a name="bnauk"></a><h3>Writing Properties Bound to Component Instances</h3>
+<a name="indexterm-574"></a><p>A property bound to a component instance returns and accepts a component instance
+rather than a component value. The following components bind a component instance to
+a managed bean property:</p>
+
+<pre>&lt;h:selectBooleanCheckbox
+    id="fanClub"
+    rendered="false"
+    binding="#{cashier.specialOffer}" />
+&lt;h:outputLabel for="fanClub"
+    rendered="false"
+    binding="#{cashier.specialOfferText}" >
+    &lt;h:outputText id="fanClubLabel"
+        value="#{bundle.DukeFanClub}" />
+&lt;/h:outputLabel></pre><p>The <tt>selectBooleanCheckbox</tt> tag renders a check box and binds the <tt>fanClub</tt> <tt>UISelectBoolean</tt> component to
+the <tt>specialOffer</tt> property of <tt>CashierBean</tt>. The <tt>outputLabel</tt> tag binds the <tt>fanClubLabel</tt> component, which represents
+the check box&rsquo;s label, to the <tt>specialOfferText</tt> property of <tt>CashierBean</tt>. If the user
+orders more than $100 worth of books and clicks the Submit button, the
+<tt>submit</tt> method of <tt>CashierBean</tt> sets both components&rsquo; <tt>rendered</tt> properties to <tt>true</tt>, causing the
+check box and label to display when the page is rerendered.</p>
+
+<p>Because the components corresponding to the example tags are bound to the managed
+bean properties, these properties must match the components&rsquo; types. This means that the
+<tt>specialOfferText</tt> property must be of type <tt>UIOutput</tt>, and the <tt>specialOffer</tt> property must be of
+type <tt>UISelectBoolean</tt>:</p>
+
+<pre>UIOutput specialOfferText = null;
+
+public UIOutput getSpecialOfferText() {
+    return this.specialOfferText;
+}
+public void setSpecialOfferText(UIOutput specialOfferText) {
+    this.specialOfferText = specialOfferText;
+}
+
+UISelectBoolean specialOffer = null;
+
+public UISelectBoolean getSpecialOffer() {
+    return this.specialOffer;
+}
+public void setSpecialOffer(UISelectBoolean specialOffer) {
+    this.specialOffer = specialOffer;
+}</pre><p>For more general information on component binding, see <a href="bnaqm.html">Managed Beans in JavaServer Faces Technology</a>.</p>
+
+<p>For information on how to reference a managed bean method that performs navigation
+when a button is clicked, see <a href="bnatn.html#bnatp">Referencing a Method That Performs Navigation</a>.</p>
+
+<p>For more information on writing managed bean methods that handle navigation, see <a href="bnavb.html#bnavc">Writing a Method to Handle Navigation</a>.</p>
+
+
+
+<a name="bnaul"></a><h3>Writing Properties Bound to Converters, Listeners, or Validators</h3>
+<a name="indexterm-575"></a><a name="indexterm-576"></a><a name="indexterm-577"></a><p>All the standard converter, listener, and validator tags included with JavaServer Faces technology
+support binding attributes that allow you to bind converter, listener, or validator implementations
+to managed bean properties.</p>
+
+<p>The following example shows a standard <tt>convertDateTime</tt> tag using a value expression with
+its <tt>binding</tt> attribute to bind the <tt>DateTimeConverter</tt> instance to the <tt>convertDate</tt> property of
+<tt>LoginBean</tt>:</p>
+
+<pre>&lt;h:inputText value="#{LoginBean.birthDate}">
+    &lt;f:convertDateTime binding="#{LoginBean.convertDate}" />
+&lt;/h:inputText></pre><p>The <tt>convertDate</tt> property must therefore accept and return a <tt>DateTimeConverter</tt> object, as shown
+here:</p>
+
+<pre>private DateTimeConverter convertDate;
+public DateTimeConverter getConvertDate() {
+       ...
+    return convertDate;
+}
+public void setConvertDate(DateTimeConverter convertDate) {
+    convertDate.setPattern("EEEEEEEE, MMM dd, yyyy");
+    this.convertDate = convertDate;
+}</pre><p>Because the converter is bound to a managed bean property, the managed bean
+property can modify the attributes of the converter or add new functionality to
+it. In the case of the preceding example, the property sets the
+date pattern that the converter uses to parse the user&rsquo;s input into a
+<tt>Date</tt> object.</p>
+
+<p>The managed bean properties that are bound to validator or listener implementations are
+written in the same way and have the same general purpose.</p>
+
+
+         </div>
+         <div class="navigation">
+             <a href="bnaqm.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="bnavb.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

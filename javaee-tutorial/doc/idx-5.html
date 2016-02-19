@@ -1,0 +1,738 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title> - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="idx-4.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="idx-6.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             <h2>J</h2>
+<div class="indexdiv">
+<dl>
+<dd>JAAS<dl>
+<dd><a href="girdr.html#indexterm-126">Java Authentication and Authorization Service</a></dd>
+<dd><a href="bnbwy.html#indexterm-1924">Java SE Security Mechanisms</a></dd>
+<dd><a href="gligc.html#indexterm-2189">Using Login Modules</a></dd>
+</dl>
+<dl>
+<dd>login modules, <a href="gligc.html#indexterm-2190">Using Login Modules</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>JACC<dl>
+<dd><a href="bnacj.html#indexterm-96">Java Authorization Contract for Containers</a></dd>
+<dd><a href="bnbxi.html#indexterm-1971">Securing the GlassFish Server</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>JAF, <a href="girdr.html#indexterm-114">JavaBeans Activation Framework</a></dd>
+</dl>
+<dl>
+<dd>JAR files, <a href="bnaby.html#indexterm-48">Packaging Applications</a><dl>
+<dd>query language, <a href="bnbuf.html#indexterm-1788">Identification Variables</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>JAR signatures, <a href="bnbwy.html#indexterm-1937">Java SE Security Mechanisms</a></dd>
+</dl>
+<dl>
+<dd>JASPIC, <a href="bnacj.html#indexterm-98">Java Authentication Service Provider Interface for Containers</a></dd>
+</dl>
+<dl>
+<dd>Java API for JavaBeans Validation, <i>See </i>Bean Validation</dd>
+</dl>
+<dl>
+<dd>Java API for RESTful Web Services, <i>See </i>JAX-RS</dd>
+</dl>
+<dl>
+<dd>Java API for XML Binding (JAXB), <a href="girdr.html#indexterm-120">Java Architecture for XML Binding</a><dl>
+<dd>using with JAX-RS, <a href="gkknj.html#indexterm-1325">Using JAX-RS With JAXB</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>Java API for XML Processing (JAXP), <a href="girdr.html#indexterm-117">Java API for XML Processing</a></dd>
+</dl>
+<dl>
+<dd>Java API for XML Web Services, <i>See </i>JAX-WS</dd>
+</dl>
+<dl>
+<dd>Java Authentication and Authorization Service, <i>See </i>JAAS</dd>
+</dl>
+<dl>
+<dd>Java Authentication Service Provider Interface for Containers (JASPIC), <a href="bnacj.html#indexterm-97">Java Authentication Service Provider Interface for Containers</a></dd>
+</dl>
+<dl>
+<dd>Java Authorization Contract for Containers, <i>See </i>JACC</dd>
+</dl>
+<dl>
+<dd>JavaBeans Activation Framework (JAF), <a href="girdr.html#indexterm-115">JavaBeans Activation Framework</a></dd>
+</dl>
+<dl>
+<dd>JavaBeans components, <a href="bnaay.html#indexterm-16">The JavaBeans Component Architecture</a></dd>
+</dl>
+<dl>
+<dd>Java BluePrints, <a href="gexap.html#indexterm-154">Tutorial Example Directory Structure</a></dd>
+</dl>
+<dl>
+<dd>Java Cryptography Extension (JCE), <a href="bnbwy.html#indexterm-1928">Java SE Security Mechanisms</a></dd>
+</dl>
+<dl>
+<dd>Java Database Connectivity API, <i>See </i>JDBC API</dd>
+</dl>
+<dl>
+<dd>Java DB, <a href="bnadf.html#indexterm-134">GlassFish Server Tools</a><dl>
+<dd>starting, <a href="bnadk.html#indexterm-150">Starting and Stopping the Java DB Server</a></dd>
+<dd>stopping, <a href="bnadk.html#indexterm-151">Starting and Stopping the Java DB Server</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>Java EE applications, <a href="bnaay.html#indexterm-5">Distributed Multitiered Applications</a><dl>
+<dd>debugging, <a href="bnadl.html#indexterm-155">Debugging Java EE Applications</a></dd>
+<dd>deploying, <a href="gipss.html#indexterm-1409">Building, Packaging, Deploying, and Running the converter Example</a></dd>
+<dd>iterative development, <a href="gipti.html#indexterm-1412">Modifying the Java EE Application</a></dd>
+<dd>running on more than one system<dl>
+<dd><a href="bnchp.html#indexterm-2533">An Application Example That Consumes Messages from a Remote Server</a></dd>
+<dd><a href="bnchx.html#indexterm-2537">An Application Example That Deploys a Message-Driven Bean on Two Servers</a></dd>
+</dl>
+</dd>
+<dd>tiers, <a href="bnaay.html#indexterm-6">Distributed Multitiered Applications</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>Java EE clients<dl>
+<dd><a href="bnaay.html#indexterm-9">Java EE Clients</a></dd>
+<dd><a href="bnaay.html#indexterm-12">Application Clients</a></dd>
+</dl>
+<dl>
+<dd><i>See also </i>application clients</dd>
+<dd><i>See also </i>web clients</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>Java EE components, <a href="bnaay.html#indexterm-8">Java EE Components</a></dd>
+</dl>
+<dl>
+<dd>Java EE Connector architecture<dl>
+<dd><a href="bnacj.html#indexterm-92">Java EE Connector Architecture</a></dd>
+<dd><a href="giqjk.html#indexterm-2210">The Java EE Connector Architecture and Resource Adapters</a></dd>
+<dd><a href="gipgl.html#indexterm-2307">Resource Adapters and Contracts</a></dd>
+</dl>
+<dl>
+<dd>example, <a href="glodb.html#indexterm-2311">Running the Resource Adapter Example</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>Java EE modules<dl>
+<dd><a href="bnaby.html#indexterm-50">Packaging Applications</a></dd>
+<dd><a href="bnaby.html#indexterm-54">Packaging Applications</a></dd>
+</dl>
+<dl>
+<dd>application client modules, <a href="bnaby.html#indexterm-58">Packaging Applications</a></dd>
+<dd>EJB modules<dl>
+<dd><a href="bnaby.html#indexterm-55">Packaging Applications</a></dd>
+<dd><a href="gipio.html#indexterm-1384">The Contents of an Enterprise Bean</a></dd>
+</dl>
+</dd>
+<dd>resource adapter modules, <a href="bnaby.html#indexterm-59">Packaging Applications</a><dl>
+<dd><i>See also </i>web modules</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>Java EE platform<dl>
+<dd>APIs, <a href="bnacj.html#indexterm-70">Java EE 6 APIs</a></dd>
+<dd>JMS and, <a href="bncdr.html#indexterm-2328">How Does the JMS API Work with the Java EE Platform?</a></dd>
+<dd>overview, <a href="giqvh.html#indexterm-3">Java EE 6 Platform Highlights</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>Java EE security model, <a href="bnabo.html#indexterm-34">Container Services</a></dd>
+</dl>
+<dl>
+<dd>Java EE servers, <a href="bnabo.html#indexterm-38">Container Types</a></dd>
+</dl>
+<dl>
+<dd>Java EE transaction model, <a href="bnabo.html#indexterm-35">Container Services</a></dd>
+</dl>
+<dl>
+<dd>Java Generic Security Services, <a href="bnbwy.html#indexterm-1925">Java SE Security Mechanisms</a></dd>
+</dl>
+<dl>
+<dd>Java GSS-API, <a href="bnbwy.html#indexterm-1926">Java SE Security Mechanisms</a></dd>
+</dl>
+<dl>
+<dd>JavaMail API, <a href="bnacj.html#indexterm-94">JavaMail API</a><dl>
+<dd>example, <a href="glodb.html#indexterm-2316">Running the Resource Adapter Example</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>Java Message Service (JMS) API, <i>See </i>JMS</dd>
+</dl>
+<dl>
+<dd>Java Naming and Directory Interface API, <a href="girdr.html#indexterm-103">Java Naming and Directory Interface API</a><dl>
+<dd><i>See also </i>JNDI</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>Java Persistence API<dl>
+<dd><a href="bnacj.html#indexterm-79">Java Persistence API</a></dd>
+<dd><a href="bnbpz.html#indexterm-1601">Introduction to the Java Persistence API</a></dd>
+</dl>
+<dl>
+<dd><i>See also </i>persistence</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>Java Persistence API query language, <i>See </i>query language</dd>
+</dl>
+<dl>
+<dd>Java Persistence Criteria API, <i>See </i>Criteria API</dd>
+</dl>
+<dl>
+<dd>Java Secure Sockets Extension (JSSE), <a href="bnbwy.html#indexterm-1930">Java SE Security Mechanisms</a></dd>
+</dl>
+<dl>
+<dd>JavaServer Faces application development, <a href="gjaam.html#indexterm-213">Creating a Simple JavaServer Faces Application</a><dl>
+<dd>bean property, <a href="bnaty.html#indexterm-553">UIInput and UIOutput Properties</a></dd>
+<dd>Bean Validation, <a href="gircz.html#indexterm-613">Using Bean Validation</a></dd>
+<dd>managed beans, <a href="bnaqm.html#indexterm-532">Managed Beans in JavaServer Faces Technology</a></dd>
+<dd>web pages, <a href="bnaqz.html#indexterm-266">Using JavaServer Faces Technology in Web Pages</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>JavaServer Faces applications<dl>
+<dd>configuring<dl>
+<dd><i>See </i>configuring JavaServer Faces applications</dd>
+</dl>
+HTML tags, <a href="bnarf.html#indexterm-271">Adding Components to a Page Using HTML Tags</a></dd>
+<dd>queueing messages, <a href="bnavb.html#indexterm-604">Writing a Method to Perform Validation</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>JavaServer Faces core tag library<dl>
+<dd><a href="bnarb.html#indexterm-268">Setting Up a Page</a></dd>
+<dd><a href="bnarc.html#indexterm-407">Using Core Tags</a></dd>
+</dl>
+<dl>
+<dd><tt>action</tt> attribute, <a href="bnarf.html#indexterm-366">Using Command Component Tags for Performing Actions and Navigation</a></dd>
+<dd><tt>actionListener</tt> tag<dl>
+<dd><a href="bnarc.html#indexterm-409">Using Core Tags</a></dd>
+<dd><a href="bnasz.html#indexterm-483">Registering an Action Listener on a Component</a></dd>
+<dd><a href="bnavh.html#indexterm-803">When to Use a Custom Component</a></dd>
+</dl>
+</dd>
+<dd><tt>ajax</tt> tag, <a href="gkabr.html#indexterm-756">Using the f:ajax Tag</a></dd>
+<dd><tt>attribute</tt> tag, <a href="bnarc.html#indexterm-427">Using Core Tags</a></dd>
+<dd><tt>convertDateTime</tt> tag<dl>
+<dd><a href="bnarc.html#indexterm-414">Using Core Tags</a></dd>
+<dd><a href="bnast.html#indexterm-465">Using DateTimeConverter</a></dd>
+</dl>
+</dd>
+<dd><tt>convertDateTime</tt> tag attributes, <a href="bnast.html#indexterm-467">Using DateTimeConverter</a></dd>
+<dd><tt>converterId</tt> attribute, <a href="bnast.html#indexterm-455">Converting a Component&rsquo;s Value</a></dd>
+<dd><tt>converter</tt> tag<dl>
+<dd><a href="bnarc.html#indexterm-413">Using Core Tags</a></dd>
+<dd><a href="bnast.html#indexterm-460">Converting a Component&rsquo;s Value</a></dd>
+<dd><a href="bnaus.html#indexterm-924">Using a Custom Converter</a></dd>
+</dl>
+</dd>
+<dd><tt>convertNumber</tt> tag<dl>
+<dd><a href="bnarc.html#indexterm-415">Using Core Tags</a></dd>
+<dd><a href="bnast.html#indexterm-458">Converting a Component&rsquo;s Value</a></dd>
+<dd><a href="bnast.html#indexterm-471">Using NumberConverter</a></dd>
+</dl>
+</dd>
+<dd><tt>convertNumber</tt> tag attributes, <a href="bnast.html#indexterm-473">Using NumberConverter</a></dd>
+<dd><tt>facet</tt> tag<dl>
+<dd><a href="bnarf.html#indexterm-377">Laying Out Components with the h:panelGrid and h:panelGroup Tags</a></dd>
+<dd><a href="bnarc.html#indexterm-416">Using Core Tags</a></dd>
+</dl>
+</dd>
+<dd><tt>loadBundle</tt> tag, <a href="bnarc.html#indexterm-428">Using Core Tags</a></dd>
+<dd><tt>metadata</tt> tag, <a href="bnarf.html#indexterm-403">Using View Parameters to Configure Bookmarkable URLs</a></dd>
+<dd><tt>param</tt> tag<dl>
+<dd><a href="bnarf.html#indexterm-363">Displaying a Formatted Message with the h:outputFormat Tag</a></dd>
+<dd><a href="bnarc.html#indexterm-431">Using Core Tags</a></dd>
+</dl>
+</dd>
+<dd><tt>selectItems</tt> tag<dl>
+<dd><a href="bnarf.html#indexterm-304">Adding Components to a Page Using HTML Tags</a></dd>
+<dd><a href="bnarf.html#indexterm-383">Displaying a Menu Using the h:selectOneMenu Tag</a></dd>
+<dd><a href="bnarf.html#indexterm-388">Displaying Components for Selecting Multiple Values</a></dd>
+<dd><a href="bnarf.html#indexterm-391">Using the f:selectItem and f:selectItems Tags</a></dd>
+<dd><a href="bnarf.html#indexterm-392">Using the f:selectItems Tag</a></dd>
+<dd><a href="bnarc.html#indexterm-418">Using Core Tags</a></dd>
+</dl>
+</dd>
+<dd><tt>selectItem</tt> tag<dl>
+<dd><a href="bnarf.html#indexterm-303">Adding Components to a Page Using HTML Tags</a></dd>
+<dd><a href="bnarf.html#indexterm-384">Displaying a Menu Using the h:selectOneMenu Tag</a></dd>
+<dd><a href="bnarf.html#indexterm-389">Displaying Components for Selecting Multiple Values</a></dd>
+<dd><a href="bnarf.html#indexterm-390">Using the f:selectItem and f:selectItems Tags</a></dd>
+<dd><a href="bnarf.html#indexterm-393">Using the f:selectItem Tag</a></dd>
+<dd><a href="bnarc.html#indexterm-417">Using Core Tags</a></dd>
+</dl>
+</dd>
+<dd><tt>type</tt> attribute, <a href="bnasz.html#indexterm-479">Registering a Value-Change Listener on a Component</a></dd>
+<dd><tt>validateDoubleRange</tt> tag<dl>
+<dd><a href="bnarc.html#indexterm-419">Using Core Tags</a></dd>
+<dd><a href="bnatc.html#indexterm-488">Using the Standard Validators</a></dd>
+</dl>
+</dd>
+<dd><tt>validateLength</tt> tag<dl>
+<dd><a href="bnarc.html#indexterm-421">Using Core Tags</a></dd>
+<dd><a href="bnatc.html#indexterm-491">Using the Standard Validators</a></dd>
+</dl>
+</dd>
+<dd><tt>validateLongRange</tt> tag<dl>
+<dd><a href="bnarc.html#indexterm-423">Using Core Tags</a></dd>
+<dd><a href="bnatc.html#indexterm-494">Using the Standard Validators</a></dd>
+<dd><a href="bnatc.html#indexterm-498">Using LongRangeValidator</a></dd>
+</dl>
+</dd>
+<dd><tt>validator</tt> tag<dl>
+<dd><a href="bnarc.html#indexterm-425">Using Core Tags</a></dd>
+<dd><a href="bnaqd.html#indexterm-741">Validation Model</a></dd>
+<dd><a href="bnauw.html#indexterm-930">Creating and Using a Custom Validator</a></dd>
+</dl>
+<dl>
+<dd>custom validator tags, <a href="bnauw.html#indexterm-942">Creating a Custom Tag</a></dd>
+</dl>
+<tt>valueChangeListener</tt> tag<dl>
+<dd><a href="bnarc.html#indexterm-411">Using Core Tags</a></dd>
+<dd><a href="bnasz.html#indexterm-477">Registering a Value-Change Listener on a Component</a></dd>
+</dl>
+</dd>
+<dd><tt>viewparam</tt> tag, <a href="bnarf.html#indexterm-404">Using View Parameters to Configure Bookmarkable URLs</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>JavaServer Faces HTML standard HTML render kit library, <a href="bnaqd.html#indexterm-703">Component Rendering Model</a></dd>
+</dl>
+<dl>
+<dd>JavaServer Faces standard HTML render kit library, <a href="bnaxh.html#indexterm-1052">Registering a Custom Renderer with a Render Kit</a><dl>
+<dd><tt>html_basic</tt> TLD, <a href="bnawn.html#indexterm-897">Defining the Custom Component Tag in a Tag Library Descriptor</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>JavaServer Faces standard HTML tag library<dl>
+<dd><i>See also </i>component tags</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>JavaServer Faces standard UI components<dl>
+<dd><a href="bnaqd.html#indexterm-661">User Interface Component Classes</a></dd>
+<dd><a href="bnavg.html#indexterm-797">Creating Custom UI Components and Other Custom Objects</a></dd>
+</dl>
+<dl>
+<dd><tt>UIComponent</tt> component, <a href="bnaus.html#indexterm-918">Creating a Custom Converter</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>JavaServer Faces tag libraries, <a href="gijtu.html#indexterm-225">What Is Facelets?</a><dl>
+<dd>JavaServer Faces core tag library<dl>
+<dd><a href="bnarb.html#indexterm-269">Setting Up a Page</a></dd>
+<dd><a href="bnarc.html#indexterm-408">Using Core Tags</a></dd>
+</dl>
+</dd>
+<dd>JavaServer Faces HTML render kit tag library, <a href="bnarb.html#indexterm-267">Setting Up a Page</a></dd>
+<dd>namespace directives, <a href="bnarb.html#indexterm-270">Setting Up a Page</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>JavaServer Faces technology<dl>
+<dd><a href="bnaay.html#indexterm-20">Web Components</a></dd>
+<dd><a href="bnacj.html#indexterm-76">JavaServer Faces Technology</a></dd>
+<dd><a href="bnaph.html#indexterm-207">JavaServer Faces Technology</a></dd>
+</dl>
+<dl>
+<dd>advantages, <a href="bnapj.html#indexterm-211">JavaServer Faces Technology Benefits</a><dl>
+<dd><i>See also </i>component rendering model</dd>
+<dd><i>See also </i>component tags</dd>
+</dl>
+composite components, <a href="gkhxa.html#indexterm-779">Composite Components: Advanced Topics and Example</a><dl>
+<dd><i>See also </i>conversion model</dd>
+<dd><i>See also </i>event and listener model</dd>
+<dd><i>See also </i>Facelets</dd>
+<dd><i>See also </i><tt>FacesContext</tt> class</dd>
+</dl>
+<tt>FacesServlet</tt> class, <a href="bnaxj.html#indexterm-1064">Identifying the Servlet for Lifecycle Processing</a></dd>
+<dd>features, <a href="bnapk.html#indexterm-208">What Is a JavaServer Faces Application?</a><dl>
+<dd><i>See also </i>JavaServer Faces standard UI components</dd>
+<dd><i>See also </i>lifecycle of a JavaServer Faces application</dd>
+</dl>
+partial processing, <a href="gknoj.html#indexterm-647">Partial Processing and Partial Rendering</a></dd>
+<dd>partial rendering, <a href="gknoj.html#indexterm-648">Partial Processing and Partial Rendering</a><dl>
+<dd><i>See also </i>UI component behavioral interfaces</dd>
+<dd><i>See also </i>UI component classes</dd>
+</dl>
+using Ajax with, <a href="gkiow.html#indexterm-751">Using Ajax with JavaServer Faces Technology</a><dl>
+<dd><i>See also </i>validation model</dd>
+</dl>
+<tt>Validator</tt> interface, <a href="bnavb.html#indexterm-598">Writing a Method to Perform Validation</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>JavaServer Pages Standard Tag Library, <i>See </i>JSTL</dd>
+</dl>
+<dl>
+<dd>Java Servlet technology<dl>
+<dd><a href="bnacj.html#indexterm-74">Java Servlet Technology</a></dd>
+<dd><a href="bnafd.html#indexterm-1069">Java Servlet Technology</a></dd>
+</dl>
+<dl>
+<dd><i>See also </i>servlets</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>Java Transaction API<dl>
+<dd><a href="bnacj.html#indexterm-81">Java Transaction API</a></dd>
+<dd><a href="bnciy.html#indexterm-2268">JTA Transactions</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd><tt>javax.servlet.http</tt> package, <a href="bnafe.html#indexterm-1072">What Is a Servlet?</a></dd>
+</dl>
+<dl>
+<dd><tt>javax.servlet</tt> package, <a href="bnafe.html#indexterm-1071">What Is a Servlet?</a></dd>
+</dl>
+<dl>
+<dd>JAXB, <a href="girdr.html#indexterm-119">Java Architecture for XML Binding</a><dl>
+<dd>using with JAX-RS, <a href="gkknj.html#indexterm-1326">Using JAX-RS With JAXB</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>JAXP, <a href="girdr.html#indexterm-116">Java API for XML Processing</a></dd>
+</dl>
+<dl>
+<dd>JAX-RS<dl>
+<dd><a href="bnacj.html#indexterm-83">Java API for RESTful Web Services</a></dd>
+<dd><a href="giepu.html#indexterm-1217">Building RESTful Web Services with JAX-RS</a></dd>
+</dl>
+<dl>
+<dd>accessing XML documents, <a href="gkknj.html#indexterm-1328">Using JAX-RS With JAXB</a></dd>
+<dd>advanced features, <a href="gjjxe.html#indexterm-1280">JAX-RS: Advanced Topics and Example</a></dd>
+<dd>annotations, <a href="gkkrb.html#indexterm-1281">Annotations for Field and Bean Properties of Resource Classes</a></dd>
+<dd>application overview, <a href="gilik.html#indexterm-1242">Overview of a JAX-RS Application</a></dd>
+<dd>conditional HTTP requests, <a href="gkqda.html#indexterm-1319">Conditional HTTP Requests</a></dd>
+<dd>converting CDI managed beans to root resource classes, <a href="gkncy.html#indexterm-1317">Integrating JAX-RS with EJB Technology and CDI</a></dd>
+<dd>converting enterprise beans to root resource classes, <a href="gkncy.html#indexterm-1315">Integrating JAX-RS with EJB Technology and CDI</a></dd>
+<dd>entity providers, <a href="gilik.html#indexterm-1258">Using Entity Providers to Map HTTP Response and Request Entity Bodies</a></dd>
+<dd>examples<dl>
+<dd><a href="gipzz.html#indexterm-1277">Example Applications for JAX-RS</a></dd>
+<dd><a href="gkoib.html#indexterm-1329">The customer Example Application</a></dd>
+</dl>
+</dd>
+<dd>extracting Java type of request or response, <a href="gkkrb.html#indexterm-1302">Extracting the Java Type of a Request or Response</a></dd>
+<dd>form parameters, <a href="gkkrb.html#indexterm-1299">Extracting Form Data</a></dd>
+<dd>integrating with CDI, <a href="gkncy.html#indexterm-1312">Integrating JAX-RS with EJB Technology and CDI</a></dd>
+<dd>integrating with EJB technology, <a href="gkncy.html#indexterm-1311">Integrating JAX-RS with EJB Technology and CDI</a></dd>
+<dd>introduction, <a href="giqsx.html#indexterm-1195">RESTful Web Services</a></dd>
+<dd>path parameters, <a href="gkkrb.html#indexterm-1293">Extracting Path Parameters</a></dd>
+<dd>path templates, <a href="gilik.html#indexterm-1246">The @Path Annotation and URI Path Templates</a></dd>
+<dd>query parameters, <a href="gkkrb.html#indexterm-1296">Extracting Query Parameters</a></dd>
+<dd>reference implementation, <a href="giepu.html#indexterm-1220">Building RESTful Web Services with JAX-RS</a></dd>
+<dd>request headers, <a href="gkkrb.html#indexterm-1284">Annotations for Field and Bean Properties of Resource Classes</a></dd>
+<dd>request method designators<dl>
+<dd><a href="gilik.html#indexterm-1228">Creating a RESTful Root Resource Class</a></dd>
+<dd><a href="gilik.html#indexterm-1251">The Request Method Designator Annotations</a></dd>
+</dl>
+</dd>
+<dd>resource classes, <a href="gilik.html#indexterm-1225">Creating a RESTful Root Resource Class</a></dd>
+<dd>resource class methods, <a href="gknav.html#indexterm-1305">Subresources and Runtime Resource Resolution</a></dd>
+<dd>resource methods, <a href="gilik.html#indexterm-1226">Creating a RESTful Root Resource Class</a></dd>
+<dd>runtime content negotiation, <a href="gkqbq.html#indexterm-1322">Runtime Content Negotiation</a></dd>
+<dd>runtime resource resolution, <a href="gknav.html#indexterm-1306">Subresources and Runtime Resource Resolution</a></dd>
+<dd>static content negotiation, <a href="gkqbq.html#indexterm-1321">Runtime Content Negotiation</a></dd>
+<dd>subresource locators<dl>
+<dd><a href="gknav.html#indexterm-1308">Subresources and Runtime Resource Resolution</a></dd>
+<dd><a href="gknav.html#indexterm-1310">Subresource Locators</a></dd>
+</dl>
+</dd>
+<dd>subresource methods<dl>
+<dd><a href="gknav.html#indexterm-1307">Subresources and Runtime Resource Resolution</a></dd>
+<dd><a href="gknav.html#indexterm-1309">Subresource Methods</a></dd>
+</dl>
+</dd>
+<dd>subresources, <a href="gknav.html#indexterm-1303">Subresources and Runtime Resource Resolution</a></dd>
+<dd>URI, <a href="gkkrb.html#indexterm-1283">Annotations for Field and Bean Properties of Resource Classes</a></dd>
+<dd>using with JAXB, <a href="gkknj.html#indexterm-1327">Using JAX-RS With JAXB</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>JAX-WS, <a href="girdr.html#indexterm-124">Java API for XML Web Services</a><dl>
+<dd>defined, <a href="bnayl.html#indexterm-1196">Building Web Services with JAX-WS</a></dd>
+<dd>examples, <a href="bnayn.html#indexterm-1207">Creating a Simple Web Service and Clients with JAX-WS</a></dd>
+<dd>introduction, <a href="giqsx.html#indexterm-1194">&ldquo;Big&rdquo; Web Services</a></dd>
+<dd>service endpoint interfaces, <a href="bnayn.html#indexterm-1209">Creating a Simple Web Service and Clients with JAX-WS</a></dd>
+<dd>specification, <a href="bnaze.html#indexterm-1212">Further Information about JAX-WS</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>JCE, <a href="bnbwy.html#indexterm-1929">Java SE Security Mechanisms</a></dd>
+</dl>
+<dl>
+<dd>JDBC API<dl>
+<dd><a href="girdr.html#indexterm-100">Java Database Connectivity API</a></dd>
+<dd><a href="giqjk.html#indexterm-2211">Java Database Connectivity Software</a></dd>
+<dd><a href="bncjj.html#indexterm-2298">DataSource Objects and Connection Pools</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>JMS, <a href="bnacj.html#indexterm-90">Java Message Service API</a><dl>
+<dd>achieving reliability and performance, <a href="bncfu.html#indexterm-2417">Creating Robust JMS Applications</a></dd>
+<dd>administered objects, <a href="bnceh.html#indexterm-2348">JMS Administered Objects</a></dd>
+<dd>application client examples, <a href="bncfa.html#indexterm-2482">Writing Simple JMS Applications</a></dd>
+<dd>architecture, <a href="bncdx.html#indexterm-2330">JMS API Architecture</a></dd>
+<dd>basic concepts, <a href="bncdx.html#indexterm-2329">Basic JMS API Concepts</a></dd>
+<dd>definition, <a href="bncdr.html#indexterm-2326">What Is the JMS API?</a></dd>
+<dd>examples<dl>
+<dd><a href="bnbpk.html#indexterm-1486">A Message-Driven Bean Example</a></dd>
+<dd><a href="bncgv.html#indexterm-2480">Java Message Service Examples</a></dd>
+</dl>
+</dd>
+<dd>introduction, <a href="bncdr.html#indexterm-2323">Overview of the JMS API</a></dd>
+<dd>Java EE platform<dl>
+<dd><a href="bncdr.html#indexterm-2327">How Does the JMS API Work with the Java EE Platform?</a></dd>
+<dd><a href="bncgl.html#indexterm-2460">Using the JMS API in Java EE Applications</a></dd>
+</dl>
+</dd>
+<dd>messaging domains, <a href="bncdx.html#indexterm-2334">Messaging Domains</a></dd>
+<dd>programming model, <a href="bnceh.html#indexterm-2346">The JMS API Programming Model</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd><tt>JMSCorrelationID</tt> message header field, <a href="bnceh.html#indexterm-2395">Message Headers</a></dd>
+</dl>
+<dl>
+<dd><tt>JMSDeliveryMode</tt> message header field, <a href="bnceh.html#indexterm-2385">Message Headers</a></dd>
+</dl>
+<dl>
+<dd><tt>JMSDestination</tt> message header field, <a href="bnceh.html#indexterm-2383">Message Headers</a></dd>
+</dl>
+<dl>
+<dd><tt>JMSException</tt> class, <a href="bnceh.html#indexterm-2416">JMS Exception Handling</a></dd>
+</dl>
+<dl>
+<dd><tt>JMSExpiration</tt> message header field, <a href="bnceh.html#indexterm-2387">Message Headers</a></dd>
+</dl>
+<dl>
+<dd><tt>JMSMessageID</tt> message header field, <a href="bnceh.html#indexterm-2391">Message Headers</a></dd>
+</dl>
+<dl>
+<dd><tt>JMSPriority</tt> message header field, <a href="bnceh.html#indexterm-2389">Message Headers</a></dd>
+</dl>
+<dl>
+<dd><tt>JMSRedelivered</tt> message header field, <a href="bnceh.html#indexterm-2400">Message Headers</a></dd>
+</dl>
+<dl>
+<dd><tt>JMSReplyTo</tt> message header field, <a href="bnceh.html#indexterm-2397">Message Headers</a></dd>
+</dl>
+<dl>
+<dd><tt>JMSTimestamp</tt> message header field, <a href="bnceh.html#indexterm-2393">Message Headers</a></dd>
+</dl>
+<dl>
+<dd><tt>JMSType</tt> message header field, <a href="bnceh.html#indexterm-2399">Message Headers</a></dd>
+</dl>
+<dl>
+<dd>JNDI<dl>
+<dd><a href="girdr.html#indexterm-102">Java Naming and Directory Interface API</a></dd>
+<dd><a href="bncji.html#indexterm-2297">Resources and JNDI Naming</a></dd>
+</dl>
+<dl>
+<dd>data source naming subcontexts, <a href="girdr.html#indexterm-113">Java Naming and Directory Interface API</a></dd>
+<dd>enterprise bean lookup, <a href="gipjf.html#indexterm-1364">Using Enterprise Beans in Clients</a></dd>
+<dd>enterprise bean naming subcontexts, <a href="girdr.html#indexterm-112">Java Naming and Directory Interface API</a></dd>
+<dd>environment naming contexts, <a href="girdr.html#indexterm-111">Java Naming and Directory Interface API</a></dd>
+<dd><tt>jms</tt> naming subcontext, <a href="bnceh.html#indexterm-2356">JMS Connection Factories</a></dd>
+<dd>namespace for JMS administered objects, <a href="bnceh.html#indexterm-2351">JMS Administered Objects</a></dd>
+<dd>naming contexts, <a href="girdr.html#indexterm-106">Java Naming and Directory Interface API</a></dd>
+<dd>naming environments, <a href="girdr.html#indexterm-105">Java Naming and Directory Interface API</a></dd>
+<dd>naming subcontexts, <a href="girdr.html#indexterm-110">Java Naming and Directory Interface API</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd><tt>jsf.js</tt> file, <a href="gkaam.html#indexterm-772">Loading JavaScript as a Resource</a></dd>
+</dl>
+<dl>
+<dd>JSR 299, <i>See </i>Contexts and Dependency Injection (CDI) for the Java EE platform</dd>
+</dl>
+<dl>
+<dd>JSR 311, <i>See </i>JAX-RS</dd>
+</dl>
+<dl>
+<dd>JSSE, <a href="bnbwy.html#indexterm-1931">Java SE Security Mechanisms</a></dd>
+</dl>
+<dl>
+<dd>JSTL, <a href="bnacj.html#indexterm-77">JavaServer Pages Standard Tag Library</a></dd>
+</dl>
+<dl>
+<dd>JTA<dl>
+<dd><a href="bnacj.html#indexterm-80">Java Transaction API</a></dd>
+<dd><a href="bnciy.html#indexterm-2269">JTA Transactions</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>JTS API, <a href="bnciy.html#indexterm-2272">JTA Transactions</a></dd>
+</dl>
+<dl>
+<dd>JUnit, <a href="gkcpv.html#indexterm-1515">The standalone Example Application</a></dd>
+</dl>
+</div>
+         </div>
+         <div class="navigation">
+             <a href="idx-4.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="idx-6.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

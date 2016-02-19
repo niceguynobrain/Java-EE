@@ -1,0 +1,343 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Overview of Java EE Security - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3"><a href="">Overview of Java EE Security</a></p>
+<p class="toc level4"><a href="#bnbwl">A Simple Application Security Walkthrough</a></p>
+<p class="toc level5"><a href="#bnbwm">Step 1: Initial Request</a></p>
+<p class="toc level5"><a href="#bnbwo">Step 2: Initial Authentication</a></p>
+<p class="toc level5"><a href="#bnbwq">Step 3: URL Authorization</a></p>
+<p class="toc level5"><a href="#bnbws">Step 4: Fulfilling the Original Request</a></p>
+<p class="toc level5"><a href="#bnbwu">Step 5: Invoking Enterprise Bean Business Methods</a></p>
+<p class="toc level4 tocsp"><a href="#bnbww">Features of a Security Mechanism</a></p>
+<p class="toc level4"><a href="#bnbwx">Characteristics of Application Security</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnbwy.html">Security Mechanisms</a></p>
+<p class="toc level4"><a href="bnbwy.html#bnbwz">Java SE Security Mechanisms</a></p>
+<p class="toc level4"><a href="bnbwy.html#bnbxa">Java EE Security Mechanisms</a></p>
+<p class="toc level5"><a href="bnbwy.html#bnbxb">Application-Layer Security</a></p>
+<p class="toc level5"><a href="bnbwy.html#bnbxc">Transport-Layer Security</a></p>
+<p class="toc level5"><a href="bnbwy.html#bnbxd">Message-Layer Security</a></p>
+<p class="toc level3 tocsp"><a href="bnbxe.html">Securing Containers</a></p>
+<p class="toc level4"><a href="bnbxe.html#bnbxg">Using Annotations to Specify Security Information</a></p>
+<p class="toc level4"><a href="bnbxe.html#bnbxf">Using Deployment Descriptors for Declarative Security</a></p>
+<p class="toc level4"><a href="bnbxe.html#bnbxh">Using Programmatic Security</a></p>
+<p class="toc level3 tocsp"><a href="bnbxi.html">Securing the GlassFish Server</a></p>
+<p class="toc level3"><a href="bnbxj.html">Working with Realms, Users, Groups, and Roles</a></p>
+<p class="toc level4"><a href="bnbxj.html#bnbxk">What Are Realms, Users, Groups, and Roles?</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxm">What Is a Realm?</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxn">What Is a User?</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxo">What Is a Group?</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxp">What Is a Role?</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxq">Some Other Terminology</a></p>
+<p class="toc level4 tocsp"><a href="bnbxj.html#bnbxr">Managing Users and Groups on the GlassFish Server</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxs">To Add Users to the GlassFish Server</a></p>
+<p class="toc level4 tocsp"><a href="bnbxj.html#bnbxu">Setting Up Security Roles</a></p>
+<p class="toc level4"><a href="bnbxj.html#bnbxv">Mapping Roles to Users and Groups</a></p>
+<p class="toc level3 tocsp"><a href="bnbxw.html">Establishing a Secure Connection Using SSL</a></p>
+<p class="toc level4"><a href="bnbxw.html#bnbxx">Verifying and Configuring SSL Support</a></p>
+<p class="toc level3 tocsp"><a href="bnbyj.html">Further Information about Security</a></p>
+<p class="toc level2 tocsp"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="bnbwj.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="bnbwy.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbwk"></a><h2>Overview of Java EE Security</h2>
+<a name="indexterm-1902"></a><a name="indexterm-1903"></a><a name="indexterm-1904"></a><p>Enterprise tier and web tier applications are made up of components that are
+deployed into various containers. These components are combined to build a multitier enterprise
+application. Security for components is provided by their containers. A container provides two
+kinds of security: declarative and programmatic.</p>
+
+
+<ul><li><p><a name="indexterm-1905"></a><a name="indexterm-1906"></a><a name="indexterm-1907"></a><b>Declarative security</b> expresses an application component&rsquo;s security requirements by using either deployment descriptors or annotations.</p>
+
+<p>A deployment descriptor is an XML file that is external to the application and that expresses an application&rsquo;s security structure, including security roles, access control, and authentication requirements. For more information about deployment descriptors, read <a href="bnbxe.html#bnbxf">Using Deployment Descriptors for Declarative Security</a>.</p>
+
+<p>Annotations, also called metadata, are used to specify information about security within a class file. When the application is deployed, this information can be either used by or overridden by the application deployment descriptor. Annotations save you from having to write declarative information inside XML descriptors. Instead, you simply put annotations on the code, and the required information gets generated. For this tutorial, annotations are used for securing applications wherever possible. For more information about annotations, see <a href="bnbxe.html#bnbxg">Using Annotations to Specify Security Information</a>.</p>
+
+</li>
+<li><p><a name="indexterm-1908"></a><a name="indexterm-1909"></a><b>Programmatic security</b> is embedded in an application and is used to make security decisions. Programmatic security is useful when declarative security alone is not sufficient to express the security model of an application. For more information about programmatic security, read <a href="bnbxe.html#bnbxh">Using Programmatic Security</a>. </p>
+
+</li></ul>
+
+
+<a name="bnbwl"></a><h3>A Simple Application Security Walkthrough</h3>
+<a name="indexterm-1910"></a><p>The security behavior of a Java EE environment may be better understood by
+examining what happens in a simple application with a web client, a
+user interface, and enterprise bean business logic.</p>
+
+<p>In the following example, which is taken from the Java EE 6
+Specification, the web client relies on the web server to act as its
+authentication proxy by collecting user authentication data from the client and using it
+to establish an authenticated session.</p>
+
+
+
+<a name="bnbwm"></a><h4>Step 1: Initial Request</h4>
+<p>In the first step of this example, the web client requests the
+main application URL. This action is shown in <a href="#bnbwn">Figure&nbsp;39-1</a>.</p>
+
+<a name="bnbwn"></a><p class="caption">Figure&nbsp;39-1 Initial Request</p><img src="figures/security-simple-1.gif" alt="Diagram of initial request from web client to web server for access to a protected resource"></img><p>Since the client has not yet authenticated itself to the application environment, the
+server responsible for delivering the web portion of the application, hereafter referred to
+as the <b>web server</b>, detects this and invokes the appropriate authentication mechanism for this resource.
+For more information on these mechanisms, see <a href="bnbwy.html">Security Mechanisms</a>.</p>
+
+
+
+<a name="bnbwo"></a><h4>Step 2: Initial Authentication</h4>
+<p>The web server returns a form that the web client uses to
+collect authentication data, such as user name and password, from the user. The
+web client forwards the authentication data to the web server, where it is
+validated by the web server, as shown in <a href="#bnbwp">Figure&nbsp;39-2</a>. The validation mechanism may be
+local to a server or may leverage the underlying security services. On the
+basis of the validation, the web server sets a credential for the user.</p>
+
+<a name="bnbwp"></a><p class="caption">Figure&nbsp;39-2 Initial Authentication</p><img src="figures/security-simple-2.gif" alt="Diagram of initial authentication: server sends form to client, which sends authentication data to server for validation"></img>
+
+<a name="bnbwq"></a><h4>Step 3: URL Authorization</h4>
+<p>The credential is used for future determinations of whether the user is authorized
+to access restricted resources it may request. The web server consults the security
+policy associated with the web resource to determine the security roles that are
+permitted access to the resource. The security policy is derived from annotations or
+from the deployment descriptor. The web container then tests the user&rsquo;s credential against
+each role to determine whether it can map the user to the role.
+<a href="#bnbwr">Figure&nbsp;39-3</a> shows this process.</p>
+
+<a name="bnbwr"></a><p class="caption">Figure&nbsp;39-3 URL Authorization</p><img src="figures/security-simple-3.gif" alt="Diagram of URL authorization"></img><p>The web server&rsquo;s evaluation stops with an &ldquo;is authorized&rdquo; outcome when the web
+server is able to map the user to a role. A &ldquo;not authorized&rdquo;
+outcome is reached if the web server is unable to map the user
+to any of the permitted roles.</p>
+
+
+
+<a name="bnbws"></a><h4>Step 4: Fulfilling the Original Request</h4>
+<p>If the user is authorized, the web server returns the result of
+the original URL request, as shown in <a href="#bnbwt">Figure&nbsp;39-4</a>.</p>
+
+<a name="bnbwt"></a><p class="caption">Figure&nbsp;39-4 Fulfilling the Original Request</p><img src="figures/security-simple-4.gif" alt="Diagram of request fulfillment, showing server returning result to client"></img><p>In our example, the response URL of a web page is returned,
+enabling the user to post form data that needs to be handled by
+the business-logic component of the application. See <a href="bncas.html">Chapter&nbsp;40, Getting Started Securing Web Applications</a> for more information on protecting web
+applications.</p>
+
+
+
+<a name="bnbwu"></a><h4>Step 5: Invoking Enterprise Bean Business Methods</h4>
+<p>The web page performs the remote method call to the enterprise bean, using
+the user&rsquo;s credential to establish a secure association between the web page and
+the enterprise bean, as shown in <a href="#bnbwv">Figure&nbsp;39-5</a>. The association is implemented as
+two related security contexts: one in the web server and one in the
+EJB container.</p>
+
+<a name="bnbwv"></a><p class="caption">Figure&nbsp;39-5 Invoking an Enterprise Bean Business Method</p><img src="figures/security-simple-5.gif" alt="Diagram of authorization process between web component and enterprise bean"></img><p>The EJB container is responsible for enforcing access control on the enterprise bean
+method. The container consults the security policy associated with the enterprise bean to
+determine the security roles that are permitted access to the method. The security
+policy is derived from annotations or from the deployment descriptor. For each role,
+the EJB container determines whether it can map the caller to the role
+by using the security context associated with the call.</p>
+
+<p>The container&rsquo;s evaluation stops with an &ldquo;is authorized&rdquo; outcome when the container is
+able to map the caller&rsquo;s credential to a role. A &ldquo;not authorized&rdquo; outcome
+is reached if the container is unable to map the caller to any
+of the permitted roles. A &ldquo;not authorized&rdquo; result causes an exception to be
+thrown by the container and propagated back to the calling web page.</p>
+
+<p>If the call is authorized, the container dispatches control to the enterprise bean
+method. The result of the bean&rsquo;s execution of the call is returned to
+the web page and ultimately to the user by the web server
+and the web client.</p>
+
+
+
+<a name="bnbww"></a><h3>Features of a Security Mechanism</h3>
+<a name="indexterm-1911"></a><p>A properly implemented security mechanism will provide the following functionality:</p>
+
+
+<ul><li><p>Prevent unauthorized access to application functions and business or personal data (authentication)</p>
+
+</li>
+<li><p>Hold system users accountable for operations they perform (non-repudiation)</p>
+
+</li>
+<li><p>Protect a system from service interruptions and other breaches that affect quality of service</p>
+
+</li></ul>
+<p>Ideally, properly implemented security mechanisms will also be</p>
+
+
+<ul><li><p>Easy to administer</p>
+
+</li>
+<li><p>Transparent to system users</p>
+
+</li>
+<li><p>Interoperable across application and enterprise boundaries</p>
+
+</li></ul>
+
+
+<a name="bnbwx"></a><h3>Characteristics of Application Security</h3>
+<a name="indexterm-1912"></a><a name="indexterm-1913"></a><a name="indexterm-1914"></a><a name="indexterm-1915"></a><p>Java EE applications consist of components that can contain both protected and unprotected
+resources. Often, you need to protect resources to ensure that only authorized users
+have access. Authorization provides controlled access to protected resources. Authorization is based on
+identification and authentication. <b>Identification</b> is a process that enables recognition of an entity by
+a system, and authentication is a process that verifies the identity of a
+user, device, or other entity in a computer system, usually as a prerequisite
+to allowing access to resources in a system.</p>
+
+<p>Authorization and authentication are not required for an entity to access unprotected resources.
+Accessing a resource without authentication is referred to as unauthenticated, or anonymous, access.</p>
+
+<p>The characteristics of application security that, when properly addressed, help to minimize the
+security threats faced by an enterprise include the following:</p>
+
+
+<ul><li><p><b>Authentication</b>: The means by which communicating entities, such as client and server, prove to each other that they are acting on behalf of specific identities that are authorized for access. This ensures that users are who they say they are.</p>
+
+</li>
+<li><p><a name="indexterm-1916"></a><b>Authorization</b>, or <b>access control</b>: The means by which interactions with resources are limited to collections of users or programs for the purpose of enforcing integrity, confidentiality, or availability constraints. This ensures that users have permission to perform operations or access data.</p>
+
+</li>
+<li><p><a name="indexterm-1917"></a><a name="indexterm-1918"></a><b>Data integrity</b>: The means used to prove that information has not been modified by a third party, an entity other than the source of the information. For example, a recipient of data sent over an open network must be able to detect and discard messages that were modified after they were sent. This ensures that only authorized users can modify data.</p>
+
+</li>
+<li><p><b>Confidentiality</b>, or <b>data privacy</b>: The means used to ensure that information is made available only to users who are authorized to access it. This ensures that only authorized users can view sensitive data.</p>
+
+</li>
+<li><p><a name="indexterm-1919"></a><b>Non-repudiation</b>: The means used to prove that a user who performed some action cannot reasonably deny having done so. This ensures that transactions can be proved to have happened.</p>
+
+</li>
+<li><p><a name="indexterm-1920"></a><b>Quality of Service</b>: The means used to provide better service to selected network traffic over various technologies.</p>
+
+</li>
+<li><p><a name="indexterm-1921"></a><b>Auditing</b>: The means used to capture a tamper-resistant record of security-related events for the purpose of being able to evaluate the effectiveness of security policies and mechanisms. To enable this, the system maintains a record of transactions and security information.</p>
+
+</li></ul>
+
+         </div>
+         <div class="navigation">
+             <a href="bnbwj.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="bnbwy.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

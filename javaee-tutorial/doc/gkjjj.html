@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Specifying the Cache Mode Settings to Improve Performance - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level3"><a href="gkjio.html">Overview of the Second-Level Cache</a></p>
+<p class="toc level4"><a href="gkjio.html#gkjiw">Controlling Whether Entities May Be Cached</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3 tocsp"><a href="">Specifying the Cache Mode Settings to Improve Performance</a></p>
+<p class="toc level4"><a href="#gkjdk">Setting the Cache Retrieval and Store Modes</a></p>
+<p class="toc level5"><a href="#gkjdr">Cache Retrieval Mode</a></p>
+<p class="toc level5"><a href="#gkjdd">Cache Store Mode</a></p>
+<p class="toc level5"><a href="#gkjds">Setting the Cache Retrieval or Store Mode</a></p>
+<p class="toc level4 tocsp"><a href="#gkjeb">Controlling the Second-Level Cache Programmatically</a></p>
+<p class="toc level5"><a href="#gkjdz">Checking Whether An Entity's Data is Cached</a></p>
+<p class="toc level5"><a href="#gkjdq">Removing an Entity from the Cache</a></p>
+<p class="toc level5"><a href="#gkjda">Removing All Data from the Cache</a></p>
+</div>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="gkjio.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="gijrp.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="gkjjj"></a><h2>Specifying the Cache Mode Settings to Improve Performance</h2>
+<p>To adjust the cache mode settings for a persistence unit, specify one of
+the cache modes as the value of the <tt>shared-cache-mode</tt> element in the <tt>persistence.xml</tt>
+deployment descriptor:</p>
+
+<pre>&lt;persistence-unit name="examplePU" transaction-type="JTA">
+  &lt;provider>org.eclipse.persistence.jpa.PersistenceProvider&lt;/provider>
+  &lt;jta-data-source>jdbc/__default&lt;/jta-data-source>
+  <b>&lt;shared-cache-mode>DISABLE_SELECTIVE&lt;/shared-cache-mode></b>
+&lt;/persistence-unit></pre>
+<hr><p><b>Note - </b>Because support for a second-level cache is not required by the Java
+Persistence API specification, setting the second-level cache mode in <tt>persistence.xml</tt> will have no
+affect when using a persistence provider that does not implement a second-level cache.</p>
+
+
+<hr>
+<p>Alternately, the shared cache mode may be specified by setting the <tt>javax.persistence.sharedCache.mode</tt>
+property to one of the shared cache mode settings:</p>
+
+<pre>EntityManagerFactor emf = Persistence.createEntityManagerFactory("myExamplePU", 
+            new Properties().add("javax.persistence.sharedCache.mode", "ENABLE_SELECTIVE"));</pre>
+
+<a name="gkjdk"></a><h3>Setting the Cache Retrieval and Store Modes</h3>
+<p>If the second-level cache has been enabled for a persistence unit by setting
+the shared cache mode, the behavior of the second-level cache can be further
+modified by setting the <tt>javax.persistence.cache.retrieveMode</tt> and <tt>javax.persistence.cache.storeMode</tt> properties. These properties may be set
+at the persistence context level by passing the property name and value to
+the <tt>EntityManager.setProperty</tt> method, or may be set on a per-<tt>EntityManager</tt> operation (<tt>EntityManager.find</tt> or
+<tt>EntityManager.refresh</tt>) or per-query level.</p>
+
+
+
+<a name="gkjdr"></a><h4>Cache Retrieval Mode</h4>
+<p>The cache retrieval mode, set by the <tt>javax.persistence.retrieveMode</tt> property, controls how data
+is read from the cache for calls to the <tt>EntityManager.find</tt> method and from
+queries.</p>
+
+<p>The <tt>retrieveMode</tt> property can be set to one of the constants defined by
+the <tt>javax.persistence.CacheRetrieveMode</tt> enumerated type, either <tt>USE</tt> (the default) or <tt>BYPASS</tt>. When set to <tt>USE</tt>,
+data is retrieved from the second-level cache, if available. If the data is
+not in the cache, the persistence provider will read it from the database.
+When set to <tt>BYPASS</tt>, the second-level cache is bypassed and a call to
+the database is made to retrieve the data.</p>
+
+
+
+<a name="gkjdd"></a><h4>Cache Store Mode</h4>
+<p>The cache store mode, set by the <tt>javax.persistence.storeMode</tt> property, controls how data is
+stored in the cache.</p>
+
+<p>The <tt>storeMode</tt> property can be set to one of the constants defined by
+the <tt>javax.persistence.CacheStoreMode</tt> enumerated type, either <tt>USE</tt> (the default), <tt>BYPASS</tt>, or <tt>REFRESH</tt>. When set to
+<tt>USE</tt> the cache data is created or updated when data is read from
+or committed to the database. If data is already in the cache, setting
+the store mode to <tt>USE</tt> will not force a refresh when data is
+read from the database. </p>
+
+<p>When the store mode is set to <tt>BYPASS</tt>, data read from or committed
+to the database is <b>not</b> inserted or updated in the cache. That is,
+the cache is unchanged.</p>
+
+<p>When the store mode is set to <tt>REFRESH</tt> the cache data is created
+or updated when data is read from or committed to the database, and
+a refresh is forced on data in the cache upon database reads.</p>
+
+
+
+<a name="gkjds"></a><h4>Setting the Cache Retrieval or Store Mode</h4>
+<p>To set the cache retrieval or store mode for the persistence context, call
+the <tt>EntityManager.setProperty</tt> method with the property name and value pair:</p>
+
+<pre>EntityManager em = ...;
+em.setProperty("javax.persistence.cache.storeMode", "BYPASS");</pre><p>To set the cache retrieval or store mode when calling the <tt>EntityManger.find</tt>
+or <tt>EntityManager.refresh</tt> methods, first create a <tt>Map&lt;String, Object></tt> instance and add a name/value pair as
+follows:</p>
+
+<pre>EntityManager em = ...;
+Map&lt;String, Object> props = new HashMap&lt;String, Object>();
+props.put("javax.persistence.cache.retrieveMode", "BYPASS");
+String personPK = ...;
+Person person = em.find(Person.class, personPK, props);</pre>
+<hr><p><b>Note - </b>The cache retrieve mode is ignored when calling the <tt>EntityManager.refresh</tt> method, as
+calls to <tt>refresh</tt> always result in data being read from the database, not
+the cache.</p>
+
+
+<hr>
+<p>To set the retrieval or store mode when using queries, call the
+<tt>Query.setHint</tt> or <tt>TypedQuery.setHint</tt> methods, depending on the type of query:</p>
+
+<pre>EntityManager em = ...;
+CriteriaQuery&lt;Person> cq = ...;
+TypedQuery&lt;Person> q = em.createQuery(cq);
+q.setHint("javax.persistence.cache.storeMode", "REFRESH");
+...</pre><p>Setting the store or retrieve mode in a query or when calling
+the <tt>EntityManager.find</tt> or <tt>EntityManager.refresh</tt> methods overrides the setting of the entity manager.</p>
+
+
+
+<a name="gkjeb"></a><h3>Controlling the Second-Level Cache Programmatically</h3>
+<p>The <tt>javax.persistence.Cache</tt> interface defines methods for interacting with the second-level cache programmatically. The <tt>Cache</tt>
+interface defines methods to check whether a particular entity has cached data, to
+remove a particular entity from the cache, to remove all instances (and instances
+of subclasses) of an entity class from the cache, and to clear the
+cache of all entity data.</p>
+
+
+<hr><p><b>Note - </b>If the second-level cache has been disabled, calls to the <tt>Cache</tt> interface's
+methods have no effect, except for <tt>contains</tt>, which will always return <tt>false</tt>.</p>
+
+
+<hr>
+
+
+<a name="gkjdz"></a><h4>Checking Whether An Entity's Data is Cached</h4>
+<p>Call the <tt>Cache.contains</tt> method to find out whether a given entity is currently
+in the second-level cache. The <tt>contains</tt> method returns <tt>true</tt> if the entity's
+data is cached, and <tt>false</tt> if the data is not in the cache.</p>
+
+<pre>EntityManager em = ...;
+Cache cache = em.getEntityManagerFactory().getCache();
+String personPK = ...;
+if (cache.contains(Person.class, personPK)) {
+  // the data is cached
+} else {
+  // the data is NOT cached
+}</pre>
+
+<a name="gkjdq"></a><h4>Removing an Entity from the Cache</h4>
+<p>Call one of the <tt>Cache.evict</tt> methods to remove a particular entity or all
+entities of a given type from the second-level cache. To remove a particular
+entity from the cache, call the <tt>evict</tt> method and pass in the entity
+class and the primary key of the entity:</p>
+
+<pre>EntityManager em = ...;
+Cache cache = em.getEntityManagerFactory().getCache();
+String personPK = ...;
+cache.evict(Person.class, personPK);</pre><p>To remove all instances of a particular entity class, including subclasses, call the
+<tt>evict</tt> method and specify the entity class:</p>
+
+<pre>EntityManager em = ...;
+Cache cache = em.getEntityManagerFactory().getCache();
+cache.evict(Person.class);</pre><p>All instances of the <tt>Person</tt> entity class will be removed from the cache.
+If the <tt>Person</tt> entity has a subclass, <tt>Student</tt>, calls to the above method
+will remove all instances of <tt>Student</tt> from the cache as well.</p>
+
+
+
+<a name="gkjda"></a><h4>Removing All Data from the Cache</h4>
+<p>Call the <tt>Cache.evictAll</tt> method to completely clear the second-level cache:</p>
+
+<pre>EntityManager em = ...;
+Cache cache = em.getEntityManagerFactory().getCache();
+cache.evictAll();</pre>
+         </div>
+         <div class="navigation">
+             <a href="gkjio.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="gijrp.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

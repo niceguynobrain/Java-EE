@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ora:customer xmlns:ora="http://xml.customer" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://xml.customer Customer.xsd">
+<ora:id>1</ora:id>
+<ora:firstName>Duke</ora:firstName>
+<ora:lastName>OfJava</ora:lastName>
+<ora:city>JavaTown</ora:city>
+<ora:country>USA</ora:country>
+</ora:customer>

@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Simplified Query Language Syntax - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level3"><a href="bnbth.html">Query Language Terminology</a></p>
+<p class="toc level3"><a href="bnbrg.html">Creating Queries Using the Java Persistence Query Language</a></p>
+<p class="toc level4"><a href="bnbrg.html#bnbrh">Named Parameters in Queries</a></p>
+<p class="toc level4"><a href="bnbrg.html#bnbri">Positional Parameters in Queries</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3 tocsp"><a href="">Simplified Query Language Syntax</a></p>
+<p class="toc level4"><a href="#bnbtj">Select Statements</a></p>
+<p class="toc level4"><a href="#bnbtk">Update and Delete Statements</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnbtl.html">Example Queries</a></p>
+<p class="toc level4"><a href="bnbtl.html#bnbtm">Simple Queries</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbtn">A Basic Select Query</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbto">Eliminating Duplicate Values</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbtp">Using Named Parameters</a></p>
+<p class="toc level4 tocsp"><a href="bnbtl.html#bnbtq">Queries That Navigate to Related Entities</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbtr">A Simple Query with Relationships</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbts">Navigating to Single-Valued Relationship Fields</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbtt">Traversing Relationships with an Input Parameter</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbtu">Traversing Multiple Relationships</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbtv">Navigating According to Related Fields</a></p>
+<p class="toc level4 tocsp"><a href="bnbtl.html#bnbtw">Queries with Other Conditional Expressions</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbtx">The <tt>LIKE</tt> Expression</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbty">The <tt>IS NULL</tt> Expression</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbtz">The <tt>IS EMPTY</tt> Expression</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbua">The <tt>BETWEEN</tt> Expression</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbub">Comparison Operators</a></p>
+<p class="toc level4 tocsp"><a href="bnbtl.html#bnbuc">Bulk Updates and Deletes</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbud">Update Queries</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbue">Delete Queries</a></p>
+<p class="toc level3 tocsp"><a href="bnbuf.html">Full Query Language Syntax</a></p>
+<p class="toc level4"><a href="bnbuf.html#bnbug">BNF Symbols</a></p>
+<p class="toc level4"><a href="bnbuf.html#bnbui">BNF Grammar of the Java Persistence Query Language</a></p>
+<p class="toc level4"><a href="bnbuf.html#bnbuj"><tt>FROM</tt> Clause</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbuk">Identifiers</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbum">Identification Variables</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbun">Range Variable Declarations</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbuo">Collection Member Declarations</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbup">Joins</a></p>
+<p class="toc level4 tocsp"><a href="bnbuf.html#bnbuq">Path Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbur">Examples of Path Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbus">Expression Types</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbut">Navigation</a></p>
+<p class="toc level4 tocsp"><a href="bnbuf.html#bnbuu"><tt>WHERE</tt> Clause</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbuv">Literals</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbva">Input Parameters</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvb">Conditional Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvc">Operators and Their Precedence</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbve"><tt>BETWEEN</tt> Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvf"><tt>IN</tt> Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvg"><tt>LIKE</tt> Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvi"><tt>NULL</tt> Comparison Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvj">Empty Collection Comparison Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvk">Collection Member Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvl">Subqueries</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvo">Functional Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#gjjnd">Case Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvr">NULL Values</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvu">Equality Semantics</a></p>
+<p class="toc level4 tocsp"><a href="bnbuf.html#bnbvx"><tt>SELECT</tt> Clause</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvy">Return Types</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbwb">The <tt>DISTINCT</tt> Keyword</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbwc">Constructor Expressions</a></p>
+<p class="toc level4 tocsp"><a href="bnbuf.html#bnbwd"><tt>ORDER BY</tt> Clause</a></p>
+<p class="toc level4"><a href="bnbuf.html#bnbwe"><tt>GROUP BY</tt> and <tt>HAVING</tt> Clauses</a></p>
+<p class="toc level2 tocsp"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="bnbrg.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="bnbtl.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbti"></a><h2>Simplified Query Language Syntax</h2>
+<a name="indexterm-1739"></a><p>This section briefly describes the syntax of the query language so that you
+can quickly move on to <a href="bnbtl.html">Example Queries</a>. When you are ready to learn about
+the syntax in more detail, see <a href="bnbuf.html">Full Query Language Syntax</a>.</p>
+
+
+
+<a name="bnbtj"></a><h3>Select Statements</h3>
+<p>A select query has six clauses: <tt>SELECT</tt>, <tt>FROM</tt>, <tt>WHERE</tt>, <tt>GROUP BY</tt>, <tt>HAVING</tt>, and
+<tt>ORDER BY</tt>. The <tt>SELECT</tt> and <tt>FROM</tt> clauses are required, but the <tt>WHERE</tt>, <tt>GROUP BY</tt>, <tt>HAVING</tt>,
+and <tt>ORDER BY</tt> clauses are optional. Here is the high-level BNF syntax of a
+query language select query:</p>
+
+<pre>QL_statement ::= select_clause from_clause 
+  [where_clause][groupby_clause][having_clause][orderby_clause]</pre>
+<ul><li><p><a name="indexterm-1740"></a>The <tt>SELECT</tt> clause defines the types of the objects or values returned by the query.</p>
+
+</li>
+<li><p><a name="indexterm-1741"></a><a name="indexterm-1742"></a>The <tt>FROM</tt> clause defines the scope of the query by declaring one or more identification variables, which can be referenced in the <tt>SELECT</tt> and <tt>WHERE</tt> clauses. An identification variable represents one of the following elements:</p>
+
+
+<ul><li><p><a name="indexterm-1743"></a><a name="indexterm-1744"></a>The abstract schema name of an entity</p>
+
+</li>
+<li><p>An element of a collection relationship</p>
+
+</li>
+<li><p>An element of a single-valued relationship</p>
+
+</li>
+<li><p>A member of a collection that is the multiple side of a one-to-many relationship</p>
+
+</li></ul>
+</li>
+<li><p><a name="indexterm-1745"></a>The <tt>WHERE</tt> clause is a conditional expression that restricts the objects or values retrieved by the query. Although the clause is optional, most queries have a <tt>WHERE</tt> clause.</p>
+
+</li>
+<li><p><a name="indexterm-1746"></a>The <tt>GROUP BY</tt> clause groups query results according to a set of properties.</p>
+
+</li>
+<li><p><a name="indexterm-1747"></a>The <tt>HAVING</tt> clause is used with the <tt>GROUP BY</tt> clause to further restrict the query results according to a conditional expression.</p>
+
+</li>
+<li><p><a name="indexterm-1748"></a>The <tt>ORDER BY</tt> clause sorts the objects or values returned by the query into a specified order.</p>
+
+</li></ul>
+
+
+<a name="bnbtk"></a><h3>Update and Delete Statements</h3>
+<a name="indexterm-1749"></a><a name="indexterm-1750"></a><p>Update and delete statements provide bulk operations over sets of entities. These statements
+have the following syntax:</p>
+
+<pre>update_statement :: = update_clause [where_clause] 
+delete_statement :: = delete_clause [where_clause]</pre><p>The update and delete clauses determine the type of the entities to be
+updated or deleted. The <tt>WHERE</tt> clause may be used to restrict the scope
+of the update or delete operation.</p>
+
+
+         </div>
+         <div class="navigation">
+             <a href="bnbrg.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="bnbtl.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

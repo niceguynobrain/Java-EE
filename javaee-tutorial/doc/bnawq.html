@@ -1,0 +1,673 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Configuring Managed Beans - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level3"><a href="girch.html">Using Annotations to Configure Managed Beans</a></p>
+<p class="toc level4"><a href="girch.html#gircr">Using Managed Bean Scopes</a></p>
+<p class="toc level5"><a href="girch.html#girep">Eager Application-scoped Beans</a></p>
+<p class="toc level3 tocsp"><a href="bnawp.html">Application Configuration Resource File</a></p>
+<p class="toc level4"><a href="bnawp.html#giqck">Ordering of Application Configuration Resource Files</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3 tocsp"><a href="">Configuring Managed Beans</a></p>
+<p class="toc level4"><a href="#bnawr">Using the <tt>managed-bean</tt> Element</a></p>
+<p class="toc level4"><a href="#bnaws">Initializing Properties Using the <tt>managed-property</tt> Element</a></p>
+<p class="toc level5"><a href="#bnawu">Referencing a Java <tt>Enum</tt> Type</a></p>
+<p class="toc level5"><a href="#bnawv">Referencing an Initialization Parameter</a></p>
+<p class="toc level5"><a href="#bnaww">Initializing Map Properties</a></p>
+<p class="toc level5"><a href="#bnawx">Initializing Array and List Properties</a></p>
+<p class="toc level5"><a href="#bnawy">Initializing Managed Bean Properties</a></p>
+<p class="toc level4 tocsp"><a href="#bnaxa">Initializing Maps and Lists</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnaxb.html">Registering Application Messages</a></p>
+<p class="toc level4"><a href="bnaxb.html#gkuhg">Using <tt>FacesMessage</tt> to Create a Message</a></p>
+<p class="toc level4"><a href="bnaxb.html#bnass">Referencing Error Messages</a></p>
+<p class="toc level3 tocsp"><a href="gireb.html">Using Default Validators</a></p>
+<p class="toc level3"><a href="bnaxd.html">Registering a Custom Validator</a></p>
+<p class="toc level3"><a href="bnaxe.html">Registering a Custom Converter</a></p>
+<p class="toc level3"><a href="bnaxf.html">Configuring Navigation Rules</a></p>
+<p class="toc level4"><a href="bnaxf.html#giqwk">Implicit Navigation Rules</a></p>
+<p class="toc level3 tocsp"><a href="bnaxh.html">Registering a Custom Renderer with a Render Kit</a></p>
+<p class="toc level3"><a href="bnaxi.html">Registering a Custom Component</a></p>
+<p class="toc level3"><a href="bnaxj.html">Basic Requirements of a JavaServer Faces Application</a></p>
+<p class="toc level4"><a href="bnaxj.html#bnaxk">Configuring an Application With a Web Deployment Descriptor</a></p>
+<p class="toc level5"><a href="bnaxj.html#glpoo">Identifying the Servlet for Lifecycle Processing</a></p>
+<p class="toc level5"><a href="bnaxj.html#bnaxm">Specifying a Path to an Application Configuration Resource File</a></p>
+<p class="toc level5"><a href="bnaxj.html#bnaxn">Specifying Where State Is Saved</a></p>
+<p class="toc level4 tocsp"><a href="bnaxj.html#giqxl">Configuring Project Stage</a></p>
+<p class="toc level4"><a href="bnaxj.html#bnaxt">Including the Classes, Pages, and Other Resources</a></p>
+<p class="toc level2 tocsp"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="bnawp.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="bnaxb.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnawq"></a><h2>Configuring Managed Beans</h2>
+<a name="indexterm-1000"></a><a name="indexterm-1001"></a><a name="indexterm-1002"></a><p>When a page references a managed bean for the first time, the
+JavaServer Faces implementation initializes it based on either a <tt>@ManagedBean</tt> annotation in the bean
+class (or a <tt>@Named</tt> annotation for CDI managed beans), or according to its
+configuration in the application configuration resource file. For information on using annotations to
+initialize beans, see <a href="girch.html">Using Annotations to Configure Managed Beans</a>.</p>
+
+<p>You can use either annotations or the application configuration resource file to instantiate
+managed beans and other managed beans that are used in a JavaServer Faces
+application and to store them in scope. The managed bean creation facility is
+configured in the application configuration resource file using <tt>managed-bean</tt> XML elements to define
+each bean. This file is processed at application startup time. For information on
+using this facility, see <a href="#bnawr">Using the <tt>managed-bean</tt> Element</a>.</p>
+
+<p>With the managed bean creation facility, you can:</p>
+
+
+<ul><li><p>Create beans in one centralized file that is available to the entire application, rather than conditionally instantiate beans throughout the application</p>
+
+</li>
+<li><p>Customize the bean&rsquo;s properties without any additional code</p>
+
+</li>
+<li><p>Customize the bean&rsquo;s property values directly from within the configuration file so that it is initialized with these values when it is created</p>
+
+</li>
+<li><p>Using <tt>value</tt> elements, set the property of one managed bean to be the result of evaluating another value expression</p>
+
+</li></ul>
+<p>This section shows you how to initialize beans using the managed bean creation
+facility. See <a href="bnaty.html">Writing Bean Properties</a> and <a href="bnavb.html">Writing Managed Bean Methods</a> for information on programming managed beans.</p>
+
+
+
+<a name="bnawr"></a><h3>Using the <tt>managed-bean</tt> Element</h3>
+<a name="indexterm-1003"></a><p>A managed bean is initiated using a <tt>managed-bean</tt> element in the application configuration
+resource file, which represents an instance of a bean class that must exist
+in the application. At runtime, the JavaServer Faces implementation processes the <tt>managed-bean</tt> element. If
+a page references the bean, and if no bean instance exists, the
+JavaServer Faces implementation instantiates the bean as specified by the element configuration. </p>
+
+<p>Here is an example managed bean configuration:</p>
+
+<pre>&lt;managed-bean>
+    &lt;managed-bean-name> UserNumberBean &lt;/managed-bean-name>
+    &lt;managed-bean-class>
+        guessNumber.UserNumberBean
+    &lt;/managed-bean-class>
+    &lt;managed-bean-scope> session &lt;/managed-bean-scope>
+    &lt;managed-property>
+        &lt;property-name> maximum &lt;/property-name>
+        &lt;property-class> long &lt;/property-class>
+        &lt;value> 10 &lt;/value>
+    &lt;/managed-property>
+        ...
+&lt;/managed-bean></pre><p>Using NetBeans IDE, you can add a managed bean declaration by doing the
+following:</p>
+
+
+<ol><li><p>After opening your project in NetBeans IDE, expand the project node in the Projects pane.</p>
+
+</li>
+<li><p>Expand the Web Pages and WEB-INF nodes of the project node.</p>
+
+</li>
+<li><p>If there is no <tt>faces-config.xml</tt> in the project, create one as follows:</p>
+
+
+<ol style="list-style-type: lower-alpha"><li><p>From the File menu, choose New File.</p>
+
+</li>
+<li><p>In the New File wizard, select the JavaServer Faces category, then select JSF Faces Configuration and click Next.</p>
+
+</li>
+<li><p>On the Name and Location page, change the name and location of the file if necessary. The default file name is <tt>faces-config.xml</tt>.</p>
+
+</li>
+<li><p>Click Finish.</p>
+
+</li></ol>
+</li>
+<li><p>Double-click <tt>faces-config.xml</tt> if the file is not already open.</p>
+
+</li>
+<li><p>After <tt>faces-config.xml</tt> opens in the editor pane, select XML from the sub tab panel options.</p>
+
+</li>
+<li><p>Right-click in the editor pane.</p>
+
+</li>
+<li><p>From the Insert menu, choose Managed Bean.</p>
+
+</li>
+<li><p>In the Add Managed Bean dialog box:</p>
+
+
+<ol style="list-style-type: lower-alpha"><li><p>Type the display name of the bean in the Bean Name field.</p>
+
+</li>
+<li><p>Click Browse to locate the bean&rsquo;s class.</p>
+
+</li></ol>
+</li>
+<li><p>In the Browse Class dialog box:</p>
+
+
+<ol style="list-style-type: lower-alpha"><li><p>Start typing the name of the class that you are looking for in the Class Name field. While you are typing, the dialog will show the matching classes.</p>
+
+</li>
+<li><p>Select the class from the Matching Classes box.</p>
+
+</li>
+<li><p>Click OK.</p>
+
+</li></ol>
+</li>
+<li><p>In the Add Managed Bean dialog box:</p>
+
+
+<ol style="list-style-type: lower-alpha"><li><p>Select the bean&rsquo;s scope from the Scope menu.</p>
+
+</li>
+<li><p>Click Add.</p>
+
+</li></ol>
+</li></ol>
+<p>The preceding steps will add the <tt>managed-bean</tt> element and three elements inside of
+that element: a <tt>managed-bean-name</tt> element, a <tt>managed-bean-class</tt> element, and a <tt>managed-bean-scope</tt> element. You
+will need to edit the XML of the configuration file directly to further
+configure this managed bean.</p>
+
+<p><a name="indexterm-1004"></a>The <tt>managed-bean-name</tt> element defines the key under which the bean will be
+stored in a scope. For a component&rsquo;s value to map to this bean,
+the component tag&rsquo;s <tt>value</tt> attribute must match the <tt>managed-bean-name</tt> up to the first
+period.</p>
+
+<p>The <tt>managed-bean-class</tt> element defines the fully qualified name of the JavaBeans component class
+used to instantiate the bean.</p>
+
+<p>The <tt>managed-bean</tt> element can contain zero or more <tt>managed-property</tt> elements, each corresponding
+to a property defined in the bean class. These elements are used to
+initialize the values of the bean properties. If you don&rsquo;t want a particular
+property initialized with a value when the bean is instantiated, do not include
+a <tt>managed-property</tt> definition for it in your application configuration resource file.</p>
+
+<p>If a <tt>managed-bean</tt> element does not contain other <tt>managed-bean</tt> elements, it can
+contain one <tt>map-entries</tt> element or <tt>list-entries</tt> element. The <tt>map-entries</tt> element configures a set of
+beans that are instances of <tt>Map</tt>. The <tt>list-entries</tt> element configures a set
+of beans that are instances of <tt>List</tt>.</p>
+
+<p>In the following example, the <tt>newsletters</tt> managed bean, representing a <tt>UISelectItems</tt> component, is
+configured as an <tt>ArrayList</tt> that represents a set of <tt>SelectItem</tt> objects. Each <tt>SelectItem</tt>
+object is in turn configured as a managed bean with properties:</p>
+
+<pre>&lt;managed-bean>
+    &lt;managed-bean-name>newsletters&lt;/managed-bean-name>
+    &lt;managed-bean-class>java.util.ArrayList&lt;/managed-bean-class>
+    &lt;managed-bean-scope>application&lt;/managed-bean-scope>
+    &lt;list-entries>
+        &lt;value-class>javax.faces.model.SelectItem&lt;/value-class>
+        &lt;value>#{newsletter0}&lt;/value>
+        &lt;value>#{newsletter1}&lt;/value>
+        &lt;value>#{newsletter2}&lt;/value>
+        &lt;value>#{newsletter3}&lt;/value>
+    &lt;/list-entries>
+&lt;/managed-bean>
+&lt;managed-bean>
+    &lt;managed-bean-name>newsletter0&lt;/managed-bean-name>
+    &lt;managed-bean-class>javax.faces.model.SelectItem&lt;/managed-bean-class>
+    &lt;managed-bean-scope>none&lt;/managed-bean-scope>
+    &lt;managed-property>
+        &lt;property-name>label&lt;/property-name>
+        &lt;value>Duke's Quarterly&lt;/value>
+    &lt;/managed-property>
+    &lt;managed-property>
+        &lt;property-name>value&lt;/property-name>
+        &lt;value>200&lt;/value>
+    &lt;/managed-property>
+&lt;/managed-bean>
+...</pre><p>This approach may be useful for quick-and-dirty creation of selection item lists, before
+a development team has had time to create such lists from the database.
+Note that each of the individual newsletter beans has a <tt>managed-bean-scope</tt> setting of
+<tt>none</tt>, so that they will not themselves be placed into any scope.</p>
+
+<p>See <a href="#bnawx">Initializing Array and List Properties</a> for more information on configuring collections as beans.</p>
+
+<p>To map to a property defined by a <tt>managed-property</tt> element, you must ensure
+that the part of a component tag&rsquo;s <tt>value</tt> expression after the period matches
+the <tt>managed-property</tt> element&rsquo;s <tt>property-name</tt> element. In the earlier example, the <tt>maximum</tt> property is
+initialized with the value <tt>10</tt>. <a href="#bnaws">Initializing Properties Using the <tt>managed-property</tt> Element</a> explains in more detail how to use
+the <tt>managed-property</tt> element.  See <a href="#bnawy">Initializing Managed Bean Properties</a> for an example of initializing a managed
+bean property.</p>
+
+
+
+<a name="bnaws"></a><h3>Initializing Properties Using the <tt>managed-property</tt> Element</h3>
+<a name="indexterm-1005"></a><p>A <tt>managed-property</tt> element must contain a <tt>property-name</tt> element, which must match the
+name of the corresponding property in the bean. A <tt>managed-property</tt> element must also
+contain one of a set of elements (listed in <a href="#bnawt">Table&nbsp;14-1</a>) that defines the
+value of the property. This value must be of the same type as
+that defined for the property in the corresponding bean. Which element you use
+to define the value depends on the type of the property defined in
+the bean. <a href="#bnawt">Table&nbsp;14-1</a> lists all the elements that are used to initialize a
+value.</p>
+
+<a name="bnawt"></a><p class="caption">Table&nbsp;14-1 Sub-elements of <tt>managed-property</tt> Elements That Define Property Values</p><table><col width="17%"><col width="82%"><tr><th align="left" valign="top" scope="column"><p>Element</p>
+
+</th>
+<th align="left" valign="top" scope="column"><p>Value That It Defines</p>
+
+</th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-1006"></a><tt>list-entries</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Defines the values in a list</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-1007"></a><tt>map-entries</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Defines the values of
+a map</p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-1008"></a><tt>null-value</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Explicitly sets the property to <tt>null</tt></p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-1009"></a><tt>value</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p>Defines a single value, such as
+a <tt>String</tt>, <tt>int</tt>, or JavaServer Faces EL expression</p>
+
+</td>
+</tr>
+</table><p><a href="#bnawr">Using the <tt>managed-bean</tt> Element</a> includes an example of initializing an <tt>int</tt> property (a primitive type) using the
+<tt>value</tt> sub-element. You also use the <tt>value</tt> sub-element to initialize <tt>String</tt> and
+other reference types. The rest of this section describes how to use the
+<tt>value</tt> sub-element and other sub-elements to initialize properties of Java <tt>Enum</tt> types, <tt>java.util.Map</tt>,
+<tt>array</tt>, and <tt>java.util.Collection</tt>, as well as initialization parameters.</p>
+
+
+
+<a name="bnawu"></a><h4>Referencing a Java <tt>Enum</tt> Type</h4>
+<p>A managed bean property can also be a Java <tt>Enum</tt> type (see <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Enum.html">http://docs.oracle.com/javase/6/docs/api/java/lang/Enum.html</a>).
+In this case, the <tt>value</tt> element of the <tt>managed-property</tt> element must be a
+<tt>String</tt> that matches one of the <tt>String</tt> constants of the <tt>Enum</tt>. In other
+words, the <tt>String</tt> must be one of the valid values that can be
+returned if you were to call <tt>valueOf(Class, String)</tt> on <tt>enum</tt>, where <tt>Class</tt> is the
+<tt>Enum</tt> class and <tt>String</tt> is the contents of the <tt>value</tt> subelement. For example,
+suppose the managed bean property is the following:</p>
+
+<pre>public enum Suit { Hearts, Spades, Diamonds, Clubs}
+ ...
+public Suit getSuit() { ... return Suit.Hearts; }</pre><p>Assuming that you want to configure this property in the application configuration resource
+file, the corresponding <tt>managed-property</tt> element would look like this:</p>
+
+<pre>&lt;managed-property>
+    &lt;property-name>Suit&lt;/property-name>
+    &lt;value>Hearts&lt;/value>
+&lt;/managed-property></pre><p>When the system encounters this property, it iterates over each of the members
+of the <tt>enum</tt> and calls <tt>toString()</tt> on each member until it finds one
+that is exactly equal to the value from the <tt>value</tt> element.</p>
+
+
+
+<a name="bnawv"></a><h4>Referencing an Initialization Parameter</h4>
+<a name="indexterm-1010"></a><p>Another powerful feature of the managed bean creation facility is the ability to
+reference implicit objects from a managed bean property.</p>
+
+<p>Suppose that you have a page that accepts data from a customer,
+including the customer&rsquo;s address. Suppose also that most of your customers live in a
+particular area code. You can make the area code component render this area
+code by saving it in an implicit object and referencing it when
+the page is rendered.</p>
+
+<p>You can save the area code as an initial default value in
+the context <tt>initParam</tt> implicit object by adding a context parameter to your web
+application and setting its value in the deployment descriptor. For example, to set
+a context parameter called <tt>defaultAreaCode</tt> to <tt>650</tt>, add a <tt>context-param</tt> element to
+the deployment descriptor, and give the parameter the name <tt>defaultAreaCode</tt> and the value <tt>650</tt>.</p>
+
+<p>Next, you write a <tt>managed-bean</tt> declaration that configures a property that references the
+parameter:</p>
+
+<pre>&lt;managed-bean>
+    &lt;managed-bean-name>customer&lt;/managed-bean-name>
+        &lt;managed-bean-class>CustomerBean&lt;/managed-bean-class>
+        &lt;managed-bean-scope>request&lt;/managed-bean-scope>
+        &lt;managed-property>
+            &lt;property-name>areaCode&lt;/property-name>
+                &lt;value>#{initParam.defaultAreaCode}&lt;/value>
+            &lt;/managed-property>
+            ...
+&lt;/managed-bean></pre><p>To access the area code at the time that the page is
+rendered, refer to the property from the <tt>area</tt> component tag&rsquo;s <tt>value</tt> attribute:</p>
+
+<pre>&lt;h:inputText id=area value="#{customer.areaCode}"</pre><p>Retrieving values from other implicit objects is done in a similar way.</p>
+
+
+
+<a name="bnaww"></a><h4>Initializing Map Properties</h4>
+<a name="indexterm-1011"></a><p><a name="indexterm-1012"></a>The <tt>map-entries</tt> element is used to initialize the values of a bean property
+with a type of <tt>java.util.Map</tt> if the <tt>map-entries</tt> element is used within
+a <tt>managed-property</tt> element. A <tt>map-entries</tt> element contains an optional <tt>key-class</tt> element, an optional
+<tt>value-class</tt> element, and zero or more <tt>map-entry</tt> elements.</p>
+
+<p><a name="indexterm-1013"></a>Each of the <tt>map-entry</tt> elements must contain a <tt>key</tt> element and either a
+<tt>null-value</tt> or <tt>value</tt> element. Here is an example that uses the <tt>map-entries</tt> element:</p>
+
+<pre>&lt;managed-bean>
+    ...
+    &lt;managed-property>
+        &lt;property-name>prices&lt;/property-name>
+        &lt;map-entries>
+            &lt;map-entry>
+                &lt;key>My Early Years: Growing Up on *7&lt;/key>
+                &lt;value>30.75&lt;/value>
+            &lt;/map-entry>
+            &lt;map-entry>
+                &lt;key>Web Servers for Fun and Profit&lt;/key>
+                &lt;value>40.75&lt;/value>
+            &lt;/map-entry>
+        &lt;/map-entries>
+    &lt;/managed-property>
+&lt;/managed-bean></pre><p><a name="indexterm-1014"></a>The map that is created from this <tt>map-entries</tt> tag contains two entries. By
+default, all the keys and values are converted to <tt>java.lang.String</tt>. If you want to
+specify a different type for the keys in the map, embed the
+<tt>key-class</tt> element just inside the <tt>map-entries</tt> element:</p>
+
+<pre>&lt;map-entries>
+    &lt;key-class>java.math.BigDecimal&lt;/key-class>
+    ...
+&lt;/map-entries></pre><p>This declaration will convert all the keys into <tt>java.math.BigDecimal</tt>. Of course, you
+must make sure that the keys can be converted to the type that
+you specify. The key from the example in this section cannot be converted
+to a <tt>java.math.BigDecimal</tt>, because it is a <tt>String</tt>.</p>
+
+<p>If you also want to specify a different type for all the
+values in the map, include the <tt>value-class</tt> element after the <tt>key-class</tt> element:</p>
+
+<pre>&lt;map-entries>
+    &lt;key-class>int&lt;/key-class>
+    &lt;value-class>java.math.BigDecimal&lt;/value-class>
+    ...
+&lt;/map-entries></pre><p>Note that this tag sets only the type of all the <tt>value</tt>
+subelements.</p>
+
+<p>Each <tt>map-entry</tt> in the preceding example includes a <tt>value</tt> subelement. The <tt>value</tt> subelement
+defines a single value, which will be converted to the type specified in
+the bean.</p>
+
+<p>Instead of using a <tt>map-entries</tt> element, it is also possible to assign the entire
+map using a <tt>value</tt> element that specifies a map-typed expression.</p>
+
+
+
+<a name="bnawx"></a><h4>Initializing Array and List Properties</h4>
+<a name="indexterm-1015"></a><p>The <tt>list-entries</tt> element is used to initialize the values of an <tt>array</tt> or
+<tt>java.util.List</tt> property. Each individual value of the array or <tt>List</tt> is initialized using a
+<tt>value</tt> or <tt>null-value</tt> element. Here is an example:</p>
+
+<pre>&lt;managed-bean>
+    ...
+    &lt;managed-property>
+        &lt;property-name>books&lt;/property-name>
+        &lt;list-entries>
+            &lt;value-class>java.lang.String&lt;/value-class>
+            &lt;value>Web Servers for Fun and Profit&lt;/value>
+            &lt;value>#{myBooks.bookId[3]}&lt;/value>
+            &lt;null-value/>
+        &lt;/list-entries>
+    &lt;/managed-property>
+&lt;/managed-bean></pre><p>This example initializes an <tt>array</tt> or a <tt>List</tt>. The type of the
+corresponding property in the bean determines which data structure is created. The <tt>list-entries</tt>
+element defines the list of values in the <tt>array</tt> or <tt>List</tt>. The <tt>value</tt>
+element specifies a single value in the <tt>array</tt> or <tt>List</tt> and can reference a
+property in another bean. The <tt>null-value</tt> element will cause the <tt>setBooks</tt> method to
+be called with an argument of <tt>null</tt>. A <tt>null</tt> property cannot be specified for
+a property whose data type is a Java primitive, such as <tt>int</tt> or
+<tt>boolean</tt>.</p>
+
+
+
+<a name="bnawy"></a><h4>Initializing Managed Bean Properties</h4>
+<a name="indexterm-1016"></a><p>Sometimes you might want to create a bean that also references other managed
+beans so that you can construct a graph or a tree of
+beans. For example, suppose that you want to create a bean representing a
+customer&rsquo;s information, including the mailing address and street address, each of which is
+also a bean. The following <tt>managed-bean</tt> declarations create a <tt>CustomerBean</tt> instance that has
+two <tt>AddressBean</tt> properties: one representing the mailing address, and the other representing the
+street address. This declaration results in a tree of beans with <tt>CustomerBean</tt> as its
+root and the two <tt>AddressBean</tt> objects as children.</p>
+
+<pre>&lt;managed-bean>
+    &lt;managed-bean-name>customer&lt;/managed-bean-name>
+    &lt;managed-bean-class>
+        com.example.mybeans.CustomerBean
+    &lt;/managed-bean-class>
+    &lt;managed-bean-scope> request &lt;/managed-bean-scope>
+    &lt;managed-property>
+        &lt;property-name>mailingAddress&lt;/property-name>
+        &lt;value>#{addressBean}&lt;/value>
+    &lt;/managed-property>
+    &lt;managed-property>
+        &lt;property-name>streetAddress&lt;/property-name>
+        &lt;value>#{addressBean}&lt;/value>
+    &lt;/managed-property>
+    &lt;managed-property>
+        &lt;property-name>customerType&lt;/property-name>
+        &lt;value>New&lt;/value>
+    &lt;/managed-property>
+&lt;/managed-bean>
+&lt;managed-bean>
+    &lt;managed-bean-name>addressBean&lt;/managed-bean-name>
+    &lt;managed-bean-class>
+        com.example.mybeans.AddressBean
+    &lt;/managed-bean-class>
+    &lt;managed-bean-scope> none &lt;/managed-bean-scope>
+    &lt;managed-property>
+        &lt;property-name>street&lt;/property-name>
+        &lt;null-value/>
+    &lt;managed-property>
+    ...
+&lt;/managed-bean></pre><p>The first <tt>CustomerBean</tt> declaration (with the <tt>managed-bean-name</tt> of <tt>customer</tt>) creates a <tt>CustomerBean</tt>
+in request scope. This bean has two properties, <tt>mailingAddress</tt> and <tt>streetAddress</tt>. These
+properties use the <tt>value</tt> element to reference a bean named <tt>addressBean</tt>.</p>
+
+<p><a name="indexterm-1017"></a>The second managed bean declaration defines an <tt>AddressBean</tt>, but does not create it, because
+its <tt>managed-bean-scope</tt> element defines a scope of <tt>none</tt>. Recall that a scope of
+<tt>none</tt> means that the bean is created only when something else references it.
+Because both the <tt>mailingAddress</tt> and the <tt>streetAddress</tt> properties reference <tt>addressBean</tt> using the <tt>value</tt> element, two
+instances of <tt>AddressBean</tt> are created when <tt>CustomerBean</tt> is created.</p>
+
+<p>When you create an object that points to other objects, do not
+try to point to an object with a shorter life span, because it
+might be impossible to recover that scope&rsquo;s resources when it goes away. A
+session-scoped object, for example, cannot point to a request-scoped object. And objects with <tt>none</tt>
+scope have no effective life span managed by the framework, so they can
+point only to other <tt>none</tt> scoped objects. <a href="#bnawz">Table&nbsp;14-2</a> outlines all of the allowed connections.</p>
+
+<a name="bnawz"></a><p class="caption">Table&nbsp;14-2 Allowable Connections Between Scoped Objects</p><table><col width="26%"><col width="73%"><tr><th align="left" valign="top" scope="column"><p>An
+Object of This Scope</p>
+
+</th>
+<th align="left" valign="top" scope="column"><p>May Point to an Object of This Scope</p>
+
+</th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>none</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>none</tt></p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>application</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>none</tt>, <tt>application</tt></p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>session</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>none</tt>,
+<tt>application</tt>, <tt>session</tt></p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>request</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>none</tt>, <tt>application</tt>, <tt>session</tt>, <tt>request,view</tt></p>
+
+</td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>view</tt></p>
+
+</td>
+<td align="left" valign="top" scope="row"><p><tt>none</tt>, <tt>application</tt>, <tt>session</tt>, <tt>view</tt></p>
+
+</td>
+</tr>
+</table><p>Be sure not to allow cyclical references between objects. For example, neither of
+the <tt>AddressBean</tt> objects in the preceding example should point back to the <tt>CustomerBean</tt>
+object, because <tt>CustomerBean</tt> already points to the <tt>AddressBean</tt> objects.</p>
+
+
+
+<a name="bnaxa"></a><h3>Initializing Maps and Lists</h3>
+<a name="indexterm-1018"></a><p>In addition to configuring <tt>Map</tt> and <tt>List</tt> properties, you can also configure
+a <tt>Map</tt> and a <tt>List</tt> directly so that you can reference them from a
+tag rather than referencing a property that wraps a <tt>Map</tt> or a <tt>List</tt>.</p>
+
+
+         </div>
+         <div class="navigation">
+             <a href="bnawp.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="bnaxb.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

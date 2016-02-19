@@ -1,0 +1,508 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>The roster Application - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level3"><a href="giqst.html">The <tt>order</tt> Application</a></p>
+<p class="toc level4"><a href="giqst.html#giqrh">Entity Relationships in the <tt>order</tt> Application</a></p>
+<p class="toc level5"><a href="giqst.html#giqqr">Self-Referential Relationships</a></p>
+<p class="toc level5"><a href="giqst.html#giqsr">One-to-One Relationships</a></p>
+<p class="toc level5"><a href="giqst.html#giqtj">One-to-Many Relationship Mapped to Overlapping Primary and Foreign Keys</a></p>
+<p class="toc level5"><a href="giqst.html#giqud">Unidirectional Relationships</a></p>
+<p class="toc level4 tocsp"><a href="giqst.html#giqqy">Primary Keys in the <tt>order</tt> Application</a></p>
+<p class="toc level5"><a href="giqst.html#giquv">Generated Primary Keys</a></p>
+<p class="toc level5"><a href="giqst.html#giquf">Compound Primary Keys</a></p>
+<p class="toc level4 tocsp"><a href="giqst.html#giqtl">Entity Mapped to More Than One Database Table</a></p>
+<p class="toc level4"><a href="giqst.html#gique">Cascade Operations in the <tt>order</tt> Application</a></p>
+<p class="toc level4"><a href="giqst.html#giqsc">BLOB and CLOB Database Types in the <tt>order</tt> Application</a></p>
+<p class="toc level4"><a href="giqst.html#giqum">Temporal Types in the <tt>order</tt> Application</a></p>
+<p class="toc level4"><a href="giqst.html#giqqv">Managing the <tt>order</tt> Application's Entities</a></p>
+<p class="toc level5"><a href="giqst.html#giqrr">Creating Entities</a></p>
+<p class="toc level5"><a href="giqst.html#giqqc">Finding Entities</a></p>
+<p class="toc level5"><a href="giqst.html#giquk">Setting Entity Relationships</a></p>
+<p class="toc level5"><a href="giqst.html#giqsv">Using Queries</a></p>
+<p class="toc level5"><a href="giqst.html#giqtw">Removing Entities</a></p>
+<p class="toc level4 tocsp"><a href="giqst.html#giqup">Building, Packaging, Deploying, and Running the <tt>order</tt> Application</a></p>
+<p class="toc level5"><a href="giqst.html#giqsg">To Build, Package, Deploy, and Run <tt>order</tt> UsingNetBeans IDE</a></p>
+<p class="toc level5"><a href="giqst.html#giqty">To Build, Package, Deploy, and Run <tt>order</tt> Using Ant</a></p>
+<p class="toc level5"><a href="giqst.html#giqrq">The <tt>all</tt> Task</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3 tocsp"><a href="">The <tt>roster</tt> Application</a></p>
+<p class="toc level4"><a href="#giqso">Relationships in the <tt>roster</tt> Application</a></p>
+<p class="toc level5"><a href="#giqqk">The Many-To-Many Relationship in <tt>roster</tt></a></p>
+<p class="toc level4 tocsp"><a href="#giqrf">Entity Inheritance in the <tt>roster</tt> Application</a></p>
+<p class="toc level4"><a href="#gjjfl">Criteria Queries in the <tt>roster</tt> Application</a></p>
+<p class="toc level5"><a href="#gjjex">Metamodel Classes in the <tt>roster</tt> Application</a></p>
+<p class="toc level5"><a href="#gjjfn">Obtaining a <tt>CriteriaBuilder</tt> Instance in <tt>RequestBean</tt></a></p>
+<p class="toc level5"><a href="#gjjff">Creating Criteria Queries in <tt>RequestBean</tt>'s Business Methods</a></p>
+<p class="toc level4 tocsp"><a href="#giqrx">Automatic Table Generation in the <tt>roster</tt> Application</a></p>
+<p class="toc level4"><a href="#giquz">Building, Packaging, Deploying, and Running the <tt>roster</tt> Application</a></p>
+<p class="toc level5"><a href="#giqug">To Build, Package, Deploy, and Run <tt>roster</tt> Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="#giqsj">To Build, Package, Deploy, and Run <tt>roster</tt> Using Ant</a></p>
+<p class="toc level5"><a href="#giqry">The <tt>all</tt> Task</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="gkanq.html">The <tt>address-book</tt> Application</a></p>
+<p class="toc level4"><a href="gkanq.html#gkaoj">Bean Validation Constraints in <tt>address-book</tt></a></p>
+<p class="toc level4"><a href="gkanq.html#gkanl">Specifying Error Messages for Constraints in <tt>address-book</tt></a></p>
+<p class="toc level4"><a href="gkanq.html#gkaon">Validating <tt>Contact</tt> Input from a JavaServer Faces Application</a></p>
+<p class="toc level4"><a href="gkanq.html#gkaop">Building, Packaging, Deploying, and Running the <tt>address-book</tt> Application</a></p>
+<p class="toc level5"><a href="gkanq.html#gkaod">Building, Packaging, Deploying, and Running the <tt>address-book</tt> Application in NetBeans IDE</a></p>
+<p class="toc level5"><a href="gkanq.html#gkanz">Building, Packaging, Deploying, and Running the <tt>address-book</tt> Application Using Ant</a></p>
+<p class="toc level2 tocsp"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="giqst.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="gkanq.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="giqsq"></a><h2>The <tt>roster</tt> Application</h2>
+<p>The <tt>roster</tt> application maintains the team rosters for players in recreational sports leagues.
+The application has four components: Java Persistence API entities (<tt>Player</tt>, <tt>Team</tt>, and <tt>League</tt>), a
+stateful session bean (<tt>RequestBean</tt>), an application client (<tt>RosterClient</tt>), and three helper classes (<tt>PlayerDetails</tt>,
+<tt>TeamDetails</tt>, and <tt>LeagueDetails</tt>).</p>
+
+<p>Functionally, <tt>roster</tt> is similar to the <tt>order</tt> application, with three new features that
+<tt>order</tt> does not have: many-to-many relationships, entity inheritance, and automatic table creation at
+deployment time.</p>
+
+
+
+<a name="giqso"></a><h3>Relationships in the <tt>roster</tt> Application</h3>
+<p>A recreational sports system has the following relationships:</p>
+
+
+<ul><li><p>A player can be on many teams.</p>
+
+</li>
+<li><p>A team can have many players.</p>
+
+</li>
+<li><p>A team is in exactly one league.</p>
+
+</li>
+<li><p>A league has many teams.</p>
+
+</li></ul>
+<p>In <tt>roster</tt> this system is reflected by the following relationships between the <tt>Player</tt>,
+<tt>Team</tt>, and <tt>League</tt> entities.</p>
+
+
+<ul><li><p>There is a many-to-many relationship between <tt>Player</tt> and <tt>Team</tt>.</p>
+
+</li>
+<li><p>There is a many-to-one relationship between <tt>Team</tt> and <tt>League</tt>.</p>
+
+</li></ul>
+
+
+<a name="giqqk"></a><h4>The Many-To-Many Relationship in <tt>roster</tt></h4>
+<a name="indexterm-1709"></a><a name="indexterm-1710"></a><p>The many-to-many relationship between <tt>Player</tt> and <tt>Team</tt> is specified by using the
+<tt>@ManyToMany</tt> annotation. In <tt>Team.java</tt>, the <tt>@ManyToMany</tt> annotation decorates the <tt>getPlayers</tt> method:</p>
+
+<pre>@ManyToMany
+@JoinTable(
+    name="EJB_ROSTER_TEAM_PLAYER",
+    joinColumns=
+        @JoinColumn(name="TEAM_ID", referencedColumnName="ID"),
+    inverseJoinColumns=
+        @JoinColumn(name="PLAYER_ID", referencedColumnName="ID")
+)
+public Collection&lt;Player> getPlayers() {
+    return players;
+}</pre><p>The <tt>@JoinTable</tt> annotation is used to specify a database table that will associate
+player IDs with team IDs. The entity that specifies the <tt>@JoinTable</tt> is the
+owner of the relationship, so the <tt>Team</tt> entity is the owner of the
+relationship with the <tt>Player</tt> entity. Because <tt>roster</tt> uses automatic table creation at deployment time,
+the container will create a join table named <tt>EJB_ROSTER_TEAM_PLAYER</tt>.</p>
+
+<p><tt>Player</tt> is the inverse, or nonowning, side of the relationship with <tt>Team</tt>. As
+one-to-one and many-to-one relationships, the nonowning side is marked by the <tt>mappedBy</tt> element in
+the relationship annotation. Because the relationship between <tt>Player</tt> and <tt>Team</tt> is bidirectional,
+the choice of which entity is the owner of the relationship is arbitrary.</p>
+
+<p>In <tt>Player.java</tt>, the <tt>@ManyToMany</tt> annotation decorates the <tt>getTeams</tt> method:</p>
+
+<pre>@ManyToMany(mappedBy="players")
+public Collection&lt;Team> getTeams() {
+    return teams;
+}</pre>
+
+<a name="giqrf"></a><h3>Entity Inheritance in the <tt>roster</tt> Application</h3>
+<a name="indexterm-1711"></a><p>The <tt>roster</tt> application shows how to use entity inheritance, as described in <a href="bnbqn.html">Entity Inheritance</a>.</p>
+
+<p>The <tt>League</tt> entity in <tt>roster</tt> is an abstract entity with two concrete subclasses:
+<tt>SummerLeague</tt> and <tt>WinterLeague</tt>. Because <tt>League</tt> is an abstract class, it cannot be instantiated:</p>
+
+<pre>...
+@Entity
+@Table(name = "EJB_ROSTER_LEAGUE")
+public abstract class League implements java.io.Serializable {
+...
+}</pre><p>Instead, when creating a league, clients use <tt>SummerLeague</tt> or <tt>WinterLeague</tt>. <tt>SummerLeague</tt> and
+<tt>WinterLeague</tt> inherit the persistent properties defined in <tt>League</tt> and add only a constructor
+that verifies that the sport parameter matches the type of sport allowed in
+that seasonal league. For example, here is the <tt>SummerLeague</tt> entity:</p>
+
+<pre>...
+@Entity
+public class SummerLeague extends League
+         implements java.io.Serializable {
+
+    /** Creates a new instance of SummerLeague */
+    public SummerLeague() {
+    }
+
+    public SummerLeague(String id, String name,
+             String sport) throws IncorrectSportException {
+        this.id = id;
+        this.name = name;
+        if (sport.equalsIgnoreCase("swimming") ||
+                sport.equalsIgnoreCase("soccer") ||
+                sport.equalsIgnoreCase("basketball") ||
+                sport.equalsIgnoreCase("baseball")) {
+            this.sport = sport;
+        } else {
+            throw new IncorrectSportException(
+                "Sport is not a summer sport.");
+        }
+    }
+}</pre><p>The <tt>roster</tt> application uses the default mapping strategy of <tt>InheritanceType.SINGLE_TABLE</tt>, so the <tt>@Inheritance</tt>
+annotation is not required. If you want to use a different mapping strategy,
+decorate <tt>League</tt> with <tt>@Inheritance</tt> and specify the mapping strategy in the <tt>strategy</tt> element:</p>
+
+<pre>@Entity
+@Inheritance(strategy=JOINED)
+@Table(name="EJB_ROSTER_LEAGUE")
+public abstract class League implements java.io.Serializable {
+    ...
+}</pre><p>The <tt>roster</tt> application uses the default discriminator column name, so the <tt>@DiscriminatorColumn</tt> annotation is
+not required. Because you are using automatic table generation in <tt>roster</tt>, the
+Persistence provider will create a discriminator column called <tt>DTYPE</tt> in the <tt>EJB_ROSTER_LEAGUE</tt>
+table, which will store the name of the inherited entity used to create
+the league. If you want to use a different name for the discriminator
+column, decorate <tt>League</tt> with <tt>@DiscriminatorColumn</tt> and set the <tt>name</tt> element:</p>
+
+<pre>@Entity
+@DiscriminatorColumn(name="DISCRIMINATOR")
+@Table(name="EJB_ROSTER_LEAGUE")
+public abstract class League implements java.io.Serializable {
+    ...
+}</pre>
+
+<a name="gjjfl"></a><h3>Criteria Queries in the <tt>roster</tt> Application</h3>
+<a name="indexterm-1712"></a><a name="indexterm-1713"></a><p>The <tt>roster</tt> application uses Criteria API queries, as opposed to the JPQL queries
+used in <tt>order</tt>. Criteria queries are Java programming language, typesafe queries defined in
+the business tier of <tt>roster</tt>, in the <tt>RequestBean</tt> stateful session bean.</p>
+
+
+
+<a name="gjjex"></a><h4>Metamodel Classes in the <tt>roster</tt> Application</h4>
+<a name="indexterm-1714"></a><p>Metamodel classes model an entity&rsquo;s attributes and are used by Criteria queries to
+navigate to an entity&rsquo;s attributes. Each entity class in <tt>roster</tt> has a corresponding
+metamodel class, generated at compile time, with the same package name as the
+entity and appended with an underscore character (_). For example, the <tt>roster.entity.Player</tt> entity has
+a corresponding metamodel class, <tt>roster.entity.Player_</tt>.</p>
+
+<p>Each persistent field or property in the entity class has a corresponding attribute
+in the entity&rsquo;s metamodel class. For the <tt>Player</tt> entity, the corresponding metamodel class
+is:</p>
+
+<pre>@StaticMetamodel(Player.class)
+public class Player_ {
+  public static volatile SingularAttribute&lt;Player, String> id;
+  public static volatile SingularAttribute&lt;Player, String> name;
+  public static volatile SingularAttribute&lt;Player, String> position;
+  public static volatile SingularAttribute&lt;Player, Double> salary;
+  public static volatile CollectionAttribute&lt;Player, Team> teams;
+}</pre>
+
+<a name="gjjfn"></a><h4>Obtaining a <tt>CriteriaBuilder</tt> Instance in <tt>RequestBean</tt></h4>
+<p>The <tt>CrtiteriaBuilder</tt> interface defines methods to create criteria query objects and create expressions
+for modifying those query objects. <tt>RequestBean</tt> creates an instance of <tt>CriteriaBuilder</tt> by using a
+<tt>@PostConstruct</tt> method, <tt>init</tt>:</p>
+
+<pre>@PersistenceContext
+private EntityManager em;
+private CriteriaBuilder cb;
+
+@PostConstruct
+private void init() {
+  cb = em.getCriteriaBuilder();
+}</pre><p>The <tt>EntityManager</tt> instance is injected at runtime, and then that <tt>EntityManager</tt> object is used
+to create the <tt>CriteriaBuilder</tt> instance by calling <tt>getCriteriaBuilder</tt>. The <tt>CriteriaBuilder</tt> instance is created
+in a <tt>@PostConstruct</tt> method to ensure that the <tt>EntityManager</tt> instance has been injected by
+the enterprise bean container.</p>
+
+
+
+<a name="gjjff"></a><h4>Creating Criteria Queries in <tt>RequestBean</tt>'s Business Methods</h4>
+<p>Many of the business methods in <tt>RequestBean</tt> define Criteria queries. One business method,
+<tt>getPlayersByPosition</tt>, returns a list of players who play a particular position on a
+team:</p>
+
+<pre>public List&lt;PlayerDetails> getPlayersByPosition(String position) {
+    logger.info("getPlayersByPosition");
+    List&lt;Player> players = null;
+    
+    try {
+        CriteriaQuery&lt;Player> cq = cb.createQuery(Player.class);
+        if (cq != null) {
+            Root&lt;Player> player = cq.from(Player.class);
+
+            // set the where clause
+            cq.where(cb.equal(player.get(Player_.position), position));
+            cq.select(player);
+            TypedQuery&lt;Player> q = em.createQuery(cq);
+            players = q.getResultList();
+        }
+
+        return copyPlayersToDetails(players);
+    } catch (Exception ex) {
+        throw new EJBException(ex);
+    }
+}</pre><p>A query object is created by calling the <tt>CriteriaBuilder</tt> object&rsquo;s <tt>createQuery</tt> method,
+with the type set to <tt>Player</tt> because the query will return a list
+of players.</p>
+
+<p>The query root, the base entity from which the query will navigate
+to find the entity&rsquo;s attributes and related entities, is created by calling the <tt>from</tt>
+method of the query object. This sets the FROM clause of the query.</p>
+
+<p>The WHERE clause, set by calling the <tt>where</tt> method on the query object,
+restricts the results of the query according to the conditions of an expression.
+The <tt>CriteriaBuilder.equal</tt> method compares the two expressions. In <tt>getPlayersByPosition</tt>, the <tt>position</tt> attribute of the
+<tt>Player_</tt> metamodel class, accessed by calling the <tt>get</tt> method of the query root, is
+compared to the <tt>position</tt> parameter passed to <tt>getPlayersByPosition</tt>.</p>
+
+<p>The SELECT clause of the query is set by calling the <tt>select</tt>
+method of the query object. The query will return <tt>Player</tt> entities, so the query
+root object is passed as a parameter to <tt>select</tt>.</p>
+
+<p>The query object is prepared for execution by calling <tt>EntityManager.createQuery</tt>, which returns
+a <tt>TypedQuery&lt;T></tt> object with the type of the query, in this case <tt>Player</tt>.
+This typed query object is used to execute the query, which occurs when
+the <tt>getResultList</tt> method is called, and a <tt>List&lt;Player></tt> collection is returned.</p>
+
+
+
+<a name="giqrx"></a><h3>Automatic Table Generation in the <tt>roster</tt> Application</h3>
+<p>At deployment time, the GlassFish Server will automatically drop and create the database
+tables used by <tt>roster</tt>. This is done by setting the <tt>eclipselink.ddl-generation</tt> property to
+<tt>drop-and-create-tables</tt> in <tt>persistence.xml</tt>:</p>
+
+<pre>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;persistence version="2.0" 
+    xmlns="http://java.sun.com/xml/ns/persistence" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+        http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  &lt;persistence-unit name="em" transaction-type="JTA">
+    &lt;jta-data-source>jdbc/__default&lt;/jta-data-source>
+    &lt;properties>
+      &lt;property name="eclipselink.ddl-generation" 
+                value="drop-and-create-tables"/>
+    &lt;/properties>
+  &lt;/persistence-unit>
+&lt;/persistence></pre><p>This feature is specific to the Java Persistence API provider used by the
+GlassFish Server and is not portable across Java EE servers. Automatic table creation
+is useful for development purposes, however, and the <tt>eclipselink.ddl-generation</tt> property may be
+removed from <tt>persistence.xml</tt> when preparing the application for production use, when deploying to
+other Java EE servers, or when using other persistence providers.</p>
+
+
+
+<a name="giquz"></a><h3>Building, Packaging, Deploying, and Running the <tt>roster</tt> Application</h3>
+<p>This section explains how to build, package, deploy, and run the <tt>roster</tt>
+application. You can do this using either NetBeans IDE or Ant.</p>
+
+
+
+<a name="giqug"></a><h4>To Build, Package, Deploy, and Run <tt>roster</tt> Using NetBeans IDE</h4>
+<ol>
+<li><b>From the File menu, choose Open Project.</b></li>
+<li><b>In the Open Project dialog, navigate to:</b><pre><tt></tt><i>tut-install</i><tt>/examples/persistence/</tt></pre></li>
+<li><b>Select the <tt>roster</tt> folder.</b></li>
+<li><b>Select the Open as Main Project and Open Required Projects check boxes.</b></li>
+<li><b>Click Open Project.</b></li>
+<li><b>In the Projects tab, right-click the <tt>roster</tt> project and select Run.</b><p>You will see the following partial output from the application client in the
+Output tab:</p><pre>List all players in team T2:
+P6 Ian Carlyle goalkeeper 555.0
+P7 Rebecca Struthers midfielder 777.0
+P8 Anne Anderson forward 65.0
+P9 Jan Wesley defender 100.0
+P10 Terry Smithson midfielder 100.0
+
+List all teams in league L1:
+T1 Honey Bees Visalia
+T2 Gophers Manteca
+T5 Crows Orland
+
+List all defenders:
+P2 Alice Smith defender 505.0
+P5 Barney Bold defender 100.0
+P9 Jan Wesley defender 100.0
+P22 Janice Walker defender 857.0
+P25 Frank Fletcher defender 399.0
+...</pre></li></ol>
+
+<a name="giqsj"></a><h4>To Build, Package, Deploy, and Run <tt>roster</tt> Using Ant</h4>
+<ol>
+<li><b>In a terminal window, go to:</b><pre><i>tut-install</i>/examples/persistence/roster/</pre></li>
+<li><b>Type the following command:</b><pre><tt><b>ant</b></tt></pre><p>This runs the <tt>default</tt> task, which compiles the source files and packages the
+application into an EAR file located at <tt></tt><i>tut-install</i><tt>/examples/persistence/roster/dist/roster.ear</tt>.</p></li>
+<li><b>To deploy the EAR, make sure that the GlassFish Server is started; then
+type the following command:</b><pre><tt><b>ant deploy</b></tt></pre><p>The build system will check whether the Java DB database server is
+running and start it if it is not running, then deploy <tt>roster.ear</tt>. The GlassFish
+Server will then drop and create the database tables during deployment, as specified
+in <tt>persistence.xml</tt>.</p><p>After <tt>roster.ear</tt> is deployed, a client JAR, <tt>rosterClient.jar</tt>, is retrieved. This contains
+the application client.</p></li>
+<li><b>To run the application client, type the following command:</b><pre><tt><b>ant run</b></tt></pre><p>You will see the output, which begins:</p><pre>[echo] running application client container.
+[exec] List all players in team T2:
+[exec] P6 Ian Carlyle goalkeeper 555.0
+[exec] P7 Rebecca Struthers midfielder 777.0
+[exec] P8 Anne Anderson forward 65.0
+[exec] P9 Jan Wesley defender 100.0
+[exec] P10 Terry Smithson midfielder 100.0
+
+[exec] List all teams in league L1:
+[exec] T1 Honey Bees Visalia
+[exec] T2 Gophers Manteca
+[exec] T5 Crows Orland
+
+[exec] List all defenders:
+[exec] P2 Alice Smith defender 505.0
+[exec] P5 Barney Bold defender 100.0
+[exec] P9 Jan Wesley defender 100.0
+[exec] P22 Janice Walker defender 857.0
+[exec] P25 Frank Fletcher defender 399.0
+...</pre></li></ol>
+
+<a name="giqry"></a><h4>The <tt>all</tt> Task</h4>
+<p>As a convenience, the <tt>all</tt> task will build, package, deploy, and run the
+application. To do this, type the following command:</p>
+
+<pre><tt><b>ant all</b></tt></pre>
+         </div>
+         <div class="navigation">
+             <a href="giqst.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="gkanq.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

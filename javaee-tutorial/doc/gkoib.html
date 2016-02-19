@@ -1,0 +1,505 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>The customer Example Application - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level3"><a href="gkkrb.html">Annotations for Field and Bean Properties of Resource Classes</a></p>
+<p class="toc level4"><a href="gkkrb.html#gkkya">Extracting Path Parameters</a></p>
+<p class="toc level4"><a href="gkkrb.html#gkkxj">Extracting Query Parameters</a></p>
+<p class="toc level4"><a href="gkkrb.html#gkkyc">Extracting Form Data</a></p>
+<p class="toc level4"><a href="gkkrb.html#gklcq">Extracting the Java Type of a Request or Response</a></p>
+<p class="toc level3 tocsp"><a href="gknav.html">Subresources and Runtime Resource Resolution</a></p>
+<p class="toc level4"><a href="gknav.html#gklag">Subresource Methods</a></p>
+<p class="toc level4"><a href="gknav.html#gkrhr">Subresource Locators</a></p>
+<p class="toc level3 tocsp"><a href="gkncy.html">Integrating JAX-RS with EJB Technology and CDI</a></p>
+<p class="toc level3"><a href="gkqda.html">Conditional HTTP Requests</a></p>
+<p class="toc level3"><a href="gkqbq.html">Runtime Content Negotiation</a></p>
+<p class="toc level3"><a href="gkknj.html">Using JAX-RS With JAXB</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3"><a href="">The <tt>customer</tt> Example Application</a></p>
+<p class="toc level4"><a href="#gkofo">The <tt>customer</tt> Application Source Files</a></p>
+<p class="toc level4"><a href="#gklgt">The <tt>CustomerService</tt> Class</a></p>
+<p class="toc level4"><a href="#gkodc">The XSD Schema for the <tt>customer</tt> Application</a></p>
+<p class="toc level4"><a href="#gkqjq">The <tt>CustomerClient</tt> Class</a></p>
+<p class="toc level4"><a href="#gkqkv">Building, Packaging, Deploying, and Running the <tt>customer</tt> Example</a></p>
+<p class="toc level5"><a href="#gkqly">To Build, Package, and Deploy the <tt>customer</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="#gkqjv">To Build, Package, and Deploy the <tt>customer</tt> Example Using Ant</a></p>
+<p class="toc level5"><a href="#glhwn">To Run the <tt>customer</tt> Example Using the Jersey Client</a></p>
+<p class="toc level5"><a href="#gkqkq">To Run the <tt>customer</tt> Example Using the Web Services Tester</a></p>
+<p class="toc level5"><a href="#gkqjl">Using Curl to Run the <tt>customer</tt> Example Application</a></p>
+</div>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="gkknj.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="bnblr.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="gkoib"></a><h2>The <tt>customer</tt> Example Application</h2>
+<a name="indexterm-1329"></a><a name="indexterm-1330"></a><p>This section describes how to build and run the <tt>customer</tt> sample application. This
+example application is a RESTful web service that uses JAXB to perform the
+Create, Read, Update, Delete (CRUD) operations for a specific entity.</p>
+
+<p>The <tt>customer</tt> sample application is in the <tt></tt><i>tut-install</i><tt>/examples/jaxrs/customer/</tt> directory. See <a href="gfiud.html">Chapter&nbsp;2, Using the Tutorial Examples</a> for
+basic information on building and running sample applications.</p>
+
+
+
+<a name="gkofo"></a><h3>The <tt>customer</tt> Application Source Files</h3>
+<p>The source files of this application are at <tt></tt><i>tut-install</i><tt>/examples/jaxrs/customer/src/java/</tt>. This application has
+the following source files:</p>
+
+
+<ul><li><p><a href="#gklgt">The <tt>CustomerService</tt> Class</a></p>
+
+</li>
+<li><p><a href="#gkodc">The XSD Schema for the <tt>customer</tt> Application</a></p>
+
+</li></ul>
+
+
+<a name="gklgt"></a><h3>The <tt>CustomerService</tt> Class</h3>
+<pre>@Path("/Customer")
+public class CustomerService {
+    public static final String DATA_STORE = "CustomerDATA.txt";
+    public static final Logger logger = 
+            Logger.getLogger(CustomerService.class.getCanonicalName());
+
+    @POST
+    @Consumes("application/xml")
+    public Response createCustomer(CustomerType customer) {
+        try {
+            long customerId = persist(customer);
+            return Response.created(URI.create("/" + customerId)).build();
+        } catch (Exception e) {
+          throw new WebApplicationException(e, Response.Status.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    private long persist(CustomerType customer) throws IOException {
+        File dataFile = new File(DATA_STORE);
+        if (!dataFile.exists()) {
+            dataFile.createNewFile();
+        }
+        long customerId = customer.getId();
+        Properties properties = new Properties();
+        properties.load(new FileInputStream(dataFile));
+        properties.setProperty(String.valueOf(customerId),
+                customer.getFirstName() + "," + customer.getLastName()
+                + "," + customer.getEmail() + "," + customer.getCity() 
+                + "," + customer.getCountry());
+        properties.store(new FileOutputStream(DATA_STORE),null);
+        return customerId;
+    }
+}</pre><p>The <tt>CustomerService</tt> class has a <tt>createCustomer</tt> method that creates a customer resource
+based on the <tt>CustomerType</tt> and returns a URI for the new resource.
+The <tt>persist</tt> method emulates the behavior of the JPA entity manager. This example
+uses a <tt>java.util.Properties</tt> file to store data. If you are using the
+default configuration of GlassFish, the properties file is at <tt></tt><i>domain-dir</i><tt>/CustomerDATA.txt</tt>.</p>
+
+<p>The response that is returned to the client has a URI to
+the newly created resource. The return type is an entity body mapped from
+the property of the response with the status code specified by the status
+property of the response. The <tt>WebApplicationException</tt> is a <tt>RuntimeException</tt> that is used to
+wrap the appropriate HTTP error status code, such as 404, 406, 415, or
+500.</p>
+
+<p>The <tt>@Consumes("application/xml")</tt> and <tt>@Produces("application/xml")</tt> annotations set the request and response media types
+to use the appropriate MIME client. These annotations can be applied to a
+resource method, a resource class, or even to an entity provider. If you
+do not use these annotations, JAX-RS allows the use of any media type
+(<tt>"*/*"</tt>).</p>
+
+<p>The following code snippet shows the implementation of the <tt>getCustomer</tt> and <tt>findbyId</tt>
+methods. The <tt>getCustomer</tt> method uses the <tt>@Produces</tt>annotation and returns a <tt>JAXBElement</tt> with a
+<tt>CustomerType</tt> object, which is a JAXB XML based entity, generated through the <tt>xjc</tt>
+binding compiler.</p>
+
+<pre>@GET
+@Path("{id}")
+@Produces("application/xml")
+public JAXBElement&lt;CustomerType> getCustomer(@PathParam("id") String customerId) {
+    CustomerType customer = null;
+    try {
+        customer = findById(customerId);
+    } catch (Exception ex) {
+        logger.log(Level.SEVERE,
+                   "Error calling searchCustomer() for customerId {0}. {1}",
+                   new Object[]{customerId, ex.getMessage()});
+    }
+    return new ObjectFactory().createCustomer(customer);
+}
+
+private CustomerType findById(String customerId) throws IOException {
+    properties properties = new Properties();
+    properties.load(new FileInputStream(DATA_STORE));
+    String rawData = properties.getProperty(customerId);
+    if (rawData != null) {
+        final String[] field = rawData.split(",");
+        ObjectFactory objFactory = new ObjectFactory();
+        CustomerType customer = objFactory.createCustomerType();
+        customer.setFirstName(field[0]);
+        customer.setLastName(field[1]);
+        customer.setEmail(field[2]);
+        customer.setCity(field[3]);
+        customer.setCountry(field[4]);
+        customer.setId(Integer.parseInt(customerId));
+        return customer;
+    }
+    return null;
+}</pre>
+
+<a name="gkodc"></a><h3>The XSD Schema for the <tt>customer</tt> Application</h3>
+<p>A sample XSD schema for the <tt>Customer</tt> entity is as follows:</p>
+
+<pre>&lt;?xml version="1.0"?>
+&lt;xs:schema targetNamespace="http://xml.customer"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           xmlns:ora="http://xml.customer">
+    &lt;xs:element name="customer" type="ora:CustomerType"/>
+    &lt;xs:complexType name="CustomerType">
+        &lt;xs:sequence>
+            &lt;xs:element name="id" type="xs:int"/>
+            &lt;xs:element name="firstName" type="xs:string"/>
+            &lt;xs:element name="lastName" type="xs:string"/>
+            &lt;xs:element name="city" type="xs:string"/>
+            &lt;xs:element name="country" type="xs:string"/>
+        &lt;/xs:sequence>
+    &lt;/xs:complexType>
+&lt;/xs:schema></pre>
+
+<a name="gkqjq"></a><h3>The <tt>CustomerClient</tt> Class</h3>
+<p>Jersey is the reference implementation of JAX-RS (JSR 311). You can use the
+Jersey client API to write a test client for the <tt>customer</tt> example application.
+You can find the Jersey APIs at <a href="http://jersey.java.net/nonav/apidocs/latest/jersey/">http://jersey.java.net/nonav/apidocs/latest/jersey/</a>.</p>
+
+<p>The <tt>CustomerClient</tt> class calls Jersey APIs to test the <tt>CustomerService</tt> web service:</p>
+
+<pre>package customer.rest.client;
+
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.WebResource;
+import customer.xml.CustomerType;
+import customer.xml.ObjectFactory;
+import java.util.logging.Logger;
+import javax.ws.rs.core.MediaType;
+import javax.xml.bind.JAXBElement;
+
+public class CustomerClient {
+    public static final Logger logger =
+            Logger.getLogger(CustomerClient.class.getCanonicalName());
+
+    public static void main(String[] args) {
+
+        Client client = Client.create();
+        // Define the URL for testing the example application
+        WebResource webResource = 
+            client.resource("http://localhost:8080/customer/Customer");
+        
+        ObjectFactory factory = new ObjectFactory();
+
+        // Test the POST method
+        CustomerType customerType = new CustomerType();
+
+        customerType.setId(1);
+        customerType.setFirstName("Duke");
+        customerType.setLastName("OfJava");
+        customerType.setCity("JavaTown");
+        customerType.setCountry("USA");
+
+        JAXBElement&lt;CustomerType> customer = 
+            factory.createCustomer(customerType);
+
+        ClientResponse response = 
+            webResource.type("application/xml").post(ClientResponse.class, 
+                customer);
+
+        logger.info("POST status: {0}" + response.getStatus());
+        if (response.getStatus() == 201) {
+            logger.info("POST succeeded");
+        } else {
+            logger.info("POST failed");
+        }
+
+        // Test the GET method using content negotiation
+        response = webResource.path("1").accept(MediaType.APPLICATION_XML)
+                                        .get(ClientResponse.class);
+        CustomerType entity = response.getEntity(CustomerType.class);
+
+        logger.info("GET status: " + response.getStatus());
+        if (response.getStatus() == 200) {
+            logger.info("GET succeeded, city is " + entity.getCity());
+        } else {
+            logger.info("GET failed");
+        }
+
+        // Test the DELETE method
+        response = webResource.path("1").delete(ClientResponse.class);
+
+        logger.info("DELETE status: " + response.getStatus());
+        if (response.getStatus() == 204) {
+            logger.info("DELETE succeeded (no content)");
+        } else {
+            logger.info("DELETE failed");
+        }
+
+        response = webResource.path("1").accept(MediaType.APPLICATION_XML)
+                              .get(ClientResponse.class);
+        entity = response.getEntity(CustomerType.class);
+
+        logger.info("GET status: " + response.getStatus());
+
+        try {
+            logger.info(entity.getCity());
+        } catch (NullPointerException ne) {
+            // as expected, returns null because you have deleted the customer
+            logger.info("After DELETE, city is: " + ne.getCause());
+        }
+    }
+}</pre><p>This Jersey client tests the POST, GET, and DELETE methods. </p>
+
+<p>All of these HTTP status codes indicate success: 201 for POST, 200
+for GET, and 204 for DELETE. For details about the meanings of HTTP
+status codes, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</a>.</p>
+
+
+
+<a name="gkqkv"></a><h3>Building, Packaging, Deploying, and Running the <tt>customer</tt> Example</h3>
+<p>You can build, package, deploy, and run the <tt>customer</tt> application by using either
+NetBeans IDE or the Ant tool.</p>
+
+
+
+<a name="gkqly"></a><h4>To Build, Package, and Deploy the <tt>customer</tt> Example Using NetBeans IDE</h4>
+<p>This procedure builds the application into the <tt></tt><i>tut-install</i><tt>/examples/jax-rs/customer/build/web/</tt> directory. The contents of
+this directory are deployed to the GlassFish Server.</p>
+
+<ol>
+<li><b>From the File menu, choose Open Project.</b></li>
+<li><b>In the Open Project dialog, navigate to:</b><pre><tt></tt><i>tut-install</i><tt>/examples/jaxrs/</tt></pre></li>
+<li><b>Select the <tt>customer</tt> folder.</b></li>
+<li><b>Select the Open as Main Project check box.</b></li>
+<li><b>Click Open Project.</b><p>It may appear that there are errors in the source files, because the
+files refer to JAXB classes that will be generated when you build the
+application. You can ignore these errors.</p></li>
+<li><b>In the Projects tab, right-click the <tt>customer</tt> project and select Deploy.</b></li></ol>
+
+<a name="gkqjv"></a><h4>To Build, Package, and Deploy the <tt>customer</tt> Example Using Ant</h4>
+<ol>
+<li><b>In a terminal window, go to:</b><pre><tt></tt><i>tut-install</i><tt>/examples/jaxrs/customer/</tt></pre></li>
+<li><b>Type the following command:</b><pre><tt><b>ant</b></tt></pre><p>This command calls the <tt>default</tt> target, which builds and packages the application into
+a WAR file, <tt>customer.war</tt>, located in the <tt>dist</tt> directory.</p></li>
+<li><b>Type the following command:</b><pre><tt><b>ant deploy</b></tt></pre><p>Typing this command deploys <tt>customer.war</tt> to the GlassFish Server.</p></li></ol>
+
+<a name="glhwn"></a><h4>To Run the <tt>customer</tt> Example Using the Jersey Client</h4>
+<ol>
+<li><b>In NetBeans IDE, expand the Source Packages node.</b></li>
+<li><b>Expand the <tt>customer.rest.client</tt> node.</b></li>
+<li><b>Right-click the <tt>CustomerClient.java</tt> file and click Run File.</b><p>The output of the client looks like this:</p><pre>run:
+Jan 18, 2011 2:40:20 PM customer.rest.client.CustomerClient main
+INFO: POST status: 201
+Jan 18, 2011 2:40:20 PM customer.rest.client.CustomerClient main
+INFO: POST succeeded
+Jan 18, 2011 2:40:20 PM customer.rest.client.CustomerClient main
+INFO: GET status: 200
+Jan 18, 2011 2:40:20 PM customer.rest.client.CustomerClient main
+INFO: GET succeeded, city is JavaTown
+Jan 18, 2011 2:40:20 PM customer.rest.client.CustomerClient main
+INFO: DELETE status: 204
+Jan 18, 2011 2:40:20 PM customer.rest.client.CustomerClient main
+INFO: DELETE succeeded (no content)
+Jan 18, 2011 2:40:20 PM customer.rest.client.CustomerClient main
+INFO: GET status: 200
+Jan 18, 2011 2:40:20 PM customer.rest.client.CustomerClient main
+INFO: After DELETE, city is: null
+BUILD SUCCESSFUL (total time: 5 seconds)</pre></li></ol>
+
+<a name="gkqkq"></a><h4>To Run the <tt>customer</tt> Example Using the Web Services Tester</h4>
+<ol>
+<li><b>In NetBeans IDE, right-click the customer node and select Test RESTful Web Services.</b></li>
+<li><b>In the Configure REST Test Client dialog, click OK to accept the default
+option.</b></li>
+<li><b>When the test client appears in the browser, select the Customer resource node
+in the left pane.</b></li>
+<li><b>Paste the following XML code into the Content text area, replacing &ldquo;Insert content
+here&rdquo;:</b><pre>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;ora:customer xmlns:ora="http://xml.customer" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://xml.customer Customer.xsd">
+&lt;ora:id>1&lt;/ora:id>
+&lt;ora:firstName>Duke&lt;/ora:firstName>
+&lt;ora:lastName>OfJava&lt;/ora:lastName>
+&lt;ora:city>JavaTown&lt;/ora:city>
+&lt;ora:country>USA&lt;/ora:country>
+&lt;/ora:customer></pre><p>You can find the code in the file <tt>customer/sample-input.txt</tt>.</p></li>
+<li><b>Click Test.</b><p>The following message appears in the window below:</p><pre>Status: 201 (Created)</pre></li>
+<li><b>Expand the Customer node and click <tt>{id}</tt>.</b></li>
+<li><b>Type <tt>1</tt> in the id field and click Test to test the GET
+method.</b><p>The following status message appears:</p><pre>Status: 200 (OK)</pre><p>The XML output for the resource appears in the Response window:</p><pre>&lt;?xml version="1.0" encoding="UTF-8"?>
+    &lt;customer xmlns="http://xml.customer">
+        &lt;id>1&lt;/id>
+        &lt;firstName>Duke&lt;/firstName>
+        &lt;lastName>OfJava&lt;/lastName>
+        &lt;city>JavaTown&lt;/city>
+        &lt;country>USA&lt;/country>
+    &lt;/customer></pre><p>A GET for a nonexistent ID also returns a <tt>200 (OK)</tt> status, but the
+output in the Response window shows no content:</p><pre>&lt;?xml version="1.0" encoding="UTF-8"?>
+   &lt;customer xmlns="http://xml.customer" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/></pre><p>You can test other methods as follows:</p>
+
+
+<ul><li><p>Select PUT, type the input for an existing customer, modify any content except the <tt>id</tt> value, and click Test to update the customer fields. A successful update returns the following status message:</p>
+
+<pre>Status: 303 (See Other)</pre></li>
+<li><p>Select DELETE, type the ID for an existing customer, and click Test to remove the customer. A successful delete returns the following status message:</p>
+
+<pre>Status: 303 (See Other)</pre></li></ul>
+</li></ol>
+
+<a name="gkqjl"></a><h4>Using Curl to Run the <tt>customer</tt> Example Application</h4>
+<p>Curl is a command-line tool that you can use to run the
+customer application on UNIX platforms. You can download Curl from <a href="http://curl.haxx.se">http://curl.haxx.se</a> or add
+it to a Cygwin installation.</p>
+
+<p>To add a new customer and test the POST method, use the
+following command:</p>
+
+<pre>curl -i --data @sample-input.txt \
+--header Content-type:application/xml http://localhost:8080/customer/Customer</pre><p>A successful POST returns an HTTP <tt>Status: 201 (Created)</tt> status.</p>
+
+<p>To retrieve the details of the customer whose id is 1, use
+the following command:</p>
+
+<pre>curl -i -X GET http://localhost:8080/customer/Customer/1</pre><p>A successful GET returns an HTTP <tt>Status: 200 (OK)</tt> status.</p>
+
+<p>To delete a customer record, use the following command:</p>
+
+<pre>curl -i -X DELETE http://localhost:8080/customer/Customer/1</pre><p>A successful DELETE returns an HTTP <tt>Status: 303</tt> status.</p>
+
+
+         </div>
+         <div class="navigation">
+             <a href="gkknj.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="bnblr.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

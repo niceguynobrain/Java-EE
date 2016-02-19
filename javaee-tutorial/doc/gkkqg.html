@@ -1,0 +1,266 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Asynchronous Method Invocation - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3"><a href="">Asynchronous Method Invocation</a></p>
+<p class="toc level4"><a href="#gkifj">Creating an Asynchronous Business Method</a></p>
+<p class="toc level4"><a href="#gkiem">Calling Asynchronous Methods from Enterprise Bean Clients</a></p>
+<p class="toc level5"><a href="#gkicm">Retrieving the Final Result from an Asynchronous Method Invocation</a></p>
+<p class="toc level5"><a href="#gkidb">Cancelling an Asynchronous Method Invocation</a></p>
+<p class="toc level5"><a href="#gkiev">Checking the Status of an Asynchronous Method Invocation</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="gkiez.html">The <tt>async</tt> Example Application</a></p>
+<p class="toc level4"><a href="gkiez.html#gkiqj">Architecture of the <tt>async</tt> Example Application</a></p>
+<p class="toc level4"><a href="gkiez.html#gkirq">Configuring the Keystore and Truststore in GlassFish Server</a></p>
+<p class="toc level4"><a href="gkiez.html#gkinw">Running the <tt>async</tt> Example Application in NetBeans IDE</a></p>
+<p class="toc level4"><a href="gkiez.html#gkrfb">Running the <tt>async</tt> Example Application Using Ant</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="gkidz.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="gkiez.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="gkkqg"></a><h2>Asynchronous Method Invocation</h2>
+<p>Session beans can implement <b>asynchronous methods</b>, business methods where control is returned to the
+client by the enterprise bean container before the method is invoked on the
+session bean instance. Clients may then use the Java SE concurrency API to
+retrieve the result, cancel the invocation, and check for exceptions. Asynchronous methods are
+typically used for long-running operations, for processor-intensive tasks, for background tasks, to increase application
+throughput, or to improve application response time if the method invocation result isn't
+required immediately.</p>
+
+<p><a name="indexterm-1522"></a>When a session bean client invokes a typical non-asynchronous business method, control is
+not returned to the client until the method has completed. Clients calling asynchronous
+methods, however, immediately have control returned to them by the enterprise bean container.
+This allows the client to perform other tasks while the method invocation completes.
+If the method returns a result, the result is an implementation of the
+<tt>java.util.concurrent.Future&lt;V></tt> interface, where &ldquo;V&rdquo; is the result value type. The <tt>Future&lt;V></tt> interface defines
+methods the client may use to check if the computation is completed, wait
+for the invocation to complete, retrieve the final result, and cancel the invocation.</p>
+
+
+
+<a name="gkifj"></a><h3>Creating an Asynchronous Business Method</h3>
+<a name="indexterm-1523"></a><a name="indexterm-1524"></a><p>Annotate a business method with <tt>javax.ejb.Asynchronous</tt> to mark that method as an asynchronous
+method, or apply <tt>@Asynchronous</tt> at the class level to mark all the business
+methods of the session bean as asynchronous methods. Session bean methods that expose
+web services can't be asynchronous.</p>
+
+<p>Asynchronous methods must return either <tt>void</tt> or an implementation of the <tt>Future&lt;V></tt> interface. Asynchronous
+methods that return <tt>void</tt> can't declare application exceptions, but if they return <tt>Future&lt;V></tt>, they
+may declare application exceptions. For example:</p>
+
+<pre>@Asynchronous
+public Future&lt;String> processPayment(Order order) throws PaymentException { ... }</pre><p>This method will attempt to process the payment of an order, and
+return the status as a <tt>String</tt>. Even if the payment processor takes a long
+time, the client can continue working, and display the result when the processing
+finally completes.</p>
+
+<p>The <tt>javax.ejb.AsyncResult&lt;V></tt> class is a concrete implementation of the <tt>Future&lt;V></tt> interface provided as a
+helper class for returning asynchronous results. <tt>AsyncResult</tt> has a constructor with the
+result as a parameter, making it easy to create <tt>Future&lt;V></tt> implementations. For example, the
+<tt>processPayment</tt> method would use <tt>AsyncResult</tt> to return the status as a <tt>String</tt>:</p>
+
+<pre>@Asynchronous
+public Future&lt;String> processPayment(Order order) throws PaymentException {
+  ...
+  String status = ...;
+  return new AsyncResult&lt;String>(status);
+}</pre><p>The result is returned to the enterprise bean container, not directly to the
+client, and the enterprise bean container makes the result available to the client.
+The session bean can check if the client requested that the invocation be
+cancelled by calling the <tt>javax.ejb.SessionContext.wasCancelled</tt> method. For example:</p>
+
+<pre>@Asynchronous
+public Future&lt;String> processPayment(Order order) throws PaymentException {
+  ...
+  if (SessionContext.wasCancelled()) {
+    // clean up
+  } else {
+    // process the payment
+  }
+  ...
+}</pre>
+
+<a name="gkiem"></a><h3>Calling Asynchronous Methods from Enterprise Bean Clients</h3>
+<a name="indexterm-1525"></a><p>Session bean clients call asynchronous methods just like non-asynchronous business methods. If the
+asynchronous method returns a result, the client receives a <tt>Future&lt;V></tt> instance as soon
+as the method is invoked. This instance can be used to retrieve the
+final result, cancel the invocation, check whether the invocation has completed, check if there
+were any exceptions thrown during processing, and check if the invocation was cancelled.</p>
+
+
+
+<a name="gkicm"></a><h4>Retrieving the Final Result from an Asynchronous Method Invocation</h4>
+<a name="indexterm-1526"></a><p>The client may retrieve the result using one of the <tt>Future&lt;V>.get</tt> methods.
+If processing hasn't completed by the session bean handling the invocation, calling one
+of the <tt>get</tt> methods will result in the client halting execution until the
+invocation completes. Use the <tt>Future&lt;V>.isDone</tt> method to determine if processing has completed before calling
+one of the <tt>get</tt> methods.</p>
+
+<p>The <tt>get()</tt> method returns the result as the type specified in the type
+value of the <tt>Future&lt;V></tt> instance. For example, calling <tt>Future&lt;String>.get()</tt> will return a <tt>String</tt> object.
+If the method invocation was cancelled, calls to <tt>get()</tt> result in a <tt>java.util.concurrent.CancellationException</tt>
+being thrown. If the invocation resulted in an exception during processing by the
+session bean, calls to <tt>get()</tt> result in a <tt>java.util.concurrent.ExecutionException</tt> being thrown. The cause of
+the <tt>ExecutionException</tt> may be retrieved by calling the <tt>ExecutionException.getCause</tt> method.</p>
+
+<p>The <tt>get(long timeout, java.util.concurrent.TimeUnit unit)</tt> method is similar to the <tt>get()</tt> method, but allows the client to
+set a timeout value. If the timeout value is exceeded, a <tt>java.util.concurrent.TimeoutException</tt>
+is thrown. See the Javadoc for the <tt>TimeUnit</tt> class for the available units
+of time to specify the timeout value.</p>
+
+
+
+<a name="gkidb"></a><h4>Cancelling an Asynchronous Method Invocation</h4>
+<a name="indexterm-1527"></a><p>Call the <tt>cancel(boolean mayInterruptIfRunning)</tt> method on the <tt>Future&lt;V></tt> instance to attempt to cancel the method
+invocation. The <tt>cancel</tt> method returns <tt>true</tt> if the cancellation was successful, and
+<tt>false</tt> if the method invocation cannot be cancelled.</p>
+
+<p>When the invocation cannot be cancelled, the <tt>mayInterruptIfRunning</tt> parameter is used to
+alert the session bean instance on which the method invocation is running that
+the client attempted to cancel the invocation. If <tt>mayInterruptIfRunning</tt> is set to <tt>true</tt>, calls
+to <tt>SessionContext.wasCancelled</tt> by the session bean instance will return <tt>true</tt>. If <tt>mayInterruptIfRunning</tt> is
+to set <tt>false</tt>, calls to <tt>SessionContext.wasCancelled</tt> by the session bean instance will
+return <tt>false</tt>.</p>
+
+<p>The <tt>Future&lt;V>.isCancelled</tt> method is used to check if the method invocation was cancelled
+before the asynchronous method invocation completed by calling <tt>Future&lt;V>.cancel</tt>. The <tt>isCancelled</tt> method returns <tt>true</tt>
+if the invocation was cancelled.</p>
+
+
+
+<a name="gkiev"></a><h4>Checking the Status of an Asynchronous Method Invocation</h4>
+<a name="indexterm-1528"></a><p>The <tt>Future&lt;V>.isDone</tt> method returns <tt>true</tt> if the session bean instance completed processing
+the method invocation. The <tt>isDone</tt> method returns <tt>true</tt> if the asynchronous method invocation completed
+normally, was cancelled, or resulted in an exception. That is, <tt>isDone</tt> only indicates
+whether the session bean has completed processing the invocation.</p>
+
+
+         </div>
+         <div class="navigation">
+             <a href="gkidz.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="gkiez.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

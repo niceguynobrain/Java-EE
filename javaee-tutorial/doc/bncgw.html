@@ -1,0 +1,369 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>An Application That Uses the JMS API with a Session Bean - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level3"><a href="bncfa.html">Writing Simple JMS Applications</a></p>
+<p class="toc level4"><a href="bncfa.html#bncfb">A Simple Example of Synchronous Message Receives</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfc">Writing the Clients for the Synchronous Receive Example</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfd">Starting the JMS Provider</a></p>
+<p class="toc level5"><a href="bncfa.html#gktjs">JMS Administered Objects for the Synchronous Receive Example</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfg">Building, Packaging, Deploying, and Running the Clients for the Synchronous Receive Example</a></p>
+<p class="toc level4 tocsp"><a href="bncfa.html#bncfh">A Simple Example of Asynchronous Message Consumption</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfi">Writing the Clients for the Asynchronous Receive Example</a></p>
+<p class="toc level5"><a href="bncfa.html#gjsch">To Build and Package the <tt>AsynchConsumer</tt> Client  Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bncfa.html#gjscf">To Deploy and Run the Clients for the Asynchronous Receive Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfj">To Build and Package the <tt>AsynchConsumer</tt> Client Using Ant</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfk">To Deploy and Run the Clients for the Asynchronous Receive Example Using Ant and the <tt>appclient</tt> Command</a></p>
+<p class="toc level4 tocsp"><a href="bncfa.html#bncfl">A Simple Example of Browsing Messages in a Queue</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfm">Writing the Client for the Queue Browser Example</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfo">To Build, Package, Deploy, and Run the <tt>MessageBrowser</tt> Client Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfn">To Build, Package, Deploy, and Run the <tt>MessageBrowser</tt> Client Using Ant and the <tt>appclient</tt> Command</a></p>
+<p class="toc level4 tocsp"><a href="bncfa.html#bncfp">Running JMS Clients on Multiple Systems</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfq">To Create Administered Objects for Multiple Systems</a></p>
+<p class="toc level5"><a href="bncfa.html#gjsdi">Changing the Default Host Name</a></p>
+<p class="toc level5"><a href="bncfa.html#gjsag">To Edit, Build, Package, Deploy, and Run the Clients Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfs">To Edit, Build, Package, Deploy, and Run the Clients Using Ant and the <tt>appclient</tt> Command</a></p>
+<p class="toc level4 tocsp"><a href="bncfa.html#bncft">Undeploying and Cleaning the Simple JMS Examples</a></p>
+<p class="toc level3 tocsp"><a href="giwfh.html">Writing Robust JMS Applications</a></p>
+<p class="toc level4"><a href="giwfh.html#bncfx">A Message Acknowledgment Example</a></p>
+<p class="toc level5"><a href="giwfh.html#gjsab">To Build, Package, Deploy, and Run <tt>ackequivexample</tt> Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="giwfh.html#gjscg">To Build, Package, Deploy, and Run <tt>ackequivexample</tt> Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="giwfh.html#bncgg">A Durable Subscription Example</a></p>
+<p class="toc level5"><a href="giwfh.html#gjsar">To Build, Package, Deploy, and Run <tt>durablesubscriberexample</tt> Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="giwfh.html#gjsci">To Build, Package, Deploy, and Run <tt>durablesubscriberexample</tt> Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="giwfh.html#bncgj">A Local Transaction Example</a></p>
+<p class="toc level5"><a href="giwfh.html#gjsem">To Build, Package, Deploy, and Run <tt>transactedexample</tt> Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="giwfh.html#gjsha">To Build, Package, Deploy, and Run <tt>transactedexample</tt> Using Ant and the <tt>appclient</tt> Command</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3 tocsp"><a href="">An Application That Uses the JMS API with a Session Bean</a></p>
+<p class="toc level4"><a href="#bncgx">Writing the Application Components for the <tt>clientsessionmdb</tt> Example</a></p>
+<p class="toc level5"><a href="#bncgz">Coding the Application Client: <tt>MyAppClient.java</tt></a></p>
+<p class="toc level5"><a href="#bncha">Coding the Publisher Session Bean</a></p>
+<p class="toc level5"><a href="#bnchb">Coding the Message-Driven Bean: <tt>MessageBean.java</tt></a></p>
+<p class="toc level4 tocsp"><a href="#bnchc">Creating Resources for the <tt>clientsessionmdb</tt> Example</a></p>
+<p class="toc level4"><a href="#bnchd">To Build, Package, Deploy, and Run the <tt>clientsessionmdb</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="#bnche">To Build, Package, Deploy, and Run the <tt>clientsessionmdb</tt> Example Using Ant</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnchf.html">An Application That Uses the JMS API with an Entity</a></p>
+<p class="toc level4"><a href="bnchf.html#bnchg">Overview of the <tt>clientmdbentity</tt> Example Application</a></p>
+<p class="toc level4"><a href="bnchf.html#bnchi">Writing the Application Components for the <tt>clientmdbentity</tt> Example</a></p>
+<p class="toc level5"><a href="bnchf.html#bnchj">Coding the Application Client: <tt>HumanResourceClient.java</tt></a></p>
+<p class="toc level5"><a href="bnchf.html#bnchk">Coding the Message-Driven Beans for the <tt>clientmdbentity</tt> Example</a></p>
+<p class="toc level5"><a href="bnchf.html#bnchl">Coding the Entity Class for the <tt>clientmdbentity</tt> Example</a></p>
+<p class="toc level4 tocsp"><a href="bnchf.html#bnchm">Creating Resources for the <tt>clientmdbentity</tt> Example</a></p>
+<p class="toc level4"><a href="bnchf.html#bnchn">To Build, Package, Deploy, and Run the <tt>clientmdbentity</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="bnchf.html#bncho">To Build, Package, Deploy, and Run the <tt>clientmdbentity</tt> Example Using Ant</a></p>
+<p class="toc level3 tocsp"><a href="bnchp.html">An Application Example That Consumes Messages from a Remote Server</a></p>
+<p class="toc level4"><a href="bnchp.html#bnchq">Overview of the <tt>consumeremote</tt> Example Modules</a></p>
+<p class="toc level4"><a href="bnchp.html#bnchs">Writing the Module Components for the <tt>consumeremote</tt> Example</a></p>
+<p class="toc level4"><a href="bnchp.html#bncht">Creating Resources for the <tt>consumeremote</tt> Example</a></p>
+<p class="toc level4"><a href="bnchp.html#bnchu">Using Two Application Servers for the <tt>consumeremote</tt> Example</a></p>
+<p class="toc level4"><a href="bnchp.html#bnchv">To Build, Package, Deploy, and Run the <tt>consumeremote</tt>Modules Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="bnchp.html#bnchw">To Build, Package, Deploy, and Run the <tt>consumeremote</tt> Modules Using Ant</a></p>
+<p class="toc level3 tocsp"><a href="bnchx.html">An Application Example That Deploys a Message-Driven Bean on Two Servers</a></p>
+<p class="toc level4"><a href="bnchx.html#bnchy">Overview of the <tt>sendremote</tt> Example Modules</a></p>
+<p class="toc level4"><a href="bnchx.html#bnchz">Writing the Module Components for the <tt>sendremote</tt> Example</a></p>
+<p class="toc level5"><a href="bnchx.html#bncib">Coding the Application Client: <tt>MultiAppServerClient.java</tt></a></p>
+<p class="toc level5"><a href="bnchx.html#bncic">Coding the Message-Driven Bean: <tt>ReplyMsgBean.java</tt></a></p>
+<p class="toc level4 tocsp"><a href="bnchx.html#bncid">Creating Resources for the <tt>sendremote</tt> Example</a></p>
+<p class="toc level4"><a href="bnchx.html#gkpbq">To Enable Deployment on the Remote System</a></p>
+<p class="toc level4"><a href="bnchx.html#bncie">To Use Two Application Servers for the <tt>sendremote</tt> Example</a></p>
+<p class="toc level4"><a href="bnchx.html#bncif">To Build, Package, Deploy, and Run the <tt>sendremote</tt> Modules Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="bnchx.html#bncig">To Build, Package, Deploy, and Run the <tt>sendremote</tt> Modules Using Ant</a></p>
+<p class="toc level2 tocsp"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="giwfh.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="bnchf.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bncgw"></a><h2>An Application That Uses the JMS API with a Session Bean</h2>
+<a name="indexterm-2517"></a><a name="indexterm-2518"></a><a name="indexterm-2519"></a><a name="indexterm-2520"></a><p>This section explains how to write, compile, package, deploy, and run an application
+that uses the JMS API in conjunction with a session bean. The application
+contains the following components:</p>
+
+
+<ul><li><p>An application client that invokes a session bean</p>
+
+</li>
+<li><p>A session bean that publishes several messages to a topic</p>
+
+</li>
+<li><p>A message-driven bean that receives and processes the messages using a durable topic subscriber and a message selector</p>
+
+</li></ul>
+<p>You will find the source files for this section in the <tt></tt><i>tut-install</i><tt>/examples/jms/clientsessionmdb/</tt>
+directory. Path names in this section are relative to this directory.</p>
+
+
+
+<a name="bncgx"></a><h3>Writing the Application Components for the <tt>clientsessionmdb</tt> Example</h3>
+<p>This application demonstrates how to send messages from an enterprise bean (in this
+case, a session bean) rather than from an application client, as in the
+example in <a href="bnbpk.html">Chapter&nbsp;25, A Message-Driven Bean Example</a>. <a href="#bncgy">Figure&nbsp;48-3</a> illustrates the structure of this application.</p>
+
+<a name="bncgy"></a><p class="caption">Figure&nbsp;48-3 An Enterprise Bean Application: Client to Session Bean to Message-Driven Bean</p><img src="figures/jmsj2ee-clientSessionMdbApp.gif" alt="Diagram of application showing an application client calling a session bean, which publishes a message that is consumed by a message-driven bean"></img><p>The Publisher enterprise bean in this example is the enterprise-application equivalent of a
+wire-service news feed that categorizes news events into six news categories. The message-driven
+bean could represent a newsroom, where the sports desk, for example, would set
+up a subscription for all news events pertaining to sports.</p>
+
+<p>The application client in the example injects the Publisher enterprise bean&rsquo;s remote home
+interface and then calls the bean&rsquo;s business method. The enterprise bean creates 18
+text messages. For each message, it sets a <tt>String</tt> property randomly to one
+of six values representing the news categories and then publishes the message to
+a topic. The message-driven bean uses a message selector for the property to
+limit which of the published messages it receives.</p>
+
+
+
+<a name="bncgz"></a><h4>Coding the Application Client: <tt>MyAppClient.java</tt></h4>
+<p>The application client, <tt>clientsessionmdb-app-client/src/java/MyAppClient.java</tt>, performs no JMS API operations and so is
+simpler than the client in <a href="bnbpk.html">Chapter&nbsp;25, A Message-Driven Bean Example</a>. The client uses dependency injection to obtain the
+Publisher enterprise bean&rsquo;s business interface:</p>
+
+<pre>@EJB(name="PublisherRemote")
+static private PublisherRemote publisher;</pre><p>The client then calls the bean&rsquo;s business method twice.</p>
+
+
+
+<a name="bncha"></a><h4>Coding the Publisher Session Bean</h4>
+<p>The Publisher bean is a stateless session bean that has one business method.
+The Publisher bean uses a remote interface rather than a local interface because
+it is accessed from the application client.</p>
+
+<p>The remote interface, <tt>clientsessionmdb-ejb/src/java/sb/PublisherRemote.java</tt>, declares a single business method, <tt>publishNews</tt>.</p>
+
+<p>The bean class, <tt>clientsessionmdb-ejb/src/java/sb/PublisherBean.java</tt>, implements the <tt>publishNews</tt> method and its helper method <tt>chooseType</tt>.
+The bean class also injects <tt>SessionContext</tt>, <tt>ConnectionFactory</tt>, and <tt>Topic</tt> resources and implements <tt>@PostConstruct</tt>
+and <tt>@PreDestroy</tt> callback methods. The bean class begins as follows:</p>
+
+<pre>@Stateless
+@Remote({PublisherRemote.class})
+public class PublisherBean implements PublisherRemote {
+
+    @Resource
+    private SessionContext sc;
+
+    @Resource(lookup = "jms/ConnectionFactory")
+    private ConnectionFactory connectionFactory;
+
+    @Resource(lookup = "jms/Topic")
+    private Topic topic;
+    ...</pre><p><a name="indexterm-2521"></a>The <tt>@PostConstruct</tt> callback method of the bean class, <tt>makeConnection</tt>, creates the <tt>Connection</tt> used
+by the bean. The business method <tt>publishNews</tt> creates a <tt>Session</tt> and a <tt>MessageProducer</tt>
+and publishes the messages.</p>
+
+<p><a name="indexterm-2522"></a>The <tt>@PreDestroy</tt> callback method, <tt>endConnection</tt>, deallocates the resources that were allocated by the
+<tt>@PostConstruct</tt> callback method. In this case, the method closes the <tt>Connection</tt>.</p>
+
+
+
+<a name="bnchb"></a><h4>Coding the Message-Driven Bean: <tt>MessageBean.java</tt></h4>
+<a name="indexterm-2523"></a><a name="indexterm-2524"></a><p>The message-driven bean class, <tt>clientsessionmdb-ejb/src/java/mdb/MessageBean.java</tt>, is almost identical to the one in
+<a href="bnbpk.html">Chapter&nbsp;25, A Message-Driven Bean Example</a>. However, the <tt>@MessageDriven</tt> annotation is different, because instead of a queue the
+bean is using a topic with a durable subscription, and it is also
+using a message selector. Therefore, the annotation sets the activation config properties <tt>messageSelector</tt>,
+<tt>subscriptionDurability</tt>, <tt>clientId</tt>, and <tt>subscriptionName</tt>, as follows:</p>
+
+<pre>@MessageDriven(mappedName = "jms/Topic", activationConfig =  {
+    @ActivationConfigProperty(propertyName = "messageSelector",
+            propertyValue = "NewsType = 'Sports' OR NewsType = 'Opinion'")
+    , @ActivationConfigProperty(propertyName = "subscriptionDurability",
+            propertyValue = "Durable")
+    , @ActivationConfigProperty(propertyName = "clientId",
+            propertyValue = "MyID")
+    , @ActivationConfigProperty(propertyName = "subscriptionName",
+            propertyValue = "MySub")
+    })</pre>
+<hr><p><b>Note - </b>For a message-driven bean, the destination is specified with the <tt>mappedName</tt> element
+instead of the <tt>lookup</tt> element.</p>
+
+
+<hr>
+<p>The JMS resource adapter uses these properties to create a connection factory for
+the message-driven bean that allows the bean to use a durable subscriber.</p>
+
+
+
+<a name="bnchc"></a><h3>Creating Resources for the <tt>clientsessionmdb</tt> Example</h3>
+<p>This example uses the topic named <tt>jms/Topic</tt> and the connection factory <tt>jms/ConnectionFactory</tt>, which
+are used in previous examples.. If you deleted the connection factory or topic,
+they will be recreated when you deploy the example.</p>
+
+
+
+<a name="bnchd"></a><h3>To Build, Package, Deploy, and Run the <tt>clientsessionmdb</tt> Example Using NetBeans IDE</h3><ol>
+<li><b>To compile and package the project, follow these steps:</b><ol style="list-style-type: lower-alpha">
+<li><b>From the File menu, choose Open Project.</b></li>
+<li><b>In the Open Project dialog, navigate to:</b><pre><tt></tt><i>tut-install</i><tt>/examples/jms/</tt></pre></li>
+<li><b>Select the <tt>clientsessionmdb</tt> folder.</b></li>
+<li><b>Select the Open as Main Project check box and the Open Required Projects
+check box.</b></li>
+<li><b>Click Open Project.</b></li>
+<li><b>In the Projects tab, right-click the <tt>clientsessionmdb</tt> project and select Build.</b><p>This task creates the following:</p>
+
+
+<ul><li><p>An application client JAR file that contains the client class file and the session bean&rsquo;s remote interface, along with a manifest file that specifies the main class and places the EJB JAR file in its classpath</p>
+
+</li>
+<li><p>An EJB JAR file that contains both the session bean and the message-driven bean</p>
+
+</li>
+<li><p>An application EAR file that contains the two JAR files</p>
+
+</li></ul>
+</li></ol></li>
+<li><b>Right-click the project and select Run.</b><p>This command creates any needed resources, deploys the project, returns a JAR file
+named <tt>clientsessionmdbClient.jar</tt>, and then executes it.</p><p>The output of the application client in the Output pane looks like
+this (preceded by application client container output):</p><pre>To view the bean output,
+ check &lt;install_dir>/domains/domain1/logs/server.log.</pre><p>The output from the enterprise beans appears in the server log (<tt></tt><i>domain-dir</i><tt>/logs/server.log</tt>),
+wrapped in logging information. The Publisher session bean sends two sets of 18
+messages numbered 0 through 17. Because of the message selector, the message-driven bean
+receives only the messages whose <tt>NewsType</tt> property is <tt>Sports</tt> or <tt>Opinion</tt>.</p></li></ol>
+
+<a name="bnche"></a><h3>To Build, Package, Deploy, and Run the <tt>clientsessionmdb</tt> Example Using Ant</h3><ol>
+<li><b>Go to the following directory:</b><pre><tt></tt><i>tut-install</i><tt>/examples/jms/clientsessionmdb/</tt></pre></li>
+<li><b>To compile the source files and package the application, use the following command:</b><pre><tt><b>ant</b></tt></pre><p>The <tt>ant</tt> command creates the following:</p>
+
+
+<ul><li><p>An application client JAR file that contains the client class file and the session bean&rsquo;s remote interface, along with a manifest file that specifies the main class and places the EJB JAR file in its classpath</p>
+
+</li>
+<li><p>An EJB JAR file that contains both the session bean and the message-driven bean</p>
+
+</li>
+<li><p>An application EAR file that contains the two JAR files</p>
+
+</li></ul>
+<p>The <tt>clientsessionmdb.ear</tt> file is created in the <tt>dist</tt> directory.</p></li>
+<li><b>To create any needed resources, deploy the application, and run the client, use
+the following command:</b><pre><tt><b>ant run</b></tt></pre><p>Ignore the message that states that the application is deployed at a URL.</p><p>The client displays these lines (preceded by application client container output):</p><pre>To view the bean output,
+ check &lt;install_dir>/domains/domain1/logs/server.log.</pre><p>The output from the enterprise beans appears in the server log file, wrapped
+in logging information. The Publisher session bean sends two sets of 18 messages
+numbered 0 through 17. Because of the message selector, the message-driven bean receives
+only the messages whose <tt>NewsType</tt> property is <tt>Sports</tt> or <tt>Opinion</tt>.</p></li></ol>
+         </div>
+         <div class="navigation">
+             <a href="giwfh.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="bnchf.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

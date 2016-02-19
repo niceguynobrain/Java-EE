@@ -1,0 +1,348 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Working with Digital Certificates - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3"><a href="">Working with Digital Certificates</a></p>
+<p class="toc level4"><a href="#bnbyc">Creating a Server Certificate</a></p>
+<p class="toc level5"><a href="#gjrgy">To Use <tt>keytool</tt> to Create a Server Certificate</a></p>
+<p class="toc level4 tocsp"><a href="#glifw">Adding Users to the Certificate Realm</a></p>
+<p class="toc level4"><a href="#bnbyf">Using a Different Server Certificate with the GlassFish Server</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="glien.html">Authentication Mechanisms</a></p>
+<p class="toc level4"><a href="glien.html#glieq">Client Authentication</a></p>
+<p class="toc level4"><a href="glien.html#gliel">Mutual Authentication</a></p>
+<p class="toc level5"><a href="glien.html#bnbyh">Enabling Mutual Authentication over SSL</a></p>
+<p class="toc level5"><a href="glien.html#bnbyi">Creating a Client Certificate for Mutual Authentication</a></p>
+<p class="toc level3 tocsp"><a href="glxce.html">Using Form-Based Login in JavaServer Faces Web Applications</a></p>
+<p class="toc level4"><a href="glxce.html#glxdh">Using <tt>j_security_check</tt> in JavaServer Faces Forms</a></p>
+<p class="toc level4"><a href="glxce.html#glxef">Using a Managed Bean for Authentication in JavaServer Faces Applications</a></p>
+<p class="toc level3 tocsp"><a href="glxgo.html">Using the JDBC Realm for User Authentication</a></p>
+<p class="toc level4"><a href="glxgo.html#glxfc">To Configure a JDBC Authentication Realm</a></p>
+<p class="toc level3 tocsp"><a href="gligc.html">Securing Application Clients</a></p>
+<p class="toc level4"><a href="gligc.html#glidw">Using Login Modules</a></p>
+<p class="toc level4"><a href="gligc.html#glihq">Using Programmatic Login</a></p>
+<p class="toc level3 tocsp"><a href="glifd.html">Securing Enterprise Information Systems Applications</a></p>
+<p class="toc level4"><a href="glifd.html#glihl">Container-Managed Sign-On</a></p>
+<p class="toc level4"><a href="glifd.html#glidp">Component-Managed Sign-On</a></p>
+<p class="toc level4"><a href="glifd.html#gligs">Configuring Resource Adapter Security</a></p>
+<p class="toc level4"><a href="glifd.html#gligw">To Map an Application Principal to EIS Principals</a></p>
+<p class="toc level3 tocsp"><a href="gkhrl.html">Configuring Security Using Deployment Descriptors</a></p>
+<p class="toc level4"><a href="gkhrl.html#bnccm">Specifying Security for Basic Authentication in the Deployment Descriptor</a></p>
+<p class="toc level4"><a href="gkhrl.html#gkafq">Specifying Non-Default Principal-to-Role Mapping in the Deployment Descriptor</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="gjjwx.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="glien.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbyb"></a><h2>Working with Digital Certificates</h2>
+<a name="indexterm-2142"></a><a name="indexterm-2143"></a><a name="indexterm-2144"></a><a name="indexterm-2145"></a><p>Digital certificates for the GlassFish Server have already been generated and can be
+found in the directory <tt></tt><i>domain-dir</i><tt>/config/</tt>. These digital certificates are self-signed and are intended
+for use in a development environment; they are not intended for production purposes.
+For production purposes, generate your own certificates and have them signed by a
+CA.</p>
+
+<p>To use SSL, an application or web server must have an associated
+certificate for each external interface, or IP address, that accepts secure connections. The theory
+behind this design is that a server should provide some kind of reasonable
+assurance that its owner is who you think it is, particularly before receiving
+any sensitive information. It may be useful to think of a certificate as
+a &ldquo;digital driver&rsquo;s license&rdquo; for an Internet address. The certificate states with which
+company the site is associated, along with some basic contact information about the
+site owner or administrator.</p>
+
+<p><a name="indexterm-2146"></a>The digital certificate is cryptographically signed by its owner and is difficult for anyone
+else to forge. For sites involved in e-commerce or in any other business
+transaction in which authentication of identity is important, a certificate can be purchased
+from a well-known CA such as VeriSign or Thawte. If your server certificate
+is self-signed, you must install it in the GlassFish Server keystore file (<tt>keystore.jks</tt>).
+If your client certificate is self-signed, you should install it in the GlassFish
+Server truststore file (<tt>cacerts.jks</tt>).</p>
+
+<p>Sometimes, authentication is not really a concern. For example, an administrator might simply
+want to ensure that data being transmitted and received by the server is
+private and cannot be snooped by anyone eavesdropping on the connection. In such
+cases, you can save the time and expense involved in obtaining a
+CA certificate and simply use a self-signed certificate.</p>
+
+<p><a name="indexterm-2147"></a><a name="indexterm-2148"></a><a name="indexterm-2149"></a><a name="indexterm-2150"></a>SSL uses <b>public-key cryptography</b>, which is based on key pairs. <b>Key pairs</b> contain one public key
+and one private key. Data encrypted with one key can be decrypted
+only with the other key of the pair. This property is fundamental to
+establishing trust and privacy in transactions. For example, using SSL, the server computes a
+value and encrypts it by using its private key. The encrypted value
+is called a <b>digital signature</b>. The client decrypts the encrypted value by using the server&rsquo;s
+public key and compares the value to its own computed value. If the
+two values match, the client can trust that the signature is authentic, because
+only the private key could have been used to produce such a signature.</p>
+
+<p><a name="indexterm-2151"></a>Digital certificates are used with HTTPS to authenticate web clients. The HTTPS service
+of most web servers will not run unless a digital certificate has been
+installed. Use the procedure outlined in the next section, <a href="#bnbyc">Creating a Server Certificate</a>, to set up
+a digital certificate that can be used by your application or web server
+to enable SSL.</p>
+
+<p><a name="indexterm-2152"></a><a name="indexterm-2153"></a><a name="indexterm-2154"></a><a name="indexterm-2155"></a>One tool that can be used to set up a digital certificate
+is <tt>keytool</tt>, a key and certificate management utility that ships with the JDK.
+This tool enables users to administer their own public/private key pairs and associated
+certificates for use in self-authentication, whereby the user authenticates himself or herself to
+other users or services, or data integrity and authentication services, using digital signatures.
+The tool also allows users to cache the public keys, in the form
+of certificates, of their communicating peers. For a better understanding of <tt>keytool</tt> and public-key
+cryptography, see the <tt>keytool</tt> documentation at <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/solaris/keytool.html">http://docs.oracle.com/javase/6/docs/technotes/tools/solaris/keytool.html</a>.</p>
+
+
+
+<a name="bnbyc"></a><h3>Creating a Server Certificate</h3>
+<a name="indexterm-2156"></a><p>A server certificate has already been created for the GlassFish Server and can
+be found in the <tt></tt><i>domain-dir</i><tt>/config/</tt> directory. The server certificate is in <tt>keystore.jks</tt>. The
+<tt>cacerts.jks</tt> file contains all the trusted certificates, including client certificates.</p>
+
+<p><a name="indexterm-2157"></a>If necessary, you can use <tt>keytool</tt> to generate certificates. The <tt>keytool</tt> utility stores
+the keys and certificates in a file termed a <b>keystore</b>, a repository
+of certificates used for identifying a client or a server. Typically, a keystore
+is a file that contains one client&rsquo;s or one server&rsquo;s identity. The keystore
+protects private keys by using a password.</p>
+
+<p>If you don&rsquo;t specify a directory when specifying the keystore file name, the
+keystores are created in the directory from which the <tt>keytool</tt> command is
+run. This can be the directory where the application resides, or it can
+be a directory common to many applications.</p>
+
+<p>The general steps for creating a server certificate are as follows.</p>
+
+
+<ol><li><p>Create the keystore.</p>
+
+</li>
+<li><p>Export the certificate from the keystore.</p>
+
+</li>
+<li><p>Sign the certificate.</p>
+
+</li>
+<li><p><a name="indexterm-2158"></a>Import the certificate into a <b>truststore:</b> a repository of certificates used for verifying the certificates. A truststore typically contains more than one certificate.</p>
+
+</li></ol>
+<p><a href="#gjrgy">To Use <tt>keytool</tt> to Create a Server Certificate</a> provides specific information on using the <tt>keytool</tt> utility to perform these steps.</p>
+
+
+
+<a name="gjrgy"></a><h4>To Use <tt>keytool</tt> to Create a Server Certificate</h4>
+<p>Run <tt>keytool</tt> to generate a new key pair in the default development keystore
+file, <tt>keystore.jks</tt>. This example uses the alias <tt>server-alias</tt> to generate a new public/private key
+pair and wrap the public key into a self-signed certificate inside <tt>keystore.jks</tt>.
+The key pair is generated by using an algorithm of type RSA, with
+a default password of <tt>changeit</tt>. For more information and other examples of creating
+and managing keystore files, read the <tt>keytool</tt> online help at <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/solaris/keytool.html">http://docs.oracle.com/javase/6/docs/technotes/tools/solaris/keytool.html</a>.</p>
+
+
+<hr><p><b>Note - </b>RSA is public-key encryption technology developed by RSA Data Security, Inc.</p>
+
+
+<hr>
+<p>From the directory in which you want to create the key pair,
+run <tt>keytool</tt> as shown in the following steps.</p>
+
+<ol>
+<li><b>Generate the server certificate.</b><p>Type the <tt>keytool</tt> command all on one line:</p><pre><tt><b></tt><i>java-home</i><tt>/bin/keytool -genkey -alias server-alias -keyalg RSA -keypass changeit</b></tt>
+<tt><b>-storepass changeit -keystore keystore.jks</b></tt></pre><p>When you press Enter, <tt>keytool</tt> prompts you to enter the server name, organizational
+unit, organization, locality, state, and country code.</p><p>You must type the server name in response to <tt>keytool</tt>&rsquo;s first prompt, in
+which it asks for first and last names. For testing purposes, this can
+be <tt>localhost</tt>.</p><p>When you run the example applications, the host (server name) specified in the
+keystore must match the host identified in the <tt>javaee.server.name</tt> property specified in
+the <tt></tt><i>tut-install</i><tt>/examples/bp-project/build.properties</tt> file (by default, this is <tt>localhost</tt>).</p></li>
+<li><b>Export the generated server certificate in <tt>keystore.jks</tt> into the file <tt>server.cer</tt>.</b><p>Type the <tt>keytool</tt> command all on one line:</p><pre><tt><b></tt><i>java-home</i><tt>/bin/keytool -export -alias server-alias -storepass changeit</b></tt>
+<tt><b>-file server.cer -keystore keystore.jks</b></tt></pre></li>
+<li><b>If you want to have the certificate signed by a CA, read
+the example at <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/solaris/keytool.html">http://docs.oracle.com/javase/6/docs/technotes/tools/solaris/keytool.html</a>. </b></li>
+<li><b>To add the server certificate to the truststore file, <tt>cacerts.jks</tt>, run <tt>keytool</tt>
+from the directory where you created the keystore and server certificate.</b><p>Use the following parameters:</p><pre><tt><b></tt><i>java-home</i><tt>/bin/keytool -import -v -trustcacerts -alias server-alias</b></tt>
+<tt><b>-file server.cer -keystore cacerts.jks -keypass changeit -storepass changeit</b></tt></pre><p>Information on the certificate, such as that shown next, will appear:</p><pre>Owner: CN=localhost, OU=Sun Micro, O=Docs, L=Santa Clara, ST=CA, 
+C=USIssuer: CN=localhost, OU=Sun Micro, O=Docs, L=Santa Clara, ST=CA, 
+C=USSerial number: 3e932169Valid from: Tue Apr 08Certificate 
+fingerprints:MD5: 52:9F:49:68:ED:78:6F:39:87:F3:98:B3:6A:6B:0F:90 SHA1: 
+EE:2E:2A:A6:9E:03:9A:3A:1C:17:4A:28:5E:97:20:78:3F:
+Trust this certificate? [no]:</pre></li>
+<li><b>Type <tt><b>yes</b></tt>, then press the <tt><b>Enter</b></tt> or <tt><b>Return</b></tt> key.</b><p>The following information appears:</p><pre>Certificate was added to keystore[Saving cacerts.jks]</pre></li></ol>
+
+<a name="glifw"></a><h3>Adding Users to the Certificate Realm</h3>
+<p><a name="indexterm-2159"></a><a name="indexterm-2160"></a>In the <tt>certificate</tt> realm, user identity is set up in the GlassFish Server
+security context and populated with user data obtained from cryptographically verified client certificates. For
+step-by-step instructions for creating this type of certificate, see <a href="">Working with Digital Certificates</a>.</p>
+
+
+
+<a name="bnbyf"></a><h3>Using a Different Server Certificate with the GlassFish Server</h3>
+<a name="indexterm-2161"></a><p>Follow the steps in <a href="#bnbyc">Creating a Server Certificate</a> to create your own server certificate, have it
+signed by a CA, and import the certificate into <tt>keystore.jks</tt>.</p>
+
+<p>Make sure that when you create the certificate, you follow these rules:</p>
+
+
+<ul><li><p>When you create the server certificate, <tt>keytool</tt> prompts you to enter your first and last name. In response to this prompt, you must enter the name of your server. For testing purposes, this can be <tt>localhost</tt>.</p>
+
+</li>
+<li><p>The server/host specified in the keystore must match the host identified in the <tt>javaee.server.name</tt> property specified in the <tt></tt><i>tut-install</i><tt>/examples/bp-project/build.properties</tt> file for running the example applications.</p>
+
+</li>
+<li><p>Your key/certificate password in <tt>keystore.jks</tt> should match the password of your keystore, <tt>keystore.jks</tt>. This is a bug. If there is a mismatch, the Java SDK cannot read the certificate and you get a &ldquo;tampered&rdquo; message.</p>
+
+</li>
+<li><p>If you want to replace the existing <tt>keystore.jks</tt>, you must either change your keystore&rsquo;s password to the default password (<tt>changeit</tt>) or change the default password to your keystore&rsquo;s password.</p>
+
+</li></ul>
+<p>To specify that the GlassFish Server should use the new keystore for
+authentication and authorization decisions, you must set the JVM options for the GlassFish
+Server so that they recognize the new keystore. To use a different keystore
+than the one provided for development purposes, follow these steps.</p>
+
+
+<ol><li><p>Start the GlassFish Server if you haven&rsquo;t already done so. Information on starting the GlassFish Server can be found in <a href="bnadi.html">Starting and Stopping the GlassFish Server</a>.</p>
+
+</li>
+<li><p>Open the GlassFish Server Administration Console in a web browser at <tt>http://localhost:4848</tt>.</p>
+
+</li>
+<li><p>Expand Configurations, then expand server-config, then click JVM Settings.</p>
+
+</li>
+<li><p>Select the JVM Options tab.</p>
+
+</li>
+<li><p>Change the following JVM options so that they point to the location and name of the new keystore. The current settings are shown below:</p>
+
+<pre><tt><b>-Djavax.net.ssl.keyStore=${com.sun.aas.instanceRoot}/config/keystore.jks -Djavax.net.ssl.trustStore=${com.sun.aas.instanceRoot}/config/cacerts.jks</b></tt></pre></li>
+<li><p>If you&rsquo;ve changed the keystore password from its default value, you need to add the password option as well:</p>
+
+<pre><tt><b>-Djavax.net.ssl.keyStorePassword=</tt><i>your-new-password</i><tt></b></tt></pre></li>
+<li><p>Click Save, then restart GlassFish Server.</p>
+
+</li></ol>
+
+         </div>
+         <div class="navigation">
+             <a href="gjjwx.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="glien.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

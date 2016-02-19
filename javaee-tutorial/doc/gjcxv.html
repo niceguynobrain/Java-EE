@@ -1,0 +1,507 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>The guessnumber CDI Example - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level3"><a href="gjbju.html">The <tt>simplegreeting</tt> CDI Example</a></p>
+<p class="toc level4"><a href="gjbju.html#gjcqs">The <tt>simplegreeting</tt> Source Files</a></p>
+<p class="toc level4"><a href="gjbju.html#gjdoj">The Facelets Template and Page</a></p>
+<p class="toc level4"><a href="gjbju.html#gjcvh">Configuration Files</a></p>
+<p class="toc level4"><a href="gjbju.html#gjcym">Building, Packaging, Deploying, and Running the <tt>simplegreeting</tt> CDI Example</a></p>
+<p class="toc level5"><a href="gjbju.html#gjcxp">To Build, Package, and Deploy the <tt>simplegreeting</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="gjbju.html#gjczt">To Build, Package, and Deploy the <tt>simplegreeting</tt> Example Using Ant</a></p>
+<p class="toc level5"><a href="gjbju.html#gjcze">To Run the <tt>simplegreeting</tt> Example</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3 tocsp"><a href="">The <tt>guessnumber</tt> CDI Example</a></p>
+<p class="toc level4"><a href="#gjdju">The <tt>guessnumber</tt> Source Files</a></p>
+<p class="toc level5"><a href="#gjdjp">The <tt>@MaxNumber</tt> and <tt>@Random</tt> Qualifier Interfaces</a></p>
+<p class="toc level5"><a href="#gjdjn">The <tt>Generator</tt> Managed Bean</a></p>
+<p class="toc level5"><a href="#gjdhy">The <tt>UserNumberBean</tt> Managed Bean</a></p>
+<p class="toc level4 tocsp"><a href="#gjdon">The Facelets Page</a></p>
+<p class="toc level4"><a href="#gjdpw">Building, Packaging, Deploying, and Running the <tt>guessnumber</tt> CDI Example</a></p>
+<p class="toc level5"><a href="#gjdps">To Build, Package, and Deploy the <tt>guessnumber</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="#gjdpr">To Build, Package, and Deploy the <tt>guessnumber</tt> Example Using Ant</a></p>
+<p class="toc level5"><a href="#gjdqb">To Run the <tt>guessnumber</tt> Example</a></p>
+</div>
+<p class="toc level2 tocsp"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="gjbju.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="gjehi.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="gjcxv"></a><h2>The <tt>guessnumber</tt> CDI Example</h2>
+<p>The <tt>guessnumber</tt> example, somewhat more complex than the <tt>simplegreeting</tt> example, illustrates the use
+of producer methods and of session and application scope. The example is a
+game in which you try to guess a number in fewer than ten
+attempts. It is similar to the <tt>guessnumber</tt> example described in <a href="giepx.html">Chapter&nbsp;5, Introduction to Facelets</a>, except
+that you can keep guessing until you get the right answer or until
+you use up your ten attempts.</p>
+
+<p>The example includes four source files, a Facelets page and template, and configuration
+files. The configuration files and the template are the same as those used
+for the <tt>simplegreeting</tt> example.</p>
+
+
+
+<a name="gjdju"></a><h3>The <tt>guessnumber</tt> Source Files</h3>
+<p>The four source files for the <tt>guessnumber</tt> example are</p>
+
+
+<ul><li><p>The <tt>@MaxNumber</tt> qualifier interface</p>
+
+</li>
+<li><p>The <tt>@Random</tt> qualifier interface</p>
+
+</li>
+<li><p>The <tt>Generator</tt> managed bean, which defines producer methods</p>
+
+</li>
+<li><p>The <tt>UserNumberBean</tt> managed bean</p>
+
+</li></ul>
+<p>The source files are located in the <tt></tt><i>tut-install</i><tt>/examples/cdi/guessnumber/src/java/guessnumber/</tt> directory.</p>
+
+
+
+<a name="gjdjp"></a><h4>The <tt>@MaxNumber</tt> and <tt>@Random</tt> Qualifier Interfaces</h4>
+<p>The <tt>@MaxNumber</tt> qualifier interface is defined as follows:</p>
+
+<pre>package guessnumber;
+
+import static java.lang.annotation.ElementType.FIELD;
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.ElementType.PARAMETER;
+import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
+
+import javax.inject.Qualifier;
+
+@Target( { TYPE, METHOD, PARAMETER, FIELD })
+@Retention(RUNTIME)
+@Documented
+@Qualifier
+public @interface MaxNumber {
+
+}</pre><p>The <tt>@Random</tt> qualifier interface is defined as follows:</p>
+
+<pre>package guessnumber;
+
+import static java.lang.annotation.ElementType.FIELD;
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.ElementType.PARAMETER;
+import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
+
+import javax.inject.Qualifier;
+
+@Target( { TYPE, METHOD, PARAMETER, FIELD })
+@Retention(RUNTIME)
+@Documented
+@Qualifier
+public @interface Random {
+
+}</pre>
+
+<a name="gjdjn"></a><h4>The <tt>Generator</tt> Managed Bean</h4>
+<p>The <tt>Generator</tt> managed bean contains the two producer methods for the application. The
+bean has the <tt>@ApplicationScoped</tt> annotation to specify that its context extends for the
+duration of the user&rsquo;s interaction with the application:</p>
+
+<pre>package guessnumber;
+
+import java.io.Serializable;
+
+import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Produces;
+
+@ApplicationScoped
+public class Generator implements Serializable {
+
+    private static final long serialVersionUID = -7213673465118041882L;
+
+    private java.util.Random random = 
+        new java.util.Random( System.currentTimeMillis() );
+
+    private int maxNumber = 100;
+
+    java.util.Random getRandom() {
+        return random;
+    }
+
+    @Produces @Random int next() {
+        return getRandom().nextInt(maxNumber);
+    }
+
+    @Produces @MaxNumber int getMaxNumber() {
+        return maxNumber;
+    }
+
+}</pre>
+
+<a name="gjdhy"></a><h4>The <tt>UserNumberBean</tt> Managed Bean</h4>
+<p>The <tt>UserNumberBean</tt> managed bean, the managed bean for the JavaServer Faces application, provides
+the basic logic for the game. This bean does the following:</p>
+
+
+<ul><li><p>Implements setter and getter methods for the bean fields</p>
+
+</li>
+<li><p>Injects the two qualifier objects</p>
+
+</li>
+<li><p>Provides a <tt>reset</tt> method that allows you to begin a new game after you complete one</p>
+
+</li>
+<li><p>Provides a <tt>check</tt> method that determines whether the user has guessed the number</p>
+
+</li>
+<li><p>Provides a <tt>validateNumberRange</tt> method that determines whether the user&rsquo;s input is correct</p>
+
+</li></ul>
+<p>The bean is defined as follows:</p>
+
+<pre>package guessnumber;
+
+import java.io.Serializable;
+
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.SessionScoped;
+import javax.enterprise.inject.Instance;
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.faces.application.FacesMessage;
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIInput;
+import javax.faces.context.FacesContext;
+
+@Named
+@SessionScoped
+public class UserNumberBean implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    private int number;
+    private Integer userNumber;
+    private int minimum;
+    private int remainingGuesses;
+
+    @MaxNumber
+    @Inject
+    private int maxNumber;
+
+    private int maximum;
+
+    @Random
+    @Inject
+    Instance&lt;Integer> randomInt;
+
+    public UserNumberBean() {
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setUserNumber(Integer user_number) {
+        userNumber = user_number;
+    }
+
+    public Integer getUserNumber() {
+        return userNumber;
+    }
+
+    public int getMaximum() {
+        return (this.maximum);
+    }
+
+    public void setMaximum(int maximum) {
+        this.maximum = maximum;
+    }
+
+    public int getMinimum() {
+        return (this.minimum);
+    }
+
+    public void setMinimum(int minimum) {
+        this.minimum = minimum;
+    }
+
+    public int getRemainingGuesses() {
+        return remainingGuesses;
+    }
+
+    public String check() throws InterruptedException {
+        if (userNumber > number) {
+            maximum = userNumber - 1;
+        }
+        if (userNumber &lt; number) {
+            minimum = userNumber + 1;
+        }
+        if (userNumber == number) {
+            FacesContext.getCurrentInstance().addMessage(null, 
+                new FacesMessage("Correct!"));
+        }
+        remainingGuesses--;
+        return null;
+    }
+
+    @PostConstruct
+    public void reset() {
+        this.minimum = 0;
+        this.userNumber = 0;
+        this.remainingGuesses = 10;
+        this.maximum = maxNumber;
+        this.number = randomInt.get();
+    }
+
+    public void validateNumberRange(FacesContext context, 
+                                    UIComponent toValidate, 
+                                    Object value) {
+        if (remainingGuesses &lt;= 0) {
+            FacesMessage message = new FacesMessage("No guesses left!");
+            context.addMessage(toValidate.getClientId(context), message);
+            ((UIInput) toValidate).setValid(false);
+            return;
+        }
+        int input = (Integer) value;
+
+        if (input &lt; minimum || input > maximum) {
+            ((UIInput) toValidate).setValid(false);
+
+            FacesMessage message = new FacesMessage("Invalid guess");
+            context.addMessage(toValidate.getClientId(context), message);
+        }
+    }
+}</pre>
+
+<a name="gjdon"></a><h3>The Facelets Page</h3>
+<p>This example uses the same template that the <tt>simplegreeting</tt> example uses. The <tt>index.xhtml</tt>
+file, however, is more complex.</p>
+
+<pre>&lt;?xml version='1.0' encoding='UTF-8' ?>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+&lt;html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+    &lt;ui:composition template="/template.xhtml">
+
+        &lt;ui:define name="title">Guess My Number&lt;/ui:define>
+        &lt;ui:define name="head">Guess My Number&lt;/ui:define>
+        &lt;ui:define name="content">
+            &lt;h:form id="GuessMain">
+                &lt;div style="color: black; font-size: 24px;">
+                    &lt;p>I'm thinking of a number from 
+                    &lt;span style="color: blue">#{userNumberBean.minimum}&lt;/span> 
+                    to 
+                    &lt;span style="color: blue">#{userNumberBean.maximum}&lt;/span>. 
+                    You have  
+                    &lt;span style="color: blue">#{userNumberBean.remainingGuesses}&lt;/span> 
+                    guesses.&lt;/p>
+                &lt;/div>
+                &lt;h:panelGrid border="0" columns="5" style="font-size: 18px;">
+                    &lt;h:outputLabel for="inputGuess">Number:&lt;/h:outputLabel>
+                    &lt;h:inputText id="inputGuess"
+                       value="#{userNumberBean.userNumber}"
+                       required="true" size="3"
+                       disabled="#{userNumberBean.number eq userNumberBean.userNumber}"
+                       validator="#{userNumberBean.validateNumberRange}">
+                    &lt;/h:inputText>
+                    &lt;h:commandButton id="GuessButton" value="Guess"
+                       action="#{userNumberBean.check}"
+                       disabled="#{userNumberBean.number eq userNumberBean.userNumber}"/>
+                    &lt;h:commandButton id="RestartButton" value="Reset"
+                       action="#{userNumberBean.reset}"
+                       immediate="true" />
+                    &lt;h:outputText id="Higher" value="Higher!"
+rendered="#{userNumberBean.number gt userNumberBean.userNumber and userNumberBean.userNumber ne 0}"
+                       style="color: #d20005"/>
+                    &lt;h:outputText id="Lower" value="Lower!"
+rendered="#{userNumberBean.number lt userNumberBean.userNumber and userNumberBean.userNumber ne 0}"
+                       style="color: #d20005"/>
+                &lt;/h:panelGrid>
+                &lt;div style="color: #d20005; font-size: 14px;">
+                    &lt;h:messages id="messages" globalOnly="false"/>
+                &lt;/div>
+            &lt;/h:form>
+        &lt;/ui:define>
+        
+    &lt;/ui:composition>
+&lt;/html></pre><p>The Facelets page presents the user with the minimum and maximum values and
+the number of guesses remaining. The user&rsquo;s interaction with the game takes place
+within the <tt>panelGrid</tt> table, which contains an input field, Guess and Reset buttons,
+and a text field that appears if the guess is higher or lower
+than the correct number. Every time the user clicks the Guess button, the
+<tt>userNumberBean.check</tt> method is called to reset the maximum or minimum value or, if
+the guess is correct, to generate a <tt>FacesMessage</tt> to that effect. The method that
+determines whether each guess is valid is <tt>userNumberBean.validateNumberRange</tt>.</p>
+
+
+
+<a name="gjdpw"></a><h3>Building, Packaging, Deploying, and Running the <tt>guessnumber</tt> CDI Example</h3>
+<p>You can build, package, deploy, and run the <tt>guessnumber</tt> application by using either
+NetBeans IDE or the Ant tool.</p>
+
+
+
+<a name="gjdps"></a><h4>To Build, Package, and Deploy the <tt>guessnumber</tt> Example Using NetBeans IDE</h4>
+<p>This procedure builds the application into the <tt></tt><i>tut-install</i><tt>/examples/cdi/guessnumber/build/web/</tt> directory. The contents of
+this directory are deployed to the GlassFish Server.</p>
+
+<ol>
+<li><b>From the File menu, choose Open Project.</b></li>
+<li><b>In the Open Project dialog, navigate to:</b><pre><tt></tt><i>tut-install</i><tt>/examples/cdi/</tt></pre></li>
+<li><b>Select the <tt>guessnumber</tt> folder.</b></li>
+<li><b>Select the Open as Main Project check box.</b></li>
+<li><b>Click Open Project.</b></li>
+<li><b>In the Projects tab, right-click the <tt>guessnumber</tt> project and select Deploy.</b></li></ol>
+
+<a name="gjdpr"></a><h4>To Build, Package, and Deploy the <tt>guessnumber</tt> Example Using Ant</h4>
+<ol>
+<li><b>In a terminal window, go to:</b><pre><i>tut-install</i>/examples/cdi/guessnumber/</pre></li>
+<li><b>Type the following command:</b><pre><tt><b>ant</b></tt></pre><p>This command calls the <tt>default</tt> target, which builds and packages the application into
+a WAR file, <tt>guessnumber.war</tt>, located in the <tt>dist</tt> directory.</p></li>
+<li><b>Type the following command:</b><pre><tt><b>ant deploy</b></tt></pre><p>The <tt>guessnumber.war</tt> file will be deployed to the GlassFish Server.</p></li></ol>
+
+<a name="gjdqb"></a><h4>To Run the <tt>guessnumber</tt> Example</h4>
+<ol>
+<li><b>In a web browser, type the following URL:</b><pre><tt><b>http://localhost:8080/guessnumber</b></tt></pre><p>The Guess My Number page opens.</p></li>
+<li><b>Type a number in the Number text field and click Guess.</b><p>The minimum and maximum values are modified, along with the remaining number of guesses.</p></li>
+<li><b>Keep guessing numbers until you get the right answer or run out of
+guesses.</b><p>If you get the right answer, the input field and Guess button are
+grayed out.</p></li>
+<li><b>Click the Reset button to play the game again with a new
+random number.</b></li></ol>
+         </div>
+         <div class="navigation">
+             <a href="gjbju.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="gjehi.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,605 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>User Interface Component Model - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level3"><a href="bnaqq.html">The Lifecycle of a JavaServer Faces Application</a></p>
+<p class="toc level4"><a href="bnaqq.html#glprc">Overview of the JavaServer Faces Lifecycle</a></p>
+<p class="toc level4"><a href="bnaqq.html#bnaqs">Restore View Phase</a></p>
+<p class="toc level4"><a href="bnaqq.html#bnaqt">Apply Request Values Phase</a></p>
+<p class="toc level4"><a href="bnaqq.html#gjsbp">Process Validations Phase</a></p>
+<p class="toc level4"><a href="bnaqq.html#bnaqv">Update Model Values Phase</a></p>
+<p class="toc level4"><a href="bnaqq.html#bnaqw">Invoke Application Phase</a></p>
+<p class="toc level4"><a href="bnaqq.html#bnaqx">Render Response Phase</a></p>
+<p class="toc level3 tocsp"><a href="gknoj.html">Partial Processing and Partial Rendering</a></p>
+<p class="toc level3"><a href="giprr.html">The Lifecycle of a Facelets Application</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3"><a href="">User Interface Component Model</a></p>
+<p class="toc level4"><a href="#bnaqe">User Interface Component Classes</a></p>
+<p class="toc level4"><a href="#bnaqf">Component Rendering Model</a></p>
+<p class="toc level4"><a href="#bnaqi">Conversion Model</a></p>
+<p class="toc level4"><a href="#gireh">Event and Listener Model</a></p>
+<p class="toc level4"><a href="#bnaqk">Validation Model</a></p>
+<p class="toc level4"><a href="#bnaql">Navigation Model</a></p>
+</div>
+<p class="toc level2 tocsp"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="giprr.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="gkiow.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnaqd"></a><h2>User Interface Component Model</h2>
+<p>In addition to the lifecycle description, an overview of JavaServer Faces architecture provides
+better understanding of the technology.</p>
+
+<p>JavaServer Faces components are the building blocks of a JavaServer Faces view. A
+component can be a user interface (UI) component or a non-UI component.</p>
+
+<p>JavaServer Faces UI components are configurable, reusable elements that compose the user interfaces
+of JavaServer Faces applications. A component can be simple, such as a button,
+or can be compound, such as a table, composed of multiple components.</p>
+
+<p>JavaServer Faces technology provides a rich, flexible component architecture that includes the following:</p>
+
+
+<ul><li><p><a name="indexterm-650"></a>A set of <tt>UIComponent</tt> classes for specifying the state and behavior of UI components</p>
+
+</li>
+<li><p><a name="indexterm-651"></a>A rendering model that defines how to render the components in various ways</p>
+
+</li>
+<li><p><a name="indexterm-652"></a>An event and listener model that defines how to handle component events</p>
+
+</li>
+<li><p><a name="indexterm-653"></a><a name="indexterm-654"></a><a name="indexterm-655"></a>A conversion model that defines how to register data converters onto a component</p>
+
+</li>
+<li><p><a name="indexterm-656"></a><a name="indexterm-657"></a><a name="indexterm-658"></a>A validation model that defines how to register validators onto a component</p>
+
+</li></ul>
+<p>This section briefly describes each of these pieces of the component architecture.</p>
+
+
+
+<a name="bnaqe"></a><h3>User Interface Component Classes</h3>
+<p><a name="indexterm-659"></a><a name="indexterm-660"></a><a name="indexterm-661"></a><a name="indexterm-662"></a>JavaServer Faces technology provides a set of UI component classes and associated behavioral
+interfaces that specify all the UI component functionality, such as holding component state, maintaining
+a reference to objects, and driving event handling and rendering for a set
+of standard components.</p>
+
+<p>The component classes are completely extensible, allowing component writers to create their own
+custom components. See <a href="bnavg.html">Chapter&nbsp;13, Creating Custom UI Components and Other Custom Objects</a> for more information.</p>
+
+<p><a name="indexterm-663"></a>The abstract base class for all  components is <tt>javax.faces.component.UIComponent</tt>. JavaServer Faces UI component
+classes extend the <tt>UIComponentBase</tt> class (a subclass of <tt>UIComponent</tt>), which defines the default state
+and behavior of a  component. The following set of  component
+classes is included with JavaServer Faces technology:</p>
+
+
+<ul><li><p><a name="indexterm-664"></a><tt>UIColumn</tt>: Represents a single column of data in a <tt>UIData</tt> component.</p>
+
+</li>
+<li><p><a name="indexterm-665"></a><tt>UICommand</tt>: Represents a control that fires actions when activated.</p>
+
+</li>
+<li><p><a name="indexterm-666"></a><tt>UIData</tt>: Represents a data binding to a collection of data represented by a <tt>DataModel</tt> instance.</p>
+
+</li>
+<li><p><a name="indexterm-667"></a><tt>UIForm</tt>: Represents an input form to be presented to the user. Its child components represent (among other things) the input fields to be included when the form is submitted. This component is analogous to the <tt>form</tt> tag in HTML.</p>
+
+</li>
+<li><p><a name="indexterm-668"></a><tt>UIGraphic</tt>: Displays an image.</p>
+
+</li>
+<li><p><a name="indexterm-669"></a><tt>UIInput</tt>: Takes data input from a user. This class is a subclass of <tt>UIOutput</tt>.</p>
+
+</li>
+<li><p><a name="indexterm-670"></a><tt>UIMessage</tt>: Displays a localized error message.</p>
+
+</li>
+<li><p><a name="indexterm-671"></a><tt>UIMessages</tt>: Displays a set of localized error messages.</p>
+
+</li>
+<li><p><tt>UIOutcomeTarget</tt>: Displays a hyperlink in the form of a link or a button.</p>
+
+</li>
+<li><p><a name="indexterm-672"></a><tt>UIOutput</tt>: Displays data output on a page.</p>
+
+</li>
+<li><p><a name="indexterm-673"></a><tt>UIPanel</tt>: Manages the layout of its child components.</p>
+
+</li>
+<li><p><a name="indexterm-674"></a><tt>UIParameter</tt>: Represents substitution parameters.</p>
+
+</li>
+<li><p><a name="indexterm-675"></a><tt>UISelectBoolean</tt>: Allows a user to set a <tt>boolean</tt> value on a control by selecting or deselecting it. This class is a subclass of the <tt>UIInput</tt> class.</p>
+
+</li>
+<li><p><a name="indexterm-676"></a><tt>UISelectItem</tt>: Represents a single item in a set of items.</p>
+
+</li>
+<li><p><a name="indexterm-677"></a><tt>UISelectItems</tt>: Represents an entire set of items.</p>
+
+</li>
+<li><p><a name="indexterm-678"></a><tt>UISelectMany</tt>: Allows a user to select multiple items from a group of items. This class is a subclass of the <tt>UIInput</tt> class.</p>
+
+</li>
+<li><p><a name="indexterm-679"></a><tt>UISelectOne</tt>: Allows a user to select one item from a group of items. This class is a subclass of the <tt>UIInput</tt> class.</p>
+
+</li>
+<li><p><tt>UIViewParameter</tt>: Represents the query parameters in a request. This class is a subclass of the <tt>UIInput</tt> class.</p>
+
+</li>
+<li><p><a name="indexterm-680"></a><tt>UIViewRoot</tt>: Represents the root of the component tree.</p>
+
+</li></ul>
+<p><a name="indexterm-681"></a><a name="indexterm-682"></a>In addition to extending <tt>UIComponentBase</tt>, the component classes also implement one or
+more <b>behavioral interfaces</b>, each of which defines certain behavior for a set of components
+whose classes implement the interface.</p>
+
+<p>These behavioral interfaces are as follows:</p>
+
+
+<ul><li><p><a name="indexterm-683"></a><tt>ActionSource</tt>: Indicates that the component can fire an action event. This interface is intended for use with components based on JavaServer Faces technology 1.1_01 and earlier versions. This interface is deprecated in JavaServer Faces 2.</p>
+
+</li>
+<li><p><a name="indexterm-684"></a><tt>ActionSource2</tt>: Extends <tt>ActionSource</tt>, and therefore provides the same functionality. However, it allows components to use the EL when they are referencing methods that handle action events.</p>
+
+</li>
+<li><p><a name="indexterm-685"></a><tt>EditableValueHolder</tt>: Extends <tt>ValueHolder</tt> and specifies additional features for editable components, such as validation and emitting value-change events.</p>
+
+</li>
+<li><p><a name="indexterm-686"></a><a name="indexterm-687"></a><tt>NamingContainer</tt>: Mandates that each component rooted at this component have a unique ID.</p>
+
+</li>
+<li><p><a name="indexterm-688"></a><tt>StateHolder</tt>: Denotes that a component has state that must be saved between requests.</p>
+
+</li>
+<li><p><a name="indexterm-689"></a><tt>ValueHolder</tt>: Indicates that the component maintains a local value as well as the option of accessing data in the model tier.</p>
+
+</li>
+<li><p><a name="indexterm-690"></a><tt>SystemEventListenerHolder</tt>: Maintains a list of <tt>SystemEventListener</tt> instances for each type of <tt>SystemEvent</tt> defined by that class.</p>
+
+</li>
+<li><p><a name="indexterm-691"></a><tt>ClientBehaviorHolder</tt>: Adds the ability to attach <tt>ClientBehavior</tt> instances such as a reusable script.</p>
+
+</li></ul>
+<p><tt>UICommand</tt> implements <tt>ActionSource2</tt> and <tt>StateHolder</tt>. <tt>UIOutput</tt> and component classes that extend <tt>UIOutput</tt> implement
+<tt>StateHolder</tt> and <tt>ValueHolder</tt>. <tt>UIInput</tt> and component classes that extend <tt>UIInput</tt> implement <tt>EditableValueHolder</tt>,
+<tt>StateHolder</tt>, and <tt>ValueHolder</tt>. <tt>UIComponentBase</tt> implements <tt>StateHolder</tt>. </p>
+
+<p>Only component writers will need to use the component classes and behavioral interfaces
+directly. Page authors and application developers will use a standard  component by
+including a tag that represents it on a page. Most of the
+components can be rendered in different ways on a page. For example, a
+<tt>UICommand</tt> component can be rendered as a button or a hyperlink.</p>
+
+<p>The next section explains how the rendering model works and how page authors
+can choose to render the components by selecting the appropriate tags.</p>
+
+
+
+<a name="bnaqf"></a><h3>Component Rendering Model</h3>
+<p><a name="indexterm-692"></a><a name="indexterm-693"></a><a name="indexterm-694"></a>The JavaServer Faces component architecture is designed such that the functionality of the
+components is defined by the component classes, whereas the component rendering can be
+defined by a separate renderer class. This design has several benefits, including:</p>
+
+
+<ul><li><p>Component writers can define the behavior of a component once but create multiple renderers, each of which defines a different way to render the component to the same client or to different clients.</p>
+
+</li>
+<li><p>Page authors and application developers can change the appearance of a component on the page by selecting the tag that represents the appropriate combination of component and renderer.</p>
+
+</li></ul>
+<p><a name="indexterm-695"></a>A <b>render kit</b> defines how component classes map to component tags that are appropriate
+for a particular client. The JavaServer Faces implementation includes a standard HTML render kit
+for rendering to an HTML client.</p>
+
+<p><a name="indexterm-696"></a><a name="indexterm-697"></a>The render kit defines a set of <tt>Renderer</tt> classes for each component that
+it supports. Each <tt>Renderer</tt> class defines a different way to render the particular
+component to the output defined by the render kit. For example, a <tt>UISelectOne</tt>
+component has three different renderers. One of them renders the component as a
+set of radio buttons. Another renders the component as a combo box. The
+third one renders the component as a list box. Similarly, a <tt>UICommand</tt> component can
+be rendered as a button or a hyperlink, using the <tt>commandButton</tt> or
+<tt>commandLink</tt> tag. The <tt>command</tt> part of each tag corresponds to the <tt>UICommand</tt> class,
+specifying the functionality, which is to fire an action. The <tt>Button</tt> and <tt>Link</tt>
+parts of the tags each correspond to a separate <tt>Renderer</tt> class, which
+defines how the component appears on the page.</p>
+
+<p><a name="indexterm-698"></a><a name="indexterm-699"></a><a name="indexterm-700"></a>Each custom tag defined in the standard HTML render kit is composed of
+the component functionality (defined in the <tt>UIComponent</tt> class) and the rendering attributes (defined by
+the <tt>Renderer</tt> class).</p>
+
+<p><a name="indexterm-701"></a><a name="indexterm-702"></a><a name="indexterm-703"></a>The section <a href="bnarf.html">Adding Components to a Page Using HTML Tags</a> lists all supported component tags and describes how to use
+the tags in an example.</p>
+
+<p>The JavaServer Faces implementation provides a custom tag library for rendering components in
+HTML.</p>
+
+
+
+<a name="bnaqi"></a><h3>Conversion Model</h3>
+<a name="indexterm-704"></a><p><a name="indexterm-705"></a><a name="indexterm-706"></a><a name="indexterm-707"></a>A JavaServer Faces application can optionally associate a component with server-side object data.
+This object is a JavaBeans component, such as a managed bean. An application
+gets and sets the object data for a component by calling the appropriate
+object properties for that component.</p>
+
+<p><a name="indexterm-708"></a>When a component is bound to an object, the application has two views
+of the component&rsquo;s data:</p>
+
+
+<ul><li><p>The model view, in which data is represented as data types, such as <tt>int</tt> or <tt>long</tt>.</p>
+
+</li>
+<li><p>The presentation view, in which data is represented in a manner that can be read or modified by the user. For example, a <tt>java.util.Date</tt> might be represented as a text string in the format <tt>mm/dd/yy</tt> or as a set of three text strings.</p>
+
+</li></ul>
+<p>The JavaServer Faces implementation automatically converts component data between these two views when
+the bean property associated with the component is of one of the types
+supported by the component&rsquo;s data. For example, if a <tt>UISelectBoolean</tt> component is associated
+with a bean property of type <tt>java.lang.Boolean</tt>, the JavaServer Faces implementation will automatically convert
+the component&rsquo;s data from <tt>String</tt> to <tt>Boolean</tt>. In addition, some component data must
+be bound to properties of a particular type. For example, a <tt>UISelectBoolean</tt>
+component must be bound to a property of type <tt>boolean</tt> or <tt>java.lang.Boolean</tt>.</p>
+
+<p><a name="indexterm-709"></a><a name="indexterm-710"></a>Sometimes you might want to convert a component&rsquo;s data to a type other
+than a standard type, or you might want to convert the format of
+the data. To facilitate this, JavaServer Faces technology allows you to register a
+<tt>Converter</tt> implementation on <tt>UIOutput</tt> components and components whose classes subclass <tt>UIOutput</tt>. If you register
+the <tt>Converter</tt> implementation on a component, the <tt>Converter</tt> implementation converts the component&rsquo;s
+data between the two views.</p>
+
+<p><a name="indexterm-711"></a><a name="indexterm-712"></a><a name="indexterm-713"></a>You can either use the standard converters supplied with the JavaServer Faces implementation
+or create your own custom converter. Custom converter creation is covered in <a href="bnavg.html">Chapter&nbsp;13, Creating Custom UI Components and Other Custom Objects</a>.</p>
+
+
+
+<a name="gireh"></a><h3>Event and Listener Model</h3>
+<a name="indexterm-714"></a><a name="indexterm-715"></a><p><a name="indexterm-716"></a><a name="indexterm-717"></a>The JavaServer Faces event and listener model is similar to the JavaBeans event
+model in that it has strongly typed event classes and listener interfaces that
+an application can use to handle events generated by  components.</p>
+
+<p>The JavaServer Faces specification defines three types of events: application events, system events
+and data-model events.</p>
+
+<p>Application events are tied to a particular application and are generated by a
+<tt>UIComponent</tt>. They represent the standard events available in previous versions of JavaServer Faces
+technology.</p>
+
+<p><a name="indexterm-718"></a><a name="indexterm-719"></a>An <tt>Event</tt> object identifies the component that generated the event and stores information
+about the event. To be notified of an event, an application must provide
+an implementation of the <tt>Listener</tt> class and must register it on the
+component that generates the event. When the user activates a component, such as
+by clicking a button, an event is fired. This causes the JavaServer Faces
+implementation to invoke the listener method that processes the event.</p>
+
+<p>JavaServer Faces supports two kinds of application events: action events and value-change events.</p>
+
+<p><a name="indexterm-720"></a>An <b>action event</b> (class <tt>ActionEvent</tt>) occurs when the user activates a component that implements
+<tt>ActionSource</tt>. These components include buttons and hyperlinks.</p>
+
+<p><a name="indexterm-721"></a><a name="indexterm-722"></a>A <b>value-change event</b> (class <tt>ValueChangeEvent</tt>) occurs when the user changes the value of
+a component represented by <tt>UIInput</tt> or one of its subclasses. An example is selecting
+a check box, an action that results in the component&rsquo;s value changing to
+<tt>true</tt>. The component types that can generate these types of events are the
+<tt>UIInput</tt>, <tt>UISelectOne</tt>, <tt>UISelectMany</tt>, and <tt>UISelectBoolean</tt> components. Value-change events are fired only if no
+validation errors were detected.</p>
+
+<p><a name="indexterm-723"></a><a name="indexterm-724"></a>Depending on the value of the <tt>immediate</tt> property (see <a href="bnarf.html#bnari">The <tt>immediate</tt> Attribute</a>) of the component
+emitting the event, action events can be processed during the invoke application phase
+or the apply request values phase, and value-change events can be processed during
+the process validations phase or the apply request values phase.</p>
+
+<p><b>System events</b> are generated by an <tt>Object</tt> rather than a <tt>UIComponent</tt>. They are generated
+during the execution of an application at predefined times. They are applicable to
+the entire application rather than to a specific component.</p>
+
+<p>A <b>data-model event</b> occurs when a new row of a <tt>UIData</tt> component is
+selected.</p>
+
+<p>There are two ways to cause your application to react to action
+events or value-change events that are emitted by a standard component:</p>
+
+
+<ul><li><p><a name="indexterm-725"></a><a name="indexterm-726"></a><a name="indexterm-727"></a>Implement an event listener class to handle the event and register the listener on the component by nesting either a <tt>valueChangeListener</tt> tag or an <tt>actionListener</tt> tag inside the component tag.</p>
+
+</li>
+<li><p><a name="indexterm-728"></a><a name="indexterm-729"></a>Implement a method of a managed bean to handle the event and refer to the method with a method expression from the appropriate attribute of the component&rsquo;s tag.</p>
+
+</li></ul>
+<p>See <a href="bnaut.html">Implementing an Event Listener</a> for information on how to implement an event listener. See <a href="bnasz.html">Registering Listeners on Components</a>
+for information on how to register the listener on a component.</p>
+
+<p>See <a href="bnavb.html#bnavd">Writing a Method to Handle an Action Event</a> and <a href="bnavb.html#bnavf">Writing a Method to Handle a Value-Change Event</a> for information on how to implement managed bean methods
+that handle these events.</p>
+
+<p>See <a href="bnatn.html">Referencing a Managed Bean Method</a> for information on how to refer to the managed bean method
+from the component tag.</p>
+
+<p>When emitting events from custom components, you must implement the appropriate <tt>Event</tt> class
+and manually queue the event on the component in addition to implementing an
+event listener class or a managed bean method that handles the event. <a href="bnawd.html">Handling Events for Custom Components</a>
+explains how to do this.</p>
+
+
+
+<a name="bnaqk"></a><h3>Validation Model</h3>
+<a name="indexterm-730"></a><a name="indexterm-731"></a><p><a name="indexterm-732"></a><a name="indexterm-733"></a><a name="indexterm-734"></a>JavaServer Faces technology supports a mechanism for validating the local data of editable components
+(such as text fields). This validation occurs before the corresponding model data is
+updated to match the local value.</p>
+
+<p><a name="indexterm-735"></a><a name="indexterm-736"></a><a name="indexterm-737"></a>Like the conversion model, the validation model defines a set of standard classes
+for performing common data validation checks. The JavaServer Faces core tag library also
+defines a set of tags that correspond to the standard <tt>Validator</tt> implementations. See <a href="bnatc.html">Using the Standard Validators</a>
+for a list of all the standard validation classes and corresponding tags.</p>
+
+<p>Most of the tags have a set of attributes for configuring the
+validator&rsquo;s properties, such as the minimum and maximum allowable values for the component&rsquo;s data.
+The page author registers the validator on a component by nesting the validator&rsquo;s
+tag within the component&rsquo;s tag.</p>
+
+<p>In addition to validators that are registered on the component, you can declare
+a default validator which is registered on all <tt>UIInput</tt> components in the application.
+For more information on default validators, see <a href="gireb.html">Using Default Validators</a>.</p>
+
+<p>The validation model also allows you to create your own custom validator and
+corresponding tag to perform custom validation. The validation model provides two ways to
+implement custom validation:</p>
+
+
+<ul><li><p><a name="indexterm-738"></a>Implement a <tt>Validator</tt> interface that performs the validation.</p>
+
+</li>
+<li><p>Implement a managed bean method that performs the validation.</p>
+
+</li></ul>
+<p>If you are implementing a <tt>Validator</tt> interface, you must also:</p>
+
+
+<ul><li><p>Register the <tt>Validator</tt> implementation with the application. </p>
+
+</li>
+<li><p><a name="indexterm-739"></a><a name="indexterm-740"></a><a name="indexterm-741"></a><a name="indexterm-742"></a>Create a custom tag or use a <tt>validator</tt> tag to register the validator on the component. </p>
+
+</li></ul>
+<p>In the previously described standard validation model, the validator is defined for each
+input component on a page. The Bean Validation model allows the validator to
+be applied to all fields in a page. See <a href="gircz.html">Using Bean Validation</a> and <a href="gkahp.html">Chapter&nbsp;49, Bean Validation: Advanced Topics</a>
+for more information on Bean Validation.</p>
+
+
+
+<a name="bnaql"></a><h3>Navigation Model</h3>
+<a name="indexterm-743"></a><p>The JavaServer Faces navigation model makes it easy to define page navigation and
+to handle any additional processing that is needed to choose the sequence in
+which pages are loaded.</p>
+
+<p><a name="indexterm-744"></a>In JavaServer Faces technology, <b>navigation</b> is a set of rules for choosing the next
+page or view to be displayed after an application action, such as when
+a button or hyperlink is clicked.</p>
+
+<p>Navigation can be implicit or user-defined. Implicit navigation comes into play when user-defined
+navigation rules are not available. For more information on implicit navigation, see <a href="bnaxf.html#giqwk">Implicit Navigation Rules</a>.</p>
+
+<p>User-defined navigation rules are declared in zero or more application configuration resource files,
+such as <tt>faces-config.xml</tt>, by using a set of XML elements. The default structure
+of a navigation rule is as follows:</p>
+
+<pre>&lt;navigation-rule>
+    &lt;description>&lt;/description
+    &lt;from-view-id>&lt;/from-view-id>
+    &lt;navigation-case>
+        &lt;from-action>&lt;/from-action>
+        &lt;from-outcome>&lt;/from-outcome>
+        &lt;if>&lt;/if>
+        &lt;to-view-id>&lt;/to-view-id>
+    &lt;/navigation-case>
+&lt;/navigation-rule></pre><p>User-defined navigation is handled as follows:</p>
+
+
+<ul><li><p>Define the rules in the application configuration resource file.</p>
+
+</li>
+<li><p>Refer to an outcome <tt>String</tt> from the button or hyperlink component&rsquo;s <tt>action</tt> attribute. This outcome <tt>String</tt> is used by the JavaServer Faces implementation to select the navigation rule.</p>
+
+</li></ul>
+<p>Here is an example navigation rule:</p>
+
+<pre>&lt;navigation-rule>
+    &lt;from-view-id>/greeting.xhtml&lt;/from-view-id>
+    &lt;navigation-case>
+        &lt;from-outcome>success&lt;/from-outcome>
+        &lt;to-view-id>/response.xhtml&lt;/to-view-id>
+    &lt;/navigation-case>
+&lt;/navigation-rule></pre><p>This rule states that when a command component (such as a <tt>commandButton</tt>
+or a <tt>commandLink</tt>) on <tt>greeting.xhtml</tt> is activated, the application will navigate from the
+<tt>greeting.xhtml</tt> page to the <tt>response.xhtml</tt><tt></tt> page if the outcome referenced by the button component&rsquo;s
+tag is <tt>success</tt>. Here is the <tt>commandButton</tt> tag from <tt>greeting.xhtml</tt> that specifies a logical
+outcome of success:</p>
+
+<pre>&lt;h:commandButton id="submit" action="success"
+         value="Submit" /></pre><p>As the example demonstrates, each <tt>navigation-rule</tt> element defines how to get from one
+page (specified in the <tt>from-view-id</tt> element) to the other pages of the application.
+The <tt>navigation-rule</tt> elements can contain any number of <tt>navigation-case</tt> elements, each of which defines
+the page to open next (defined by <tt>to-view-id</tt>) based on a logical outcome
+(defined by <tt>from-outcome</tt>) .</p>
+
+<p><a name="indexterm-745"></a><a name="indexterm-746"></a><a name="indexterm-747"></a>In more complicated applications, the logical outcome can also come from the return
+value of an <b>action method</b> in a managed bean. This method performs some processing
+to determine the outcome. For example, the method can check whether the password
+the user entered on the page matches the one on file. If it
+does, the method might return <tt>success</tt>; otherwise, it might return <tt>failure</tt>. An
+outcome of <tt>failure</tt> might result in the logon page being reloaded. An outcome of
+<tt>success</tt> might cause the page displaying the user&rsquo;s credit card activity to open.
+If you want the outcome to be returned by a method on a
+bean, you must refer to the method using a method expression, with the
+<tt>action</tt> attribute, as shown by this example:</p>
+
+<pre>&lt;h:commandButton id="submit"
+     action="#{userNumberBean.getOrderStatus}" value="Submit" /></pre><p><a name="indexterm-748"></a><a name="indexterm-749"></a>When the user clicks the button represented by this tag, the corresponding component
+generates an action event. This event is handled by the default <tt>ActionListener</tt>
+instance, which calls the action method referenced by the component that triggered the
+event. The action method returns a logical outcome to the action listener.</p>
+
+<p><a name="indexterm-750"></a>The listener passes the logical outcome and a reference to the action method
+that produced the outcome to the default <tt>NavigationHandler</tt>. The <tt>NavigationHandler</tt> selects the page
+to display next by matching the outcome or the action method reference against
+the navigation rules in the application configuration resource file by the following process:</p>
+
+
+<ol><li><p>The <tt>NavigationHandler</tt> selects the navigation rule that matches the page currently displayed.</p>
+
+</li>
+<li><p>It matches the outcome or the action method reference that it received from the default <tt>ActionListener</tt> with those defined by the navigation cases.</p>
+
+</li>
+<li><p>It tries to match both the method reference and the outcome against the same navigation case.</p>
+
+</li>
+<li><p>If the previous step fails, the navigation handler attempts to match the outcome.</p>
+
+</li>
+<li><p>Finally, the navigation handler attempts to match the action method reference if the previous two attempts failed.</p>
+
+</li>
+<li><p>If no navigation case is matched, it displays the same view again.</p>
+
+</li></ol>
+<p>When the <tt>NavigationHandler</tt> achieves a match, the render response phase begins. During this
+phase, the page selected by the <tt>NavigationHandler</tt> will be rendered.</p>
+
+<p>For more information on how to define navigation rules, see <a href="bnaxf.html">Configuring Navigation Rules</a>.</p>
+
+<p>For more information on how to implement action methods to handle navigation, see
+<a href="bnavb.html#bnavd">Writing a Method to Handle an Action Event</a>.</p>
+
+<p>For more information on how to reference outcomes or action methods from component
+tags, see <a href="bnatn.html#bnatp">Referencing a Method That Performs Navigation</a>.</p>
+
+
+         </div>
+         <div class="navigation">
+             <a href="giprr.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="gkiow.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

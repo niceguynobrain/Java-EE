@@ -1,0 +1,523 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<!-- GenHTML revision 25226-->
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Creating a Simple Web Service and Clients with JAX-WS - The Java EE 6 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2012-04-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/javaeetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td width="400px"><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnaph.html">4.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="giepx.html">5.&nbsp;&nbsp;Introduction to Facelets</a></p>
+<p class="toc level2"><a href="gjddd.html">6.&nbsp;&nbsp;Expression Language</a></p>
+<p class="toc level2"><a href="bnaqz.html">7.&nbsp;&nbsp;Using JavaServer Faces Technology in Web Pages</a></p>
+<p class="toc level2"><a href="gjcut.html">8.&nbsp;&nbsp;Using Converters, Listeners, and Validators</a></p>
+<p class="toc level2"><a href="bnatx.html">9.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkmaa.html">10.&nbsp;&nbsp;JavaServer Faces Technology: Advanced Concepts</a></p>
+<p class="toc level2"><a href="gkiow.html">11.&nbsp;&nbsp;Using Ajax with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="gkhxa.html">12.&nbsp;&nbsp;Composite Components: Advanced Topics and Example</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components and Other Custom Objects</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">15.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="glrbb.html">16.&nbsp;&nbsp;Java Servlet Technology: Advanced Topics</a></p>
+<p class="toc level2"><a href="bnaxu.html">17.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="gijti.html">18.&nbsp;&nbsp;Introduction to Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">19.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<div id="scrolltoc" class="onpage">
+<p class="toc level3"><a href="">Creating a Simple Web Service and Clients with JAX-WS</a></p>
+<p class="toc level4"><a href="#bnayp">Requirements of a JAX-WS Endpoint</a></p>
+<p class="toc level4"><a href="#bnayq">Coding the Service Endpoint Implementation Class</a></p>
+<p class="toc level4"><a href="#bnayr">Building, Packaging, and Deploying the Service</a></p>
+<p class="toc level5"><a href="#bnays">To Build, Package, and Deploy the Service Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="#bnayt">To Build, Package, and Deploy the Service Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="#gkajl">Testing the Methods of a Web Service Endpoint</a></p>
+<p class="toc level5"><a href="#bnayw">To Test the Service without a Client</a></p>
+<p class="toc level4 tocsp"><a href="#bnayx">A Simple JAX-WS Application Client</a></p>
+<p class="toc level5"><a href="#bnayy">Coding the Application Client</a></p>
+<p class="toc level5"><a href="#bnayz">Building, Packaging, Deploying, and Running the Application Client</a></p>
+<p class="toc level4 tocsp"><a href="#gjygb">A Simple JAX-WS Web Client</a></p>
+<p class="toc level5"><a href="#gjyfl">Coding the Servlet</a></p>
+<p class="toc level5"><a href="#gjyge">Building, Packaging, Deploying, and Running the Web Client</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnazc.html">Types Supported by JAX-WS</a></p>
+<p class="toc level4"><a href="bnazc.html#bnazt">Schema-to-Java Mapping</a></p>
+<p class="toc level4"><a href="bnazc.html#bnazw">Java-to-Schema Mapping</a></p>
+<p class="toc level3 tocsp"><a href="bnazd.html">Web Services Interoperability and JAX-WS</a></p>
+<p class="toc level3"><a href="bnaze.html">Further Information about JAX-WS</a></p>
+<p class="toc level2 tocsp"><a href="giepu.html">20.&nbsp;&nbsp;Building RESTful Web Services with JAX-RS</a></p>
+<p class="toc level2"><a href="gjjxe.html">21.&nbsp;&nbsp;JAX-RS: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijsz.html">22.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijre.html">23.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="gijrb.html">24.&nbsp;&nbsp;Running the Enterprise Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">25.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level2"><a href="gkcqz.html">26.&nbsp;&nbsp;Using the Embedded Enterprise Bean Container</a></p>
+<p class="toc level2"><a href="gkidz.html">27.&nbsp;&nbsp;Using Asynchronous Method Invocation in Session Beans</a></p>
+<p class="toc level1 tocsp"><a href="gjbnr.html">Part&nbsp;V&nbsp;Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="giwhb.html">28.&nbsp;&nbsp;Introduction to Contexts and Dependency Injection for the Java EE Platform</a></p>
+<p class="toc level2"><a href="gjbls.html">29.&nbsp;&nbsp;Running the Basic Contexts and Dependency Injection Examples</a></p>
+<p class="toc level2"><a href="gjehi.html">30.&nbsp;&nbsp;Contexts and Dependency Injection for the Java EE Platform: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkhre.html">31.&nbsp;&nbsp;Running the Advanced Contexts and Dependency Injection Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;VI&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">32.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="gijst.html">33.&nbsp;&nbsp;Running the Persistence Examples</a></p>
+<p class="toc level2"><a href="bnbtg.html">34.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level2"><a href="gjitv.html">35.&nbsp;&nbsp;Using the Criteria API to Create Queries</a></p>
+<p class="toc level2"><a href="gkjiq.html">36.&nbsp;&nbsp;Creating and Using String-Based Criteria Queries</a></p>
+<p class="toc level2"><a href="gkjjf.html">37.&nbsp;&nbsp;Controlling Concurrent Access to Entity Data with Locking</a></p>
+<p class="toc level2"><a href="gkjia.html">38.&nbsp;&nbsp;Improving the Performance of Java Persistence API Applications By Setting a Second-Level Cache</a></p>
+<p class="toc level1 tocsp"><a href="gijrp.html">Part&nbsp;VII&nbsp;Security</a></p>
+<p class="toc level2"><a href="bnbwj.html">39.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bncas.html">40.&nbsp;&nbsp;Getting Started Securing Web Applications</a></p>
+<p class="toc level2"><a href="bnbyk.html">41.&nbsp;&nbsp;Getting Started Securing Enterprise Applications</a></p>
+<p class="toc level2"><a href="gjjwx.html">42.&nbsp;&nbsp;Java EE Security: Advanced Topics and Example</a></p>
+<p class="toc level1 tocsp"><a href="gijue.html">Part&nbsp;VIII&nbsp;Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="gijto.html">43.&nbsp;&nbsp;Introduction to Java EE Supporting Technologies</a></p>
+<p class="toc level2"><a href="bncih.html">44.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">45.&nbsp;&nbsp;Resources and Resource Adapters</a></p>
+<p class="toc level2"><a href="glodb.html">46.&nbsp;&nbsp;Running the Resource Adapter Example</a></p>
+<p class="toc level2"><a href="bncdq.html">47.&nbsp;&nbsp;Java Message Service Concepts</a></p>
+<p class="toc level2"><a href="bncgv.html">48.&nbsp;&nbsp;Java Message Service Examples</a></p>
+<p class="toc level2"><a href="gkahp.html">49.&nbsp;&nbsp;Bean Validation: Advanced Topics</a></p>
+<p class="toc level2"><a href="gkeed.html">50.&nbsp;&nbsp;Using Java EE Interceptors</a></p>
+<p class="toc level1 tocsp"><a href="gkgjw.html">Part&nbsp;IX&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="glnvi.html">51.&nbsp;&nbsp;Duke's Bookstore Case Study Example</a></p>
+<p class="toc level2"><a href="gkaee.html">52.&nbsp;&nbsp;Duke's Tutoring Case Study Example</a></p>
+<p class="toc level2"><a href="glnpw.html">53.&nbsp;&nbsp;Duke's Forest Case Study Example</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td>
+         <div class="header">
+             <div class="banner">
+                <table width="100%" border="0" cellpadding="5" cellspacing="0">
+                   <tbody>
+                      <tr>
+                         <td valign="bottom"><p class="Banner">The Java EE 6 Tutorial
+</p></td>
+                         <td align="right"  valign="bottom"><img src="graphics/javalogo.png" alt="Java Coffee Cup logo"></td>
+                      </tr>
+                   </tbody>
+                </table>
+             </div>
+
+             <div class="header-links">
+	         <a href="./index.html">Home</a> | 
+<a href="../information/download.html">Download</a> | 
+<a href="./javaeetutorial6.pdf">PDF</a> | 
+<a href="../information/faq.html">FAQ</a> | 
+<a href="http://docs.oracle.com/javaee/support/feedback.htm">Feedback</a>
+
+             </div>
+             <div class="navigation">
+                 <a href="bnayl.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+                 <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+                 <a href="bnazc.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnayn"></a><h2>Creating a Simple Web Service and Clients with JAX-WS</h2>
+<a name="indexterm-1205"></a><a name="indexterm-1206"></a><a name="indexterm-1207"></a><p>This section shows how to build and deploy a simple web service
+and two clients: an application client and a web client. The source code
+for the service is in the <tt></tt><i>tut-install</i><tt>/examples/jaxws/helloservice/</tt> directory, and the clients are in the
+<tt></tt><i>tut-install</i><tt>/examples/jaxws/appclient/</tt> and <tt></tt><i>tut-install</i><tt>/examples/jaxws/webclient/</tt> directories.</p>
+
+<p><a href="#bnayo">Figure&nbsp;19-1</a> illustrates how JAX-WS technology manages communication between a web service and a
+client.</p>
+
+<a name="bnayo"></a><p class="caption">Figure&nbsp;19-1 Communication between a JAX-WS Web Service and a Client</p><img src="figures/jaxws-simpleclientservice.gif" alt="Diagram showing a client and web service communicating through a SOAP message."></img><p><a name="indexterm-1208"></a>The starting point for developing a JAX-WS web service is a Java class
+annotated with the <tt>javax.jws.WebService</tt> annotation. The <tt>@WebService</tt> annotation defines the class as a
+web service endpoint.</p>
+
+<p><a name="indexterm-1209"></a>A <b>service endpoint interface</b> or <b>service endpoint implementation</b> (SEI) is a Java interface or class, respectively, that
+declares the methods that a client can invoke on the service. An
+interface is not required when building a JAX-WS endpoint. The web service implementation class
+implicitly defines an SEI.</p>
+
+<p>You may specify an explicit interface by adding the <tt>endpointInterface</tt> element to
+the <tt>@WebService</tt> annotation in the implementation class. You must then provide an interface
+that defines the public methods made available in the endpoint implementation class.</p>
+
+<p>The basic steps for creating a web service and client are as
+follows:</p>
+
+
+<ol><li><p>Code the implementation class.</p>
+
+</li>
+<li><p>Compile the implementation class.</p>
+
+</li>
+<li><p>Package the files into a WAR file.</p>
+
+</li>
+<li><p>Deploy the WAR file. The web service artifacts, which are used to communicate with clients, are generated by the GlassFish Server during deployment.</p>
+
+</li>
+<li><p>Code the client class.</p>
+
+</li>
+<li><p>Use a <tt>wsimport</tt> Ant task to generate and compile the web service artifacts needed to connect to the service.</p>
+
+</li>
+<li><p>Compile the client class.</p>
+
+</li>
+<li><p>Run the client.</p>
+
+</li></ol>
+<p>If you use NetBeans IDE to create a service and client, the
+IDE performs the <tt>wsimport</tt> task for you.</p>
+
+<p>The sections that follow cover these steps in greater detail.</p>
+
+
+
+<a name="bnayp"></a><h3>Requirements of a JAX-WS Endpoint</h3>
+<p>JAX-WS endpoints must follow these requirements.</p>
+
+
+<ul><li><p>The implementing class must be annotated with either the <tt>javax.jws.WebService</tt> or the <tt>javax.jws.WebServiceProvider</tt> annotation.</p>
+
+</li>
+<li><p>The implementing class may explicitly reference an SEI through the <tt>endpointInterface</tt> element of the <tt>@WebService</tt> annotation but is not required to do so. If no <tt>endpointInterface</tt> is specified in <tt>@WebService</tt>, an SEI is implicitly defined for the implementing class.</p>
+
+</li>
+<li><p>The business methods of the implementing class must be public and must not be declared <tt>static</tt> or <tt>final</tt>.</p>
+
+</li>
+<li><p>Business methods that are exposed to web service clients must be annotated with <tt>javax.jws.WebMethod</tt>.</p>
+
+</li>
+<li><p>Business methods that are exposed to web service clients must have JAXB-compatible parameters and return types. See the list of JAXB default data type bindings at <a href="http://docs.oracle.com/javaee/5/tutorial/doc/bnazq.html#bnazs">http://docs.oracle.com/javaee/5/tutorial/doc/bnazq.html#bnazs</a>.</p>
+
+</li>
+<li><p>The implementing class must not be declared <tt>final</tt> and must not be <tt>abstract</tt>.</p>
+
+</li>
+<li><p>The implementing class must have a default public constructor.</p>
+
+</li>
+<li><p>The implementing class must not define the <tt>finalize</tt> method.</p>
+
+</li>
+<li><p>The implementing class may use the <tt>javax.annotation.PostConstruct</tt> or the <tt>javax.annotation.PreDestroy</tt> annotations on its methods for lifecycle event callbacks.</p>
+
+<p>The <tt>@PostConstruct</tt> method is called by the container before the implementing class begins responding to web service clients.</p>
+
+<p>The <tt>@PreDestroy</tt> method is called by the container before the endpoint is removed from operation.</p>
+
+</li></ul>
+
+
+<a name="bnayq"></a><h3>Coding the Service Endpoint Implementation Class</h3>
+<p>In this example, the implementation class, <tt>Hello</tt>, is annotated as a web service
+endpoint using the <tt>@WebService</tt> annotation. <tt>Hello</tt> declares a single method named <tt>sayHello</tt>, annotated
+with the <tt>@WebMethod</tt> annotation, which exposes the annotated method to web service clients.
+The <tt>sayHello</tt> method returns a greeting to the client, using the name passed
+to it to compose the greeting. The implementation class also must define a
+default, public, no-argument constructor.</p>
+
+<pre>package helloservice.endpoint;
+
+import javax.jws.WebService;
+import javax.jws.webMethod;
+
+@WebService
+public class Hello {
+    private String message = new String("Hello, ");
+
+    public void Hello() {
+    }
+
+    @WebMethod
+    public String sayHello(String name) {
+        return message + name + ".";
+    }
+}</pre>
+
+<a name="bnayr"></a><h3>Building, Packaging, and Deploying the Service</h3>
+<p>You can build, package, and deploy the <tt>helloservice</tt> application by using either NetBeans
+IDE or Ant.</p>
+
+
+
+<a name="bnays"></a><h4>To Build, Package, and Deploy the Service Using NetBeans IDE</h4>
+<ol>
+<li><b>From the File menu, choose Open Project.</b></li>
+<li><b>In the Open Project dialog, navigate to:</b><pre><tt></tt><i>tut-install</i><tt>/examples/jaxws/</tt></pre></li>
+<li><b>Select the <tt>helloservice</tt> folder.</b></li>
+<li><b>Select the Open as Main Project check box.</b></li>
+<li><b>Click Open Project.</b></li>
+<li><b>In the Projects tab, right-click the <tt>helloservice</tt> project and select Deploy.</b><p>This command builds and packages the application into <tt>helloservice.war</tt>, located in <tt></tt><i>tut-install</i><tt>/examples/jaxws/helloservice/dist/</tt>, and
+deploys this WAR file to the GlassFish Server.</p></li></ol><p></b>Next Steps</b></p><p>You can view the WSDL file of the deployed service by requesting
+the URL <tt>http://localhost:8080/helloservice/HelloService?wsdl</tt> in a web browser. Now you are ready to create a
+client that accesses this service.</p>
+
+
+
+<a name="bnayt"></a><h4>To Build, Package, and Deploy the Service Using Ant</h4>
+<ol>
+<li><b>In a terminal window, go to:</b><pre><tt></tt><i>tut-install</i><tt>/examples/jaxws/helloservice/</tt></pre></li>
+<li><b>Type the following command:</b><pre><tt><b>ant</b></tt></pre><p>This command calls the <tt>default</tt> target, which builds and packages the application into
+a WAR file, <tt>helloservice.war</tt>, located in the <tt>dist</tt> directory.</p></li>
+<li><b>Make sure that the GlassFish Server is started.</b></li>
+<li><b>Type the following:</b><pre><tt><b>ant deploy</b></tt></pre></li></ol><p></b>Next Steps</b></p><p>You can view the WSDL file of the deployed service by requesting
+the URL <tt>http://localhost:8080/helloservice/HelloService?wsdl</tt> in a web browser. Now you are ready to create a
+client that accesses this service.</p>
+
+
+
+<a name="gkajl"></a><h3>Testing the Methods of a Web Service Endpoint</h3>
+<p>GlassFish Server allows you to test the methods of a web service
+endpoint.</p>
+
+
+
+<a name="bnayw"></a><h4>To Test the Service without a Client</h4>
+<p>To test the <tt>sayHello</tt> method of <tt>HelloService</tt>, follow these steps.</p>
+
+<ol>
+<li><b>Open the web service test interface by typing the following URL in a
+web browser:</b><pre>http://localhost:8080/helloservice/HelloService?Tester</pre></li>
+<li><b>Under Methods, type a name as the parameter to the <tt>sayHello</tt> method.</b></li>
+<li><b>Click the <tt>sayHello</tt> button.</b><p>This takes you to the <tt>sayHello</tt> Method invocation page.</p><p>Under Method returned, you&rsquo;ll see the response from the endpoint.</p></li></ol>
+
+<a name="bnayx"></a><h3>A Simple JAX-WS Application Client</h3>
+<p>The <tt>HelloAppClient</tt> class is a stand-alone application client that accesses the <tt>sayHello</tt> method
+of <tt>HelloService</tt>. This call is made through a port, a local object
+that acts as a proxy for the remote service. The port is created
+at development time by the <tt>wsimport</tt> task, which generates JAX-WS portable artifacts based on
+a WSDL file.</p>
+
+
+
+<a name="bnayy"></a><h4>Coding the Application Client</h4>
+<p>When invoking the remote methods on the port, the client performs these steps:</p>
+
+
+<ol><li><p>Uses the generated <tt>helloservice.endpoint.HelloService</tt> class, which represents the service at the URI of the deployed service&rsquo;s WSDL file:</p>
+
+<pre>import helloservice.endpoint.HelloService;
+import javax.xml.ws.WebServiceRef;
+
+public class HelloAppClient {
+    @WebServiceRef(wsdlLocation = 
+      "META-INF/wsdl/localhost_8080/helloservice/HelloService.wsdl")
+    private static HelloService service;</pre></li>
+<li><p>Retrieves a proxy to the service, also known as a port, by invoking <tt>getHelloPort</tt> on the service:</p>
+
+<pre>helloservice.endpoint.Hello port = service.getHelloPort();</pre><p>The port implements the SEI defined by the service.</p>
+
+</li>
+<li><p>Invokes the port&rsquo;s <tt>sayHello</tt> method, passing a string to the service:</p>
+
+<pre>return port.sayHello(arg0);</pre></li></ol>
+<p>Here is the full source of <tt>HelloAppClient</tt>, which is located in the following
+ directory:</p>
+
+<pre><tt></tt><i>tut-install</i><tt>/examples/jaxws/appclient/src/appclient/</tt></pre><pre>package appclient;
+
+import helloservice.endpoint.HelloService;
+import javax.xml.ws.WebServiceRef;
+
+public class HelloAppClient {
+    @WebServiceRef(wsdlLocation = 
+      "META-INF/wsdl/localhost_8080/helloservice/HelloService.wsdl")
+    private static HelloService service;
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       System.out.println(sayHello("world"));
+    }
+
+    private static String sayHello(java.lang.String arg0) {
+        helloservice.endpoint.Hello port = service.getHelloPort();
+        return port.sayHello(arg0);
+    }
+}</pre>
+
+<a name="bnayz"></a><h4>Building, Packaging, Deploying, and Running the Application Client</h4>
+<p>You can build, package, deploy, and run the <tt>appclient</tt> application by using either
+NetBeans IDE or Ant. To build the client, you must first have deployed
+<tt>helloservice</tt>, as described in <a href="#bnayr">Building, Packaging, and Deploying the Service</a>.</p>
+
+
+
+<a name="bnaza"></a><h4>To Build, Package, Deploy, and Run the Application Client Using NetBeans IDE</h4>
+<ol>
+<li><b>From the File menu, choose Open Project.</b></li>
+<li><b>In the Open Project dialog, navigate to:</b><pre><tt></tt><i>tut-install</i><tt>/examples/jaxws/</tt></pre></li>
+<li><b>Select the <tt>appclient</tt> folder.</b></li>
+<li><b>Select the Open as Main Project check box.</b></li>
+<li><b>Click Open Project.</b></li>
+<li><b>In the Projects tab, right-click the <tt>appclient</tt> project and select Run.</b><p>You will see the output of the application client in the Output pane.</p></li></ol>
+
+<a name="bnazb"></a><h4>To Build, Package, Deploy, and Run the Application Client Using Ant</h4>
+<ol>
+<li><b>In a terminal window, go to:</b><pre><tt></tt><i>tut-install</i><tt>/examples/jaxws/appclient/</tt></pre></li>
+<li><b>Type the following command:</b><pre><tt><b>ant</b></tt></pre><p>This command calls the <tt>default</tt> target, which runs the <tt>wsimport</tt> task and builds
+and packages the application into a JAR file, <tt>appclient.jar</tt>, located in the <tt>dist</tt>
+directory.</p></li>
+<li><b>Type the following command:</b><pre><tt><b>ant getclient</b></tt></pre><p>This command deploys the <tt>appclient.jar</tt> file and retrieves the client stubs.</p></li>
+<li><b>To run the client, type the following command:</b><pre><tt><b>ant run</b></tt></pre></li></ol>
+
+<a name="gjygb"></a><h3>A Simple JAX-WS Web Client</h3>
+<p><tt>HelloServlet</tt> is a servlet that, like the Java client, calls the <tt>sayHello</tt> method
+of the web service. Like the application client, it makes this call through
+a port.</p>
+
+
+
+<a name="gjyfl"></a><h4>Coding the Servlet</h4>
+<p>To invoke the method on the port, the client performs these steps:</p>
+
+
+<ol><li><p>Imports the <tt>HelloService</tt> endpoint and the <tt>WebServiceRef</tt> annotation:</p>
+
+<pre>import helloservice.endpoint.HelloService;
+...
+import javax.xml.ws.WebServiceRef;</pre></li>
+<li><p>Defines a reference to the web service by specifying the WSDL location:</p>
+
+<pre>@WebServiceRef(wsdlLocation = 
+  "WEB-INF/wsdl/localhost_8080/helloservice/HelloService.wsdl")</pre></li>
+<li><p>Declares the web service, then defines a private method that calls the <tt>sayHello</tt> method on the port:</p>
+
+<pre>private HelloService service;
+...
+private String sayHello(java.lang.String arg0) {
+    helloservice.endpoint.Hello port = service.getHelloPort();
+    return port.sayHello(arg0);
+}</pre></li>
+<li><p>In the servlet, calls this private method:</p>
+
+<pre>out.println("&lt;p>" + sayHello("world") + "&lt;/p>");</pre></li></ol>
+<p>The significant parts of the <tt>HelloServlet</tt> code follow. The code is located in
+the <tt></tt><i>tut-install</i><tt>/examples/jaxws/src/java/webclient/</tt> directory.</p>
+
+<pre>package webclient;
+
+import helloservice.endpoint.HelloService;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.xml.ws.WebServiceRef;
+
+@WebServlet(name="HelloServlet", urlPatterns={"/HelloServlet"})
+public class HelloServlet extends HttpServlet {
+    @WebServiceRef(wsdlLocation = 
+      "WEB-INF/wsdl/localhost_8080/helloservice/HelloService.wsdl")
+    private HelloService service;
+   
+    /** 
+     * Processes requests for both HTTP &lt;code>GET&lt;/code> 
+     *   and &lt;code>POST&lt;/code> methods.
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    protected void processRequest(HttpServletRequest request, 
+            HttpServletResponse response)
+    throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        try {
+            
+            out.println("&lt;html lang=\"en\">");
+            out.println("&lt;head>");
+            out.println("&lt;title>Servlet HelloServlet&lt;/title>");  
+            out.println("&lt;/head>");
+            out.println("&lt;body>");
+            out.println("&lt;h1>Servlet HelloServlet at " + 
+                request.getContextPath () + "&lt;/h1>");
+            out.println("&lt;p>" + sayHello("world") + "&lt;/p>");
+            out.println("&lt;/body>");
+            out.println("&lt;/html>");
+            
+        } finally { 
+            out.close();
+        }
+    } 
+    
+    // doGet and doPost methods, which call processRequest, and
+    //   getServletInfo method
+    
+    private String sayHello(java.lang.String arg0) {
+        helloservice.endpoint.Hello port = service.getHelloPort();
+        return port.sayHello(arg0);
+    }
+}</pre>
+
+<a name="gjyge"></a><h4>Building, Packaging, Deploying, and Running the Web Client</h4>
+<p>You can build, package, deploy, and run the <tt>webclient</tt> application by using either
+NetBeans IDE or Ant. To build the client, you must first have deployed
+<tt>helloservice</tt>, as described in <a href="#bnayr">Building, Packaging, and Deploying the Service</a>.</p>
+
+
+
+<a name="gjygz"></a><h4>To Build, Package, Deploy, and Run the Web Client Using NetBeans IDE</h4>
+<ol>
+<li><b>From the File menu, choose Open Project.</b></li>
+<li><b>In the Open Project dialog, navigate to:</b><pre><tt></tt><i>tut-install</i><tt>/examples/jaxws/</tt></pre></li>
+<li><b>Select the <tt>webclient</tt> folder.</b></li>
+<li><b>Select the Open as Main Project check box.</b></li>
+<li><b>Click Open Project.</b></li>
+<li><b>In the Projects tab, right-click the <tt>webclient</tt> project and select Deploy.</b><p>This task runs the <tt>wsimport</tt> tasks, builds and packages the application into a
+WAR file, <tt>webclient.war</tt>, located in the <tt>dist</tt> directory, and deploys it to the server.</p></li>
+<li><b>In a web browser, navigate to the following URL:</b><pre>http://localhost:8080/webclient/HelloServlet</pre><p>The output of the <tt>sayHello</tt> method appears in the window.</p></li></ol>
+
+<a name="gjygn"></a><h4>To Build, Package, Deploy, and Run the Web Client Using Ant</h4>
+<ol>
+<li><b>In a terminal window, go to:</b><pre><tt></tt><i>tut-install</i><tt>/examples/jaxws/webclient/</tt></pre></li>
+<li><b>Type the following command:</b><pre><tt><b>ant</b></tt></pre><p>This command calls the <tt>default</tt> target, which  runs the <tt>wsimport</tt> tasks, then
+builds and packages the application into a WAR file, <tt>webclient.war</tt>, located in the
+<tt>dist</tt> directory.</p></li>
+<li><b>Type the following command:</b><pre><tt><b>ant deploy</b></tt></pre><p>This task deploys the WAR file to the server.</p></li>
+<li><b>In a web browser, navigate to the following URL:</b><pre>http://localhost:8080/webclient/HelloServlet</pre><p>The output of the <tt>sayHello</tt> method appears in the window.</p></li></ol>
+         </div>
+         <div class="navigation">
+             <a href="bnayl.html"><img src="graphics/leftButton.gif" border="0" alt="Previous" title="Previous"></a>
+             <a href="p1.html"><img src="graphics/upButton.gif" border="0" alt="Contents" title="Contents"></a>
+             <a href="bnazc.html"><img src="graphics/rightButton.gif" border="0" alt="Next" title="Next"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>Copyright &copy; 2012, Oracle and/or its affiliates. All rights reserved. <a href="docinfo.html">Legal Notices</a></p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+
