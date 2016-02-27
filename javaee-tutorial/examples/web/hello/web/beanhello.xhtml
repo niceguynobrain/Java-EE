@@ -7,6 +7,11 @@
         <title>Facelets Hello World</title>
     </h:head>
     <h:body>
+        <!--retrieves the value from the Managed Bean tagged in hello.java
+            Uses # this is Expression Language (EL) -->
+        <div> This is a response from a managed bean. 
+              Managed beans are lightweight container-managed objects.
+        </div>
         #{hello.world}
     </h:body>
 </html>
