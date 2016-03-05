@@ -1,0 +1,133 @@
+
+User Guide:
+	Where text is between two hyphens, - like so - then it should be replaced with comment 
+	which is relevant to the class / method / property which is being documented.
+
+Class comment:
+
+Creates an 
+	- insert: listener / view / button / layout / interface	-
+which  
+	- insert object description - 
+	- insert: purpose / function -
+The result is 
+	- property passed -
+	- change in values / perceptive -
+	- logical business step passed -
+<p>
+The class implements
+	- Implementations -
+for determining
+	- Code logic -
+and 
+	- more Code logic -
+
+@see
+	@see <API documentation>
+
+	Example: 
+			@see android.view.View.OnFocusChangeListener
+
+	Example:
+			/**  
+			 * creates an OnFocusChangeListener for an EditText control that displays
+			 * a TimePicker Control letting the user select the time from a 24 Hr
+			 * clock.  The resultant time is formatted into a string showing HH:mm
+			 * as per the picker control and populated as the value of the EditText.
+			 *
+			 * The class implements the View.OnFocusChangeListener for determining
+			 * when the EditText has gained focus, and the TimePickerDialog.OnTimeSetListener
+			 * to get the Time selected by the user input. 
+		     * @author Yusuf Bhayat
+			 * @version 1.0
+			 * @since 2016-02-27
+			 * @see android.view.View.OnFocusChangeListener
+			 * @see android.app.TimePickerDialog.OnTimeSetListener
+			 * @see android.text.format.Time
+			 */
+
+Constructor comment:
+
+	- class name -
+Constructor which 
+	- explain first parameter passed in -
+as well as 
+	- explain other parameters passed in -
+It also
+	- state any objects initialised and their purpose -
+		Example:
+				*  It also initialises the Time object that will get and hold the time
+as well as
+	- other Code logic -
+<p>
+@param  
+	@param  <parameter name>	The <parameter description>: which / that <parameter purpose>
+
+	Example:
+			@param editText  The EditText control to which we want to bind our listener
+			@param view      The TimePicker view that is returning the value
+     		@param hour      The Hour value chosen by the user
+     		@param minute    The Minute value as chosen by the user
+     		@param View	     The view that raised the event
+     		@param hasFocus  Determines if the control currently has focus
+
+	Example:
+			/**
+		     * SetTime Constructor which sets the EditText control that will be manipulated
+		     * as well as the Context of the EditText control.  It also initialises the Time
+		     * object that will get and hold the time as well as setting the OnFocusChangeListener.
+		     *
+		     * @param editText  The EditText control to which we want to bind out listener
+		     * @param context   The context of the EditTextControl, which will be used to the launch
+		     *                  the TimePicker control
+		     */
+
+Method comment:
+	- where the method is called from (if not native) -
+<p>
+	- verb - 
+		Example: Gets / Sets / Displays
+the 
+	- method description -
+	- Code logic -
+It then
+	- other Code logic -
+<p>
+@param
+@see 
+
+	Example:
+			/**
+		     * Implementation of the Abstract method onTimeSet for a TimePickerDialog
+		     *
+		     * Gets the Time set by user using the TimerPicker control and adds the values to the
+		     * Time object.  It then sets the text of the control to that of the selected time.
+		     *
+		     * @param view      The TimePicker view that is returning the value
+		     * @param hour      The Hour value chosen by the user
+		     * @param minute    The Minute value as chosen by the user
+		     * @see android.app.TimePickerDialog.OnTimeSetListener
+		     */
+
+	Example:
+		    /**
+		     * Displays the Time Picker dialog when the focus is set to the EditText control
+		     *
+		     * @param view  The view that raised the event
+		     * @param hasFocus  Determines if the control currently has focus
+		     */
+
+In-line comments:
+	- Code logic -
+	- action performed -
+
+	Example:
+			//String timeStr = time.format("%Y:%m:%d %H:%M:%S");
+        	//Formats time output into Hour and Minutes for display
+
+    Example:
+    		//If we currently have focus on the EditText then display the
+	        //TimePickerDialog, setting the Hour and Minute to match what is
+	        //currently in the EditText (or time when activity was started)
+	        
+
