@@ -1,0 +1,66 @@
+// order of listeners, flow executor, service executor, is not important. 
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+// name spaces 
+-<beans xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd http://www.springframework.org/schema/faces http://www.springframework.org/schema/faces/spring-faces.xsd" xmlns:faces="http://www.springframework.org/schema/faces" xmlns:webflow="http://www.springframework.org/schema/webflow-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans">
+
+// Listener bean, handle persistence during web flow
+-<bean class="org.springframework.webflow.persistence.JpaFlowExecutionListener" id="jpaFlowExecutionListener">
+
+	<constructor-arg ref="entityManagerFactory"/>
+
+	<constructor-arg ref="transactionManager"/>
+
+</bean>
+
+// listener bean
+<bean class="org.springframework.faces.webflow.FlowFacesContextLifecycleListener" id="facesContextListener"/>
+
+// flow executor
+-<webflow:flow-executor id="flowExecutor">
+	-<webflow:flow-execution-listeners>
+		<webflow:listener ref="jpaFlowExecutionListener"/>
+		<webflow:listener ref="facesContextListener"/>
+		<webflow:listener ref="securityFlowExecutionListener"/>
+	</webflow:flow-execution-listeners>
+</webflow:flow-executor>
+
+// flow registry, pass in id and base path (need to create the flows folder) and builder service
+-<webflow:flow-registry id="flowRegistry" base-path="/WEB-INF/flows" flow-builder-services="facesFlowBuilderServices">
+// naming pattern 
+	<webflow:flow-location-pattern value="/**/*-flow.xml"/>
+</webflow:flow-registry>
+
+// builder, developemnt set to true to help debug flows
+<faces:flow-builder-services id="facesFlowBuilderServices" development="true"/>
+
+<faces:resources/>
+
+// beans (not neccessary to understand all this. if needs changing google it.)
+-<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+	<property value="1" name="order"/>
+	<property ref="flowRegistry" name="flowRegistry"/>
+	-<property name="defaultHandler">
+		<bean class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
+	</property>
+</bean>
+
+//  more beans to configure web flow. 
+-<bean class="org.springframework.faces.webflow.JsfFlowHandlerAdapter">
+	<property ref="flowExecutor" name="flowExecutor"/>
+</bean>
+
+
+-<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" id="faceletsViewResolver">
+	<property value="org.springframework.faces.mvc.JsfView" name="viewClass"/>
+	<property value="/WEB-INF/" name="prefix"/>
+	<property value=".xhtml" name="suffix"/>
+</bean>
+
+<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+
+<bean class="org.springframework.webflow.security.SecurityFlowExecutionListener" id="securityFlowExecutionListener"/>
+
+</beans>
