@@ -1,0 +1,18 @@
+// 2eeapplication\src\main\resources\META-INF\persistence.xml
+// common name space config, this file is required by hibernate which contains the
+// name of classes which are subject to object relational mapping.
+// tell hibernate which classes are able to persist. 
+// the application will not start without this file 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+		http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0">
+		
+	<persistence-unit name="default" transaction-type="RESOURCE_LOCAL">
+		
+		<class>com.example.j2eeapp.domain.UserEntity</class>
+		
+	</persistence-unit>
+</persistence>
